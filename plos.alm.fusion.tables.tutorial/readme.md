@@ -18,20 +18,22 @@ A range of queries similar to SQL are supported. A SELECT statement is used to p
 
 <br>
 
-To export CSV append the query to this base: <pre class="text source-text" style="font-family: monospace;">http://tables.googlelabs.com/exporttable?query=
-</pre>
+To export CSV append the query to this base: 
+`http://tables.googlelabs.com/exporttable?query=`
 
-Remember to use URL encoding. For example the query <script src="http://gist.github.com/617850.js?file=Summary.Complete.Table.gft.sql"></script>
-<noscript><pre class="sql source-sql" style="font-family: monospace;">SELECT * FROM 204244<br></pre>
-</noscript>
-<br>
+Remember to use URL encoding. For example the query
+```sql
+SELECT * FROM 204244
+```
+
 
 Would be:
 
-<script src="https://gist.github.com/617850.js?file=Summary.Complete.Table.gft.sql.urlencode"></script>
-<noscript><pre class="text" style="font-family: monospace;">http://tables.googlelabs.com/exporttable?query=SELECT%20*%20FROM%20204244</pre></noscript> Click <a href="http://tables.googlelabs.com/exporttable?query=SELECT%20*%20FROM%20204244">Download CSV</a> to download the output of a query.<br>
+`http://tables.googlelabs.com/exporttable?query=SELECT%20*%20FROM%20204244`
 
-<h3>Google Spreadsheets</h3>
+Click [Download CSV](http://tables.googlelabs.com/exporttable?query=SELECT%20*%20FROM%20204244) to download the output of a query.
+
+### Google Spreadsheets ###
 
 The CSV output can be loaded in many applications such as Google Spreadsheets. By using the importData() function we can adjust the query and the spreadsheet will automatically update.<br>
 
