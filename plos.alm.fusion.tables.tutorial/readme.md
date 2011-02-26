@@ -42,9 +42,11 @@ Click [Download CSV](http://tables.googlelabs.com/exporttable?query=SELECT%20*%2
 The CSV output can be loaded in many applications such as Google Spreadsheets. By using the importData() function we can adjust the query and the spreadsheet will automatically update.<br>
 
 For example, to select the first 10 results of the Summary ALM Data table:
-<script src="http://gist.github.com/617850.js?file=Import.Data.Google.Spreadsheet.txt"></script>
-<noscript><pre class="text source-text" style="font-family: monospace;">=importData("http://tables.googlelabs.com/exporttable?query=SELECT<br>* FROM 204244 LIMIT 10")</pre>
-</noscript><iframe src="http://spreadsheets.google.com/pub?key=tw6F5r-M_VQ2aM82w1vN3sg&amp;single=true&amp;gid=0&amp;output=html&amp;widget=true" frameborder="0" height="300" width="100%"></iframe><br>
+```
+=importData("http://tables.googlelabs.com/exporttable?query=SELECT * FROM 204244 LIMIT 10")
+```
+
+<iframe src="http://spreadsheets.google.com/pub?key=tw6F5r-M_VQ2aM82w1vN3sg&amp;single=true&amp;gid=0&amp;output=html&amp;widget=true" frameborder="0" height="300" width="100%"></iframe><br>
 
 <h2>Summary ALM Data</h2>
 The Summary ALM Data table includes basic information and citation counts for each article. The columns are DOI, URL, Publication Date, Publication Year, Journal, Article Title, Citations, and Downloads. 
