@@ -1,12 +1,12 @@
 Google Fusion Tables
 ====================
 
-A set of <a href="http://blogs.plos.org/plos/2010/07/plos-alm-data-in-google-fusion-tables/">Google Fusion Tables</a> have been released with the <a href="http://article-level-metrics.plos.org/">Article Level Metrics</a> data from all Public Library of Science (PLoS) publications.<br>
+A set of [Google Fusion Tables](http://blogs.plos.org/plos/2010/07/plos-alm-data-in-google-fusion-tables/) have been released with the [Article Level Metrics](http://article-level-metrics.plos.org/) data from all Public Library of Science (PLoS) publications.
 The data includes citation totals in the Summary ALM Data table, and monthly download history totals and broken down by file type.
     
-SQL-like queries allow filtering, sorting, aggregating, and more. The table data can be exported as CSV and imported into a Google Spreadsheet. This allows additional operations on the data and charting.<br>
+SQL-like queries allow filtering, sorting, aggregating, and more. The table data can be exported as CSV and imported into a Google Spreadsheet. This allows additional operations on the data and charting.
      
-There are 5 tables available: <a href="http://tables.googlelabs.com/DataSource?snapid=61925">Summary ALM Data</a>, <a href="http://tables.googlelabs.com/DataSource?snapid=62323" >Combined Download Statistics</a>, <a href="http://tables.googlelabs.com/DataSource?snapid=62324" >HTML Views</a>, <a href="http://tables.googlelabs.com/DataSource?snapid=62524">PDF Downloads</a>, and <a href="http://tables.googlelabs.com/DataSource?snapid=62607">XML Downloads</a>. Each table is referenced by an ID number. The ID number can be seen in File -> About<br>
+There are 5 tables available: [Summary ALM Data](http://tables.googlelabs.com/DataSource?snapid=61925), [Combined Download Statistics](http://tables.googlelabs.com/DataSource?snapid=62323), [HTML Views](http://tables.googlelabs.com/DataSource?snapid=62324), [PDF Downloads](http://tables.googlelabs.com/DataSource?snapid=62524), and [XML Downloads](http://tables.googlelabs.com/DataSource?snapid=62607). Each table is referenced by an ID number. The ID number can be seen in File -> About<br>
 
 <!-- start to explain details -->
 
