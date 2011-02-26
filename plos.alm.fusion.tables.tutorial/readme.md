@@ -19,7 +19,9 @@ A range of queries similar to SQL are supported. A SELECT statement is used to p
 <br>
 
 To export CSV append the query to this base: 
-`http://tables.googlelabs.com/exporttable?query=`
+```
+http://tables.googlelabs.com/exporttable?query=
+```
 
 Remember to use URL encoding. For example the query
 ```sql
@@ -29,7 +31,9 @@ SELECT * FROM 204244
 
 Would be:
 
-`http://tables.googlelabs.com/exporttable?query=SELECT%20*%20FROM%20204244`
+```
+http://tables.googlelabs.com/exporttable?query=SELECT%20*%20FROM%20204244
+```
 
 Click [Download CSV](http://tables.googlelabs.com/exporttable?query=SELECT%20*%20FROM%20204244) to download the output of a query.
 
