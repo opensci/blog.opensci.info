@@ -10,7 +10,8 @@ There are 5 tables available: <a href="http://tables.googlelabs.com/DataSource?s
 
 <!-- start to explain details -->
 
-<h3>Query Language</h3>
+Query Language
+--------------
 
 A range of queries similar to SQL are supported. A SELECT statement is used to pick columns from a table. Additional options include FROM, WHERE, GROUP BY, OFFSET, and LIMIT. See the full <a href="https://code.google.com/apis/fusiontables/docs/developers_reference.html#Select">syntax reference</a>.
 <br>
