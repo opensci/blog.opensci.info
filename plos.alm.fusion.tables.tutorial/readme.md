@@ -1,9 +1,39 @@
 # Analyze PLoS Article Level Metrics with Google Fusion Tables and Spreadsheets
 
-Google Fusion Tables
---------------------
+<!-- first section -->
 
-A set of [Google Fusion Tables](http://blogs.plos.org/plos/2010/07/plos-alm-data-in-google-fusion-tables/) have been released with the [Article Level Metrics](http://article-level-metrics.plos.org/) data from all Public Library of Science (PLoS) publications.
+
+<!-- summary of what  -->
+
+PLoS Article Level Metrics on Google Fusion Tables
+--------------------------------------------------
+
+Google Fusion Tables is a free service that allows access through the web and an API to large uploaded datasets.
+
+GFT
+    free
+    web access
+    api
+    datasets can be uploaded
+
+PLoS ALM
+    csv
+    citations
+    usage
+        page views
+        downloads
+            by file type
+                pdf
+                
+
+
+PLoS ALM released on GFT
+
+A set of [Google Fusion Tables][1] have been released with the [Article Level Metrics] data from all Public Library of Science (PLoS) publications.
+
+[1]: http://blogs.plos.org/plos/2010/07/plos-alm-data-in-google-fusion-tables/
+[2]: http://article-level-metrics.plos.org/
+
 The data includes citation totals in the Summary ALM Data table, and monthly download history totals and broken down by file type.
     
 SQL-like queries allow filtering, sorting, aggregating, and more. The table data can be exported as CSV and imported into a Google Spreadsheet. This allows additional operations on the data and charting.
