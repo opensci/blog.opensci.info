@@ -63,6 +63,9 @@ Complete Summary table. <a href="http://tables.googlelabs.com/exporttable?query=
 <script src="http://gist.github.com/617850.js?file=Summary.Complete.Table.gft.sql"></script>
 <noscript><pre class="sql source-sql" style="font-family: monospace;">SELECT * FROM 204244<br></pre>
 </noscript>
+
+[[Summary.Complete.Table.gft.sql|Summary.Complete.Table.gft.sql]]
+
 <br>
 
 <h3>Limit<br>
