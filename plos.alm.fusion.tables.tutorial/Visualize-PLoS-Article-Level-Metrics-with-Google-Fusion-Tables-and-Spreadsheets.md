@@ -9,10 +9,10 @@ PLoS Article Level Metrics on Google Fusion Tables
 Google Fusion Tables is a free service that allows access through the web and an API to large uploaded datasets.
 
 GFT
-    free
-    web access
-    api
-    datasets can be uploaded
+* free
+* web access
+* api
+* datasets can be uploaded
 
 PLoS ALM
     csv
