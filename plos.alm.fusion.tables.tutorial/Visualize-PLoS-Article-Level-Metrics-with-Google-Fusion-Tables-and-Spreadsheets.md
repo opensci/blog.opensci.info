@@ -1,5 +1,3 @@
-# Analyze PLoS Article Level Metrics with Google Fusion Tables and Spreadsheets
-
 <!-- first section -->
 
 
