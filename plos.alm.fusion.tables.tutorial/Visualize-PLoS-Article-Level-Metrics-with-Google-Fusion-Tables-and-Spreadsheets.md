@@ -1,12 +1,31 @@
-# PLoS Article Level Metrics on Google Fusion Tables
+# Visualize PLoS Article Level Metrics with Google Fusion Tables and Spreadsheets
 
-Google Fusion Tables is a free service that allows access to large uploaded datasets through the web and through an API.
 
-## GFT
+Article citation and usage metrics from the Public Library of Science have been uploaded to Google Fusion Tables. These datasets can now be explored with an SQL-like query language.
+
+
+## Google Fusion Tables
+
+Large datasets can be freely uploaded and accessed. Both web and API interfaces are available.
+
+GFT has a much higher CSV upload limit of 100mb.[1] 
+
+Google Spreadsheets can be up to 20mb[2] but only 400,000 cells which often means issues with files much larger than 1mb.[3]
+
+
 * free
 * web access
 * api
 * datasets can be uploaded
+* large datasets
+* 100mb csv
+
+
+
+
+[1]: https://code.google.com/p/fusion-tables/issues/detail?id=261#c1
+[2]: https://docs.google.com/support/bin/answer.py?answer=37603
+[3]: http://www.google.com/support/forum/p/Google%20Docs/thread?tid=3c2751ecad928f8c&hl=en
 
 ## PLoS ALM
 * csv
@@ -17,6 +36,11 @@ Google Fusion Tables is a free service that allows access to large uploaded data
             by file type
                 pdf
                 
+
+
+
+
+
 
 
 ## PLoS ALM released on GFT
@@ -73,7 +97,7 @@ The Summary ALM Data table includes basic information and citation counts for ea
 
 <a href="http://tables.googlelabs.com/DataSource?snapid=61925">PLoS ALM v3 05182010 Summary ALM Data</a> ID: 204244<br>
 
-### Select ###
+### Select
 
 Complete Summary table. <a href="http://tables.googlelabs.com/exporttable?query=SELECT%20*%20FROM%20204244">Download CSV</a><br>
 
