@@ -14,13 +14,18 @@ The data includes citation totals in the Summary ALM Data table, and monthly dow
     
 SQL-like queries allow filtering, sorting, aggregating, and more. The table data can be exported as CSV and imported into a Google Spreadsheet. This allows additional operations on the data and charting.
      
-There are 5 tables available: [Summary ALM Data][1], [Combined Download Statistics][2], [HTML Views][3], [PDF Downloads][4], and [XML Downloads][5]. 
+There are 5 tables available:
+* [Summary ALM Data][1]
+* [Combined Download Statistics][2]
+* [HTML Views][3]
+* [PDF Downloads][4]
+* [XML Downloads][5]
 
 [[Google.Fusion.Tables.Summary.ALM.Data.png|width=800px|frame|alt=Web-based Google Fusion Tables view of Summary ALM Data table.]]
 
-Each table is referenced by an ID number. The ID number can be seen in File -> About
-
 [[Google.Fusion.Tables.About.Menu.png|width=200px|frame|alt=About Menu]]
+
+Each table is referenced by an ID number. The ID number can be seen in File -> About
 
 [[Summary.ALM.Data.About.png|width=500px|frame|alt=About Summary ALM Data]]
 
