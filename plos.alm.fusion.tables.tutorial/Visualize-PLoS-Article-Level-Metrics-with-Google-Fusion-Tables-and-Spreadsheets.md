@@ -14,7 +14,8 @@ The data includes citation totals in the Summary ALM Data table, and monthly dow
     
 SQL-like queries allow filtering, sorting, aggregating, and more. The table data can be exported as CSV and imported into a Google Spreadsheet. This allows additional operations on the data and charting.
      
-There are 5 tables available:
+There are 5 tables available
+
 * [Summary ALM Data][1]
 * [Combined Download Statistics][2]
 * [HTML Views][3]
