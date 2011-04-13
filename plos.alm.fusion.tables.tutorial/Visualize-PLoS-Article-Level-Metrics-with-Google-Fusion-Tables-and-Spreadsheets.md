@@ -18,7 +18,7 @@ There are 5 tables available: [Summary ALM Data][1], [Combined Download Statisti
 
 Each table is referenced by an ID number. The ID number can be seen in File -> About<br>
 
-[[Google.Fusion.Tables.Summary.ALM.Data.png|width=800px|alt=Main page]]
+[[Google.Fusion.Tables.Summary.ALM.Data.png|frame|alt=Main page]]
 
 [[Google.Fusion.Tables.About.Menu.png|width=100px]]
 [[Summary.ALM.Data.About.png]]
