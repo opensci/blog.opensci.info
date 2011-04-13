@@ -16,9 +16,9 @@ SQL-like queries allow filtering, sorting, aggregating, and more. The table data
      
 There are 5 tables available: [Summary ALM Data][1], [Combined Download Statistics][2], [HTML Views][3], [PDF Downloads][4], and [XML Downloads][5]. 
 
-[[Google.Fusion.Tables.Summary.ALM.Data.png|width=800px|frame|alt=Web-based Google Fusion Tables view of Summary ALM Data table.]]
+Each table is referenced by an ID number. The ID number can be seen in File -> About<br>
 
-Each table is referenced by an ID number. The ID number can be seen in File -> About
+[[Google.Fusion.Tables.Summary.ALM.Data.png|width=800px|frame|alt=Main page]]
 
 [[Google.Fusion.Tables.About.Menu.png|width=200px|frame|alt=About Menu]]
 
