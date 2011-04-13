@@ -1,49 +1,9 @@
 # Visualize PLoS Article Level Metrics with Google Fusion Tables and Spreadsheets
 
 
-Article citation and usage metrics from the Public Library of Science have been uploaded to Google Fusion Tables. These datasets can now be explored with an SQL-like query language.
-
-
-## Google Fusion Tables
-
-Large datasets can be freely uploaded and accessed. Both web and API interfaces are available.
-
-GFT has a much higher [CSV upload limit of 100mb][1]. 
-
-Google Spreadsheets can be [up to 20mb but only 400,000 cells][2] and often there are issues with files much [larger than 1mb][3].
-
-
-* free
-* web access
-* api
-* datasets can be uploaded
-* large datasets
-* 100mb csv
-
-
-
-
-[1]: https://code.google.com/p/fusion-tables/issues/detail?id=261#c1
-[2]: https://docs.google.com/support/bin/answer.py?answer=37603
-[3]: http://www.google.com/support/forum/p/Google%20Docs/thread?tid=3c2751ecad928f8c&hl=en
-
-## PLoS ALM
-* csv
-* citations
-* usage
- * page views
- * downloads
-            by file type
-                pdf
-                
-
-
-
-
-
-
-
 ## PLoS ALM released on GFT
+
+Article citation and usage metrics from the Public Library of Science have been uploaded to Google Fusion Tables. These datasets can now be explored with an SQL-like query language.
 
 A set of [Google Fusion Tables][1] have been released with the [Article Level Metrics] data from all Public Library of Science (PLoS) publications.
 
@@ -54,7 +14,41 @@ The data includes citation totals in the Summary ALM Data table, and monthly dow
     
 SQL-like queries allow filtering, sorting, aggregating, and more. The table data can be exported as CSV and imported into a Google Spreadsheet. This allows additional operations on the data and charting.
      
-There are 5 tables available: [Summary ALM Data](http://tables.googlelabs.com/DataSource?snapid=61925), [Combined Download Statistics](http://tables.googlelabs.com/DataSource?snapid=62323), [HTML Views](http://tables.googlelabs.com/DataSource?snapid=62324), [PDF Downloads](http://tables.googlelabs.com/DataSource?snapid=62524), and [XML Downloads](http://tables.googlelabs.com/DataSource?snapid=62607). Each table is referenced by an ID number. The ID number can be seen in File -> About<br>
+There are 5 tables available: [Summary ALM Data][1], [Combined Download Statistics][2], [HTML Views][3], [PDF Downloads][4], and [XML Downloads][5]. 
+
+Each table is referenced by an ID number. The ID number can be seen in File -> About<br>
+
+[[plos.alm.fusion.tables.tutorial/Google.Fusion.Tables.About.Menu.png]]
+
+
+[1]: http://tables.googlelabs.com/DataSource?snapid=61925
+[2]: http://tables.googlelabs.com/DataSource?snapid=62323
+[3]: http://tables.googlelabs.com/DataSource?snapid=62324
+[4]: http://tables.googlelabs.com/DataSource?snapid=62524
+[5]: http://tables.googlelabs.com/DataSource?snapid=62607
+
+## PLoS ALM
+* csv
+* citations
+* usage
+ * page views
+ * downloads
+            by file type
+                pdf
+                
+## Google Fusion Tables
+
+Large datasets can be freely uploaded and accessed. Both web and API interfaces are available.
+
+GFT has a much higher [CSV upload limit of 100mb][1]. 
+
+Google Spreadsheets can be [up to 20mb but only 400,000 cells][2] and often there are issues with files much [larger than 1mb][3].
+
+[1]: https://code.google.com/p/fusion-tables/issues/detail?id=261#c1
+[2]: https://docs.google.com/support/bin/answer.py?answer=37603
+[3]: http://www.google.com/support/forum/p/Google%20Docs/thread?tid=3c2751ecad928f8c&hl=en
+
+
 
 <!-- start to explain details -->
 
