@@ -21,7 +21,7 @@ Each table is referenced by an ID number. The ID number can be seen in File -> A
 [[Google.Fusion.Tables.Summary.ALM.Data.png|width=800px|frame|alt=Main page]]
 
 <div style="float:left;margin:0 10px 10px 0" markdown="1">
-    ![book](/Google.Fusion.Tables.About.Menu.png)
+[[Google.Fusion.Tables.About.Menu.png|width=200px|alt=About Menu]]
 </div>
 
 
