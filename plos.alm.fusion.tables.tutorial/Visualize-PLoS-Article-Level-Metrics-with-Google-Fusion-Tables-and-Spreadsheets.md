@@ -20,7 +20,11 @@ Each table is referenced by an ID number. The ID number can be seen in File -> A
 
 [[Google.Fusion.Tables.Summary.ALM.Data.png|width=800px|frame|alt=Main page]]
 
-[[Google.Fusion.Tables.About.Menu.png|width=200px|frame|alt=About Menu]]
+<div style="float:left;margin:0 10px 10px 0" markdown="1">
+    ![book](/Google.Fusion.Tables.About.Menu.png)
+</div>
+
+
 [[Summary.ALM.Data.About.png|width=500px|frame|alt=About Summary ALM Data]]
 
 [1]: http://tables.googlelabs.com/DataSource?snapid=61925
