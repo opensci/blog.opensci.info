@@ -8,9 +8,9 @@ Article citation and usage metrics from the Public Library of Science have been 
 
 Large datasets can be freely uploaded and accessed. Both web and API interfaces are available.
 
-GFT has a much higher CSV upload limit of 100mb.[1] 
+GFT has a much higher [CSV upload limit of 100mb][1]. 
 
-Google Spreadsheets can be up to 20mb[2] but only 400,000 cells which often means issues with files much larger than 1mb.[3]
+Google Spreadsheets can be [up to 20mb but only 400,000 cells][2] and often there are issues with files much [larger than 1mb][3].
 
 
 * free
