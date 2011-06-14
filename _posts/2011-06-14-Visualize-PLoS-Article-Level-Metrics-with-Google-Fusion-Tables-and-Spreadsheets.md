@@ -1,5 +1,7 @@
-# Visualize PLoS Article Level Metrics with Google Fusion Tables and Spreadsheets
-
+--- 
+layout: post
+title: Visualize PLoS Article Level Metrics with Google Fusion Tables and Spreadsheets
+---
 
 ## PLoS ALM released on GFT
 
