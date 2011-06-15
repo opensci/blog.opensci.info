@@ -13,6 +13,8 @@ A set of [Google Fusion Tables][1] have been released with the [Article Level Me
 [2]: http://article-level-metrics.plos.org/
 
 The data includes citation totals in the Summary ALM Data table, and monthly download history totals and broken down by file type.
+
+<!--more-->
     
 SQL-like queries allow filtering, sorting, aggregating, and more. The table data can be exported as CSV and imported into a Google Spreadsheet. This allows additional operations on the data and charting.
      
@@ -24,13 +26,23 @@ There are 5 tables available
 * [PDF Downloads][4]
 * [XML Downloads][5]
 
-[[Google.Fusion.Tables.Summary.ALM.Data.png|width=800px|frame|alt=Web-based Google Fusion Tables view of Summary ALM Data table.]]
 
-[[Google.Fusion.Tables.About.Menu.png|width=200px|frame|alt=About Menu]]
+
+<img class="mainimage bigimage" src="/file/2011-06-14-Visualize-PLoS-Article-Level-Metrics-with-Google-Fusion-Tables-and-Spreadsheets/Google.Fusion.Tables.Summary.ALM.Data.png" />
+
+Web-based Google Fusion Tables view of Summary ALM Data table.
+
+<img class="mainimage" src="/file/2011-06-14-Visualize-PLoS-Article-Level-Metrics-with-Google-Fusion-Tables-and-Spreadsheets/Google.Fusion.Tables.About.Menu.png" />
+
+About Menu
 
 Each table is referenced by an ID number. The ID number can be seen in File -> About
 
-[[Summary.ALM.Data.About.png|width=500px|frame|alt=About Summary ALM Data]]
+<img class="mainimage" src="/file/2011-06-14-Visualize-PLoS-Article-Level-Metrics-with-Google-Fusion-Tables-and-Spreadsheets/Summary.ALM.Data.About.png" />
+
+About Summary ALM Data
+
+
 
 [1]: http://tables.googlelabs.com/DataSource?snapid=61925
 [2]: http://tables.googlelabs.com/DataSource?snapid=62323
@@ -68,21 +80,17 @@ Google Spreadsheets can be [up to 20mb but only 400,000 cells][2] and often ther
 A range of queries similar to SQL are supported. A SELECT statement is used to pick columns from a table. Additional options include FROM, WHERE, GROUP BY, OFFSET, and LIMIT. See the full <a href="https://code.google.com/apis/fusiontables/docs/developers_reference.html#Select">syntax reference</a>.
 
 To export CSV append the query to this base: 
-```
-http://tables.googlelabs.com/exporttable?query=
-```
+    http://tables.googlelabs.com/exporttable?query=
 
 Remember to use URL encoding. For example the query
-```sql
+{% highlight sql %}
 SELECT * FROM 204244
-```
+{% endhighlight %}
 
 
 Would be:
 
-```
-http://tables.googlelabs.com/exporttable?query=SELECT%20*%20FROM%20204244
-```
+    http://tables.googlelabs.com/exporttable?query=SELECT%20*%20FROM%20204244
 
 Click [Download CSV](http://tables.googlelabs.com/exporttable?query=SELECT%20*%20FROM%20204244) to download the output of a query.
 
@@ -91,9 +99,7 @@ Click [Download CSV](http://tables.googlelabs.com/exporttable?query=SELECT%20*%2
 The CSV output can be loaded in many applications such as Google Spreadsheets. By using the importData() function we can adjust the query and the spreadsheet will automatically update.<br>
 
 For example, to select the first 10 results of the Summary ALM Data table:
-```
-=importData("http://tables.googlelabs.com/exporttable?query=SELECT * FROM 204244 LIMIT 10")
-```
+    =importData("http://tables.googlelabs.com/exporttable?query=SELECT * FROM 204244 LIMIT 10")
 
 <iframe src="http://spreadsheets.google.com/pub?key=tw6F5r-M_VQ2aM82w1vN3sg&amp;single=true&amp;gid=0&amp;output=html&amp;widget=true" frameborder="0" height="300" width="100%"></iframe><br>
 
@@ -106,11 +112,11 @@ The Summary ALM Data table includes basic information and citation counts for ea
 
 Complete Summary table. <a href="http://tables.googlelabs.com/exporttable?query=SELECT%20*%20FROM%20204244">Download CSV</a><br>
 
-<script src="http://gist.github.com/617850.js?file=Summary.Complete.Table.gft.sql"></script>
-<noscript><pre class="sql source-sql" style="font-family: monospace;">SELECT * FROM 204244<br></pre>
-</noscript>
+{% highlight sql %}
+SELECT * FROM 204244
+{% endhighlight %}
 
-[[Summary.Complete.Table.gft.sql|Summary.Complete.Table.gft.sql]]
+[Summary.Complete.Table.gft.sql](/file/2011-06-14-Visualize-PLoS-Article-Level-Metrics-with-Google-Fusion-Tables-and-Spreadsheets/Summary.Complete.Table.gft.sql)
 
 <br>
 
@@ -119,14 +125,22 @@ Complete Summary table. <a href="http://tables.googlelabs.com/exporttable?query=
 
 Limit results to make sure they fit on a spreadsheet because Google Docs only supports import up to 500kb. <a href="http://tables.googlelabs.com/exporttable?query=SELECT%20*%20FROM%20204244%20LIMIT%2010">Download CSV</a><br>
 
-<script src="http://gist.github.com/617850.js?file=Limit.Results.gft.sql"></script><noscript>
-<pre class="sql source-sql" style="font-family: monospace;">SELECT *<br>FROM 204244 LIMIT 10<br></pre> </noscript>
+
+{% highlight sql %}
+SELECT * FROM 204244 LIMIT 10
+{% endhighlight %}
+
+
 <h3>Columns<br>
 </h3>
 
 Choose which columns to include. Surround column names with single parenthesis for example such as for the Article Title column. <a href="http://tables.googlelabs.com/exporttable?query=SELECT%20%27Article%20Title%27,DOI,URL%20FROM%20204244%20LIMIT%2010">Download CSV</a>
-<script src="http://gist.github.com/617850.js?file=Select.Columns.gft.sql"></script><noscript><pre class="sql source-sql" style="font-family: monospace;">SELECT 'Article<br>Title',DOI,URL FROM 204244 LIMIT 10<br></pre>&nbsp;
-</noscript><iframe src="http://spreadsheets.google.com/pub?key=tw6F5r-M_VQ2aM82w1vN3sg&amp;single=true&amp;gid=2&amp;output=html&amp;widget=true" frameborder="0" height="300" width="100%"></iframe><br>
+
+{% highlight sql %}
+SELECT 'Article Title',DOI,URL FROM 204244 LIMIT 10
+{% endhighlight %}
+
+<iframe src="http://spreadsheets.google.com/pub?key=tw6F5r-M_VQ2aM82w1vN3sg&amp;single=true&amp;gid=2&amp;output=html&amp;widget=true" frameborder="0" height="300" width="100%"></iframe><br>
 <br>
 <br>
 <h3>Sort</h3>
@@ -157,6 +171,9 @@ Download Statistics<br>
 </h2>
 <a href="http://tables.googlelabs.com/DataSource?snapid=62323">PLoS ALM v3 05182010 Combined Download Statistics</a> ID 202272<br>
 <br>
+
+
+<!--
 
 <h3>Sort</h3>
 Sort by the 2010-3 column to find papers with the most recent downloads. <a href="http://tables.googlelabs.com/exporttable?query=SELECT%20*%20FROM%20202272%20ORDER%20BY%20%272010-3%27%20DESC%20LIMIT%2010">Download CSV</a><br>
@@ -218,5 +235,6 @@ There are several groupings. The most downloaded papers are 10.1371/journal.pbio
 <br>
 <br>
 <a href="https://gist.github.com/617850">All sample files</a>
-</body>
-</html>
+
+
+-->

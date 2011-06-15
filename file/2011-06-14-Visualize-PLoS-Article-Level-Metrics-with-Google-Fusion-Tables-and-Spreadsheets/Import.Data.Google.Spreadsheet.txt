@@ -1,0 +1,1 @@
+=importData("http://tables.googlelabs.com/exporttable?query=SELECT * FROM 204244 LIMIT 10")

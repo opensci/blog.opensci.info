@@ -158,3 +158,20 @@ table.projects td.desc {
   margin-top: 45px; }
   #disqus_thread h3 {
     font-size: 19px; }
+    
+img.mainimage {
+  border: 1px solid #607890;
+    box-shadow: 5px 5px 5px #888;
+  -webkit-box-shadow: 2px 2px 2px #888;
+  -moz-box-shadow: 5px 5px 5px #888;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+/*  padding: 0.1em 0.2em; */
+
+}    
+
+img.bigimage {
+  width: 100%;
+}    
+
