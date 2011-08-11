@@ -1,6 +1,7 @@
 --- 
 layout: post
 title: Visualize PLoS Article Level Metrics with Google Fusion Tables and Spreadsheets
+uuid: 777dd893-0aee-4395-9802-63b9b0a50634
 ---
 
 ## Public Library of Science Article Level Metrics released on Google Fusion Tables
