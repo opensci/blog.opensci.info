@@ -4,14 +4,17 @@ title: Visualize PLoS Article Level Metrics with Google Fusion Tables and Spread
 uuid: 777dd893-0aee-4395-9802-63b9b0a50634
 ---
 
-## Public Library of Science Article Level Metrics released on Google Fusion Tables
+# Public Library of Science Article Level Metrics released on Google Fusion Tables
+  
+  
+[Citation and download counts][plosblog] for each article from Public Library of Science are now available on [Google Fusion Tables][gft]. These datasets can be explored using an SQL-like query language with the Google Fusion Tables API.
 
-Article citation and usage metrics from the Public Library of Science have been uploaded to Google Fusion Tables. These datasets can now be explored with an SQL-like query language.
+The latest version posted by PloS on GFT is "PLoS ALM v3 05182010 Summary ALM Data". For a more recent version of the data see [PLoS Article Level Metrics on Google Fusion Tables Updated to V4][plosalmv] or visit the [PLoS ALM website][plosalm].
 
-A set of [Google Fusion Tables][1] have been released with the [Article Level Metrics] data from all Public Library of Science (PLoS) publications.
-
-[1]: http://blogs.plos.org/plos/2010/07/plos-alm-data-in-google-fusion-tables/
-[2]: http://article-level-metrics.plos.org/
+[plosblog]: http://blogs.plos.org/plos/2010/07/plos-alm-data-in-google-fusion-tables/
+[plosalm]: http://article-level-metrics.plos.org/
+[gft]: http://www.google.com/fusiontables/Home
+[plosalmv4]: 2011/08/14/PLoS-Article-Level-Metrics-on-Google-Fusion-Tables-Updated-to-v4/
 
 The data includes citation totals in the Summary ALM Data table, and monthly download history totals and broken down by file type.
 
@@ -21,11 +24,11 @@ SQL-like queries allow filtering, sorting, aggregating, and more. The table data
      
 There are 5 tables available
 
-* [Summary ALM Data][1]
-* [Combined Download Statistics][2]
-* [HTML Views][3]
-* [PDF Downloads][4]
-* [XML Downloads][5]
+* [Summary ALM Data][summary]
+* [Combined Download Statistics][combined]
+* [HTML Views][html]
+* [PDF Downloads][pdf]
+* [XML Downloads][xml]
 
 
 
@@ -45,11 +48,11 @@ About Summary ALM Data
 
 
 
-[1]: http://tables.googlelabs.com/DataSource?snapid=61925
-[2]: http://tables.googlelabs.com/DataSource?snapid=62323
-[3]: http://tables.googlelabs.com/DataSource?snapid=62324
-[4]: http://tables.googlelabs.com/DataSource?snapid=62524
-[5]: http://tables.googlelabs.com/DataSource?snapid=62607
+[summary]: http://tables.googlelabs.com/DataSource?snapid=61925
+[combined]: http://tables.googlelabs.com/DataSource?snapid=62323
+[html]: http://tables.googlelabs.com/DataSource?snapid=62324
+[pdf]: http://tables.googlelabs.com/DataSource?snapid=62524
+[xml]: http://tables.googlelabs.com/DataSource?snapid=62607
 
 
 
