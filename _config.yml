@@ -1,6 +1,7 @@
-markdown: rdiscount
+markdown: kramdown
 auto: true
 permalink: pretty
+server: false
 exclude:
   - start.sh
   - Rakefile
