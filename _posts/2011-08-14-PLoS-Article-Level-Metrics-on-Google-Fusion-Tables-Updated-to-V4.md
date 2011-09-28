@@ -4,13 +4,7 @@ title: PLoS Article Level Metrics on Google Fusion Tables Updated to V4
 uuid: 2d6cc4e2-7f99-4d75-94d1-5f166f487ca9
 ---
 
-The latest version of the bulk PLoS Article Level Metrics data has been uploaded by me to Google Fusion Tables. The free GFT service provides API access for complex queries and a standard CSV file format output.
-
-For a guide to working with and visualizing this data see [Visualize PLoS Article Level Metrics with Google Fusion Tables and Spreadsheets][visplos].
-[visplos]: /2011/06/14/Visualize-PLoS-Article-Level-Metrics-with-Google-Fusion-Tables-and-Spreadsheets/
-
-The source file [from PLoS][sourcexls] used was plos-alm-v4-11302010.xls. 
-[sourcexls]: http://www.plosone.org/static/plos-alm.zip
+The latest version of the bulk PLoS Article Level Metrics data has been uploaded to Google Fusion Tables.
 
 * [Summary ALM Data][summary]
 * [Combined Download Statistics][combined]
@@ -24,6 +18,11 @@ The source file [from PLoS][sourcexls] used was plos-alm-v4-11302010.xls.
 [pdf]: http://www.google.com/fusiontables/DataSource?snapid=S240110gzRp
 [xml]: http://www.google.com/fusiontables/DataSource?snapid=S240105c1eQ
 
-The previous version [posted by PLoS][plosblog] was "PLoS ALM v3 05182010 Summary ALM Data".
+Google Fusion Tables provides web based and API access for complex queries, and a standard CSV file format output. For a guide to working with and visualizing this data see [Visualize PLoS Article Level Metrics with Google Fusion Tables and Spreadsheets][visplos].
 
+[visplos]: /2011/06/14/Visualize-PLoS-Article-Level-Metrics-with-Google-Fusion-Tables-and-Spreadsheets/
+
+The [source file][sourcexls] used was "`plos-alm-v4-11302010.xls`". The previous version was "`PLoS ALM v3 05182010 Summary ALM Data`" [posted by PLoS][plosblog].
+
+[sourcexls]: http://www.plosone.org/static/plos-alm.zip
 [plosblog]: http://blogs.plos.org/plos/2010/07/plos-alm-data-in-google-fusion-tables/
