@@ -18,7 +18,7 @@ The latest version of the bulk PLoS Article Level Metrics data has been uploaded
 [pdf]: http://www.google.com/fusiontables/DataSource?snapid=S240110gzRp
 [xml]: http://www.google.com/fusiontables/DataSource?snapid=S240105c1eQ
 
-Google Fusion Tables provides web based and API access for complex queries, and a standard CSV file format output. For a guide to working with and visualizing this data see [Visualize PLoS Article Level Metrics with Google Fusion Tables and Spreadsheets][visplos].
+Google Fusion Tables provides an API and web based access for complex queries of large data sets. The data can be exported in standard file formats such as CSV. For a guide to working with and visualizing this data see [Visualize PLoS Article Level Metrics with Google Fusion Tables and Spreadsheets][visplos].
 
 [visplos]: /2011/06/14/Visualize-PLoS-Article-Level-Metrics-with-Google-Fusion-Tables-and-Spreadsheets/
 
