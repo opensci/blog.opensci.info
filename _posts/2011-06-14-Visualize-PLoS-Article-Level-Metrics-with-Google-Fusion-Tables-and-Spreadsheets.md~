@@ -10,13 +10,6 @@ uuid: 777dd893-0aee-4395-9802-63b9b0a50634
 
 The [Public Library of Science][plos] collects additional information for each article they publish including citations, downloads, web page views, and community response. These metrics have now been uploaded [uploaded][plosblog] to [Google Fusion Tables][gft], a free service for sharing data. Previously the the data was available through an [Excel XLS file][almxls] on the PLoS [Article Level Metrics][plosalm] site. 
 
-<!--more-->
-
-
-* Table of Contents
-{:toc}
-
-
 The collected information is divided into 5 tables:
 
 * [Summary ALM Data][summary]
@@ -32,7 +25,11 @@ The collected information is divided into 5 tables:
 [gft]: http://www.google.com/fusiontables/Home
 
 
+<!--more-->
 
+
+* Table of Contents
+{:toc}
 
 ### Google Fusion Tables ###
 
