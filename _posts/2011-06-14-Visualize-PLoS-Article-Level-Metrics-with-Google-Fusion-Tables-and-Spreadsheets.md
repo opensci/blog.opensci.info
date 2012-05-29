@@ -44,21 +44,16 @@ The collected information is divided into 5 tables:
 
 
 ### Web Based View ###
-On Google Fusion Tables each dataset can be viewed through a web browser. The first 100 rows and several columns are shown, and each column can be sorted ascending or descending. Additional operations such as filtering, aggregation, and visualization are available through the menu system. For example, one of the PLoS tables that includes much of the collected article metrics is [Summary ALM Data table][summary]:
+On Google Fusion Tables each dataset can be viewed through a web browser. The first 100 rows and several columns are shown, and each column can be sorted ascending or descending. Additional operations such as filtering, aggregation, and visualization are available through the menu system. For example, one of the PLoS tables that includes much of the collected article metrics is [Summary ALM Data table][summary].
 <a href="http://www.google.com/fusiontables/DataSource?snapid=61925"><img class="mainimage bigimage" src="/file/2011-06-14-Visualize-PLoS-Article-Level-Metrics-with-Google-Fusion-Tables-and-Spreadsheets/Google.Fusion.Tables.Summary.ALM.Data.png" /></a>
 
 
 
 ### Data Updated ###
 
-An updated version version of the ALM data is now available on Google Fusion Tables: [PLoS Article Level Metrics on Google Fusion Tables Updated to V4][plosalmv4].
+An updated version of this ALM data is now also available on Google Fusion Tables: [PLoS Article Level Metrics on Google Fusion Tables Updated to V4][plosalmv4].
 
 [plosalmv4]: /2011/08/14/PLoS-Article-Level-Metrics-on-Google-Fusion-Tables-Updated-to-V4/
-
-
-
-
-
 
 
 
@@ -66,7 +61,6 @@ An updated version version of the ALM data is now available on Google Fusion Tab
 
 The [Summary ALM Data][summary] table contains basic information about each article such as the article title, the journal it was published in, and the publication date. The metric information conists of citation counts, usage, and community metrics. The citation counts are from CrossRef, PubMed Central, and Scopus. Usage metrics are based on website page accesses and downloads: HTML page views, PDF downloads, and XML downloads. Community reactions are an assessment of Blog coverage, Trackbacks, and Social Bookmarks.
 
-The [Summary ALM Data][summary] table includes basic information and citation counts for each article. The columns are DOI, URL, Publication Date, Publication Year, Journal, Article Title, Citations, and Downloads. 
 
 <br clear="all" />
 <img class="mainimage" src="/file/2011-06-14-Visualize-PLoS-Article-Level-Metrics-with-Google-Fusion-Tables-and-Spreadsheets/Google.Fusion.Tables.About.Menu.png" style="width:150px;float:left;"/>
@@ -86,79 +80,56 @@ The ID number for the [Summary ALM Data table][summary] is `204244`. This number
 
 
 ## Combined Download Statistics ##
-In [Combined Download Statistics][combined] the history of downloads for each month is available . The download history is also seperated by file type in the [HTML][html], [PDF][pdf], and [XML][xml] tables.
-
-
-
-
+The history of downloads for each month is available in [Combined Download Statistics][combined]. The download history is also seperated by file type in the [HTML][html], [PDF][pdf], and [XML][xml] tables.
 
 
 
 ## Google Fusion Tables API ##
 
-A range of queries similar to SQL are supported. See the full <a href="https://code.google.com/apis/fusiontables/docs/developers_reference.html#Select">syntax reference</a>.
+The [Google Fusion Tables API] [gftapi] supports a range of queries similar to SQL. Some of the query statments available include SELECT, LIMIT, and SORT. See the [syntax reference][gftdev] for a full list of commands.
+
+[gftdev]: https://code.google.com/apis/fusiontables/docs/developers_reference.html
 
 ### Select ###
-A SELECT statement is used to pick columns from a table. Options include FROM, WHERE, GROUP BY, OFFSET, and LIMIT.
+A SELECT statement is used to choose the desired columns from a table. Options include FROM, WHERE, GROUP BY, OFFSET, and LIMIT.
 
-For example, use an asterisk `*`to select all the columns from the [Summary ALM Data table][summary] using its ID number:
+For example, use an asterisk `*` to select all the columns from the [Summary ALM Data table][summary] which is identified with its ID number:
 
 {% highlight sql %}
 SELECT * FROM 204244
 {% endhighlight %}
-[Summary.Complete.Table.gft.sql](/file/2011-06-14-Visualize-PLoS-Article-Level-Metrics-with-Google-Fusion-Tables-and-Spreadsheets/Summary.Complete.Table.gft.sql)
 
+Example queries in this article include a Download CSV link to see the raw output from each query.
 
-    
-To export the results as CSV append the query to this base URL:
+[Download CSV](http://tables.googlelabs.com/exporttable?query=SELECT%20*%20FROM%20204244)
+
+The results of a query can be exported as CSV by appending the query to this base URL:
     http://tables.googlelabs.com/exporttable?query=
 
 Remember to use URL encoding if needed, for example:
-
     http://tables.googlelabs.com/exporttable?query=SELECT%20*%20FROM%20204244
-
-Click [Download CSV](http://tables.googlelabs.com/exporttable?query=SELECT%20*%20FROM%20204244) to download the output of each query.
-
-
-When working with large datasets a result may contain many records. Use the LIMIT option to restrict the number of rows.
-For example, to select the first 10 results of the [Summary ALM Data table][summary]:
-
-    SELECT * FROM 204244 LIMIT 10
-
-[Download CSV](http://tables.googlelabs.com/exporttable?query=SELECT%20*%20FROM%20204244%20LIMIT%2010)
 
 
 
 
 ### Limit ###
 
-Limit results to make sure they fit on a spreadsheet. Google Docs supports import up to 500kb.
-
+When working with large datasets a result may contain many records. Use the LIMIT option to restrict the number of rows. Google Docs only supports import up to 500kb.
+For example, to select the first 10 results of the [Summary ALM Data table][summary]:
 
 {% highlight sql %}
 SELECT * FROM 204244 LIMIT 10
 {% endhighlight %}
 
-
-<a href="http://tables.googlelabs.com/exporttable?query=SELECT%20*%20FROM%20204244%20LIMIT%2010">Download CSV</a>
-
-
-
-
-
+[Download CSV](http://tables.googlelabs.com/exporttable?query=SELECT%20*%20FROM%20204244%20LIMIT%2010)
 
 
 ### Google Spreadsheets ###
 
 The CSV output can be loaded in many applications such as Google Spreadsheets. The importData() function imports the results of the query and the spreadsheet will automatically update.
 
-
-
-
 For example the formula:
     =importData("http://tables.googlelabs.com/exporttable?query=SELECT * FROM 204244 LIMIT 10")
-
-
 
 Will import the results and display them in the [spreadsheet](https://docs.google.com/spreadsheet/pub?hl=en_US&hl=en_US&key=0AuD5dr31WtX4dHc2RjVyLU1fVlEyYU04Mncxdk4zc2c&single=true&gid=0&output=html) ([edit](https://docs.google.com/spreadsheet/ccc?key=0AuD5dr31WtX4dHc2RjVyLU1fVlEyYU04Mncxdk4zc2c&hl=en_US#gid=0)):
 
