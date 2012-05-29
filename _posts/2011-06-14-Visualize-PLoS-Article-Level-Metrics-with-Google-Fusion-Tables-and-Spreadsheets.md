@@ -101,13 +101,13 @@ SELECT * FROM 204244
 
 Example queries in this article include a Download CSV link to see the raw output from each query.
 
-[Download CSV](http://tables.googlelabs.com/exporttable?query=SELECT%20*%20FROM%20204244)
+[Download CSV](https://www.google.com/fusiontables/exporttable?query=SELECT%20*%20FROM%20204244)
 
 The results of a query can be exported as CSV by appending the query to this base URL:
-    http://tables.googlelabs.com/exporttable?query=
+    https://www.google.com/fusiontables/exporttable?query=
 
 Remember to use URL encoding if needed, for example:
-    http://tables.googlelabs.com/exporttable?query=SELECT%20*%20FROM%20204244
+    https://www.google.com/fusiontables/exporttable?query=SELECT%20*%20FROM%20204244
 
 
 
@@ -121,7 +121,7 @@ For example, to select the first 10 results of the [Summary ALM Data table][summ
 SELECT * FROM 204244 LIMIT 10
 {% endhighlight %}
 
-[Download CSV](http://tables.googlelabs.com/exporttable?query=SELECT%20*%20FROM%20204244%20LIMIT%2010)
+[Download CSV](https://www.google.com/fusiontables/exporttable?query=SELECT%20*%20FROM%20204244%20LIMIT%2010)
 
 
 ### Google Spreadsheets ###
@@ -129,7 +129,7 @@ SELECT * FROM 204244 LIMIT 10
 The CSV output can be loaded in many applications such as Google Spreadsheets. The importData() function imports the results of the query and the spreadsheet will automatically update.
 
 For example the formula:
-    =importData("http://tables.googlelabs.com/exporttable?query=SELECT * FROM 204244 LIMIT 10")
+    =importData("https://www.google.com/fusiontables/exporttable?query=SELECT * FROM 204244 LIMIT 10")
 
 Will import the results and display them in the [spreadsheet](https://docs.google.com/spreadsheet/pub?hl=en_US&hl=en_US&key=0AuD5dr31WtX4dHc2RjVyLU1fVlEyYU04Mncxdk4zc2c&single=true&gid=0&output=html) ([edit](https://docs.google.com/spreadsheet/ccc?key=0AuD5dr31WtX4dHc2RjVyLU1fVlEyYU04Mncxdk4zc2c&hl=en_US#gid=0)):
 
@@ -159,7 +159,7 @@ Will import the results and display them in the [spreadsheet](https://docs.googl
 Choose which columns to include. Surround column names with single parenthesis for example such as for the Article Title column.
 
 
-<a href="http://tables.googlelabs.com/exporttable?query=SELECT%20%27Article%20Title%27,DOI,URL%20FROM%20204244%20LIMIT%2010">Download CSV</a>
+<a href="https://www.google.com/fusiontables/exporttable?query=SELECT%20%27Article%20Title%27,DOI,URL%20FROM%20204244%20LIMIT%2010">Download CSV</a>
 
 {% highlight sql %}
 SELECT 'Article Title',DOI,URL FROM 204244 LIMIT 10
@@ -172,7 +172,7 @@ SELECT 'Article Title',DOI,URL FROM 204244 LIMIT 10
 
 
 ### Sort ###
-Sort by any column such as number of CrossRef citations. <a href="http://tables.googlelabs.com/exporttable?query=SELECT%20*%20FROM%20204244%20ORDER%20BY%20%27Citations%20-%20CrossRef%27%20DESC%20LIMIT%2010">Download CSV</a>
+Sort by any column such as number of CrossRef citations. <a href="https://www.google.com/fusiontables/exporttable?query=SELECT%20*%20FROM%20204244%20ORDER%20BY%20%27Citations%20-%20CrossRef%27%20DESC%20LIMIT%2010">Download CSV</a>
 
 {% highlight sql %}
 SELECT * FROM 204244 ORDER BY 'Citations - CrossRef' DESC LIMIT 10
@@ -181,7 +181,7 @@ SELECT * FROM 204244 ORDER BY 'Citations - CrossRef' DESC LIMIT 10
 <iframe src="http://spreadsheets.google.com/pub?key=tw6F5r-M_VQ2aM82w1vN3sg&amp;single=true&amp;gid=3&amp;output=html&amp;widget=true" frameborder="0" height="300" width="100%"></iframe>
 <h3>Filter</h3>
 
-Add a filter for a particular value, such as articles published in 2009 only.<a href="http://tables.googlelabs.com/exporttable?query=SELECT%20*%20FROM%20204244%20WHERE%20%27Publication%20Year%27%20=%202009%20ORDER%20BY%20%27Citations%20-%20CrossRef%27%20DESC%20LIMIT%2010">Download CSV</a>
+Add a filter for a particular value, such as articles published in 2009 only.<a href="https://www.google.com/fusiontables/exporttable?query=SELECT%20*%20FROM%20204244%20WHERE%20%27Publication%20Year%27%20=%202009%20ORDER%20BY%20%27Citations%20-%20CrossRef%27%20DESC%20LIMIT%2010">Download CSV</a>
 &nbsp;
 
 {% highlight sql %}
@@ -201,7 +201,7 @@ SELECT '\'Research Article\' or \'non-Research Article\'?' FROM 204244 LIMIT 10
 
 ### Column Reference ###
 
-It may be easier to reference columns by number instead of using their names. <a href="http://tables.googlelabs.com/exporttable?query=SELECT%20col1,col2%20FROM%20204244%20LIMIT%2010">Download CSV</a>
+It may be easier to reference columns by number instead of using their names. <a href="https://www.google.com/fusiontables/exporttable?query=SELECT%20col1,col2%20FROM%20204244%20LIMIT%2010">Download CSV</a>
 
 {% highlight sql %}
 SELECT col1,col2 FROM 204244 LIMIT 10
@@ -215,7 +215,7 @@ SELECT col1,col2 FROM 204244 LIMIT 10
 
 
 ### Sort ###
-Sort by the 2010-3 column to find papers with the most recent downloads. <a href="http://tables.googlelabs.com/exporttable?query=SELECT%20*%20FROM%20202272%20ORDER%20BY%20%272010-3%27%20DESC%20LIMIT%2010">Download CSV</a>
+Sort by the 2010-3 column to find papers with the most recent downloads. <a href="https://www.google.com/fusiontables/exporttable?query=SELECT%20*%20FROM%20202272%20ORDER%20BY%20%272010-3%27%20DESC%20LIMIT%2010">Download CSV</a>
 
 {% highlight sql %}
 SELECT * FROM 202272 ORDER BY '2010-3' DESC LIMIT 10
@@ -234,7 +234,7 @@ SELECT SUM('2009-3'),SUM('2009-4'),SUM('2009-5'),SUM('2009-6'),SUM('2009-7'),SUM
 {% endhighlight %}
 
 
-<a href="http://tables.googlelabs.com/exporttable?query=SELECT%20SUM%28%272009-3%27%29,SUM%28%272009-4%27%29,SUM%28%272009-5%27%29,SUM%28%272009-6%27%29,SUM%28%272009-7%27%29,SUM%28%272009-8%27%29,SUM%28%272009-9%27%29,SUM%28%272009-10%27%29,SUM%28%272009-11%27%29,SUM%28%272009-12%27%29,SUM%28%272010-1%27%29,SUM%28%272010-2%27%29,SUM%28%272010-3%27%29%20FROM%20202272">Download CSV</a>
+<a href="https://www.google.com/fusiontables/exporttable?query=SELECT%20SUM%28%272009-3%27%29,SUM%28%272009-4%27%29,SUM%28%272009-5%27%29,SUM%28%272009-6%27%29,SUM%28%272009-7%27%29,SUM%28%272009-8%27%29,SUM%28%272009-9%27%29,SUM%28%272009-10%27%29,SUM%28%272009-11%27%29,SUM%28%272009-12%27%29,SUM%28%272010-1%27%29,SUM%28%272010-2%27%29,SUM%28%272010-3%27%29%20FROM%20202272">Download CSV</a>
 
 
 
@@ -244,7 +244,7 @@ SELECT SUM('2009-3'),SUM('2009-4'),SUM('2009-5'),SUM('2009-6'),SUM('2009-7'),SUM
 SELECT SUM('2003-10'),SUM('2003-11'),SUM('2003-12'),SUM('2004-1'),SUM('2004-2'),SUM('2004-3'),SUM('2004-4'),SUM('2004-5'),SUM('2004-6'),SUM('2004-7'),SUM('2004-8'),SUM('2004-9'),SUM('2004-10'),SUM('2004-11'),SUM('2004-12'),SUM('2005-1'),SUM('2005-2'),SUM('2005-3'),SUM('2005-4'),SUM('2005-5'),SUM('2005-6'),SUM('2005-7'),SUM('2005-8'),SUM('2005-9'),SUM('2005-10'),SUM('2005-11'),SUM('2005-12'),SUM('2006-1'),SUM('2006-2'),SUM('2006-3'),SUM('2006-4'),SUM('2006-5'),SUM('2006-6'),SUM('2006-7'),SUM('2006-8'),SUM('2006-9'),SUM('2006-10'),SUM('2006-11'),SUM('2006-12'),SUM('2007-1'),SUM('2007-2'),SUM('2007-3'),SUM('2007-4'),SUM('2007-5'),SUM('2007-6'),SUM('2007-7'),SUM('2007-8'),SUM('2007-9'),SUM('2007-10'),SUM('2007-11'),SUM('2007-12'),SUM('2008-1'),SUM('2008-2'),SUM('2008-3'),SUM('2008-4'),SUM('2008-5'),SUM('2008-6'),SUM('2008-7'),SUM('2008-8'),SUM('2008-9'),SUM('2008-10'),SUM('2008-11'),SUM('2008-12'),SUM('2009-1'),SUM('2009-2'),SUM('2009-3'),SUM('2009-4'),SUM('2009-5'),SUM('2009-6'),SUM('2009-7'),SUM('2009-8'),SUM('2009-9'),SUM('2009-10'),SUM('2009-11'),SUM('2009-12'),SUM('2010-1'),SUM('2010-2'),SUM('2010-3') FROM 202272
 {% endhighlight %}
 
-<a href="http://tables.googlelabs.com/exporttable?query=SELECT%20SUM%28%272003-10%27%29,SUM%28%272003-11%27%29,SUM%28%272003-12%27%29,SUM%28%272004-1%27%29,SUM%28%272004-2%27%29,SUM%28%272004-3%27%29,SUM%28%272004-4%27%29,SUM%28%272004-5%27%29,SUM%28%272004-6%27%29,SUM%28%272004-7%27%29,SUM%28%272004-8%27%29,SUM%28%272004-9%27%29,SUM%28%272004-10%27%29,SUM%28%272004-11%27%29,SUM%28%272004-12%27%29,SUM%28%272005-1%27%29,SUM%28%272005-2%27%29,SUM%28%272005-3%27%29,SUM%28%272005-4%27%29,SUM%28%272005-5%27%29,SUM%28%272005-6%27%29,SUM%28%272005-7%27%29,SUM%28%272005-8%27%29,SUM%28%272005-9%27%29,SUM%28%272005-10%27%29,SUM%28%272005-11%27%29,SUM%28%272005-12%27%29,SUM%28%272006-1%27%29,SUM%28%272006-2%27%29,SUM%28%272006-3%27%29,SUM%28%272006-4%27%29,SUM%28%272006-5%27%29,SUM%28%272006-6%27%29,SUM%28%272006-7%27%29,SUM%28%272006-8%27%29,SUM%28%272006-9%27%29,SUM%28%272006-10%27%29,SUM%28%272006-11%27%29,SUM%28%272006-12%27%29,SUM%28%272007-1%27%29,SUM%28%272007-2%27%29,SUM%28%272007-3%27%29,SUM%28%272007-4%27%29,SUM%28%272007-5%27%29,SUM%28%272007-6%27%29,SUM%28%272007-7%27%29,SUM%28%272007-8%27%29,SUM%28%272007-9%27%29,SUM%28%272007-10%27%29,SUM%28%272007-11%27%29,SUM%28%272007-12%27%29,SUM%28%272008-1%27%29,SUM%28%272008-2%27%29,SUM%28%272008-3%27%29,SUM%28%272008-4%27%29,SUM%28%272008-5%27%29,SUM%28%272008-6%27%29,SUM%28%272008-7%27%29,SUM%28%272008-8%27%29,SUM%28%272008-9%27%29,SUM%28%272008-10%27%29,SUM%28%272008-11%27%29,SUM%28%272008-12%27%29,SUM%28%272009-1%27%29,SUM%28%272009-2%27%29,SUM%28%272009-3%27%29,SUM%28%272009-4%27%29,SUM%28%272009-5%27%29,SUM%28%272009-6%27%29,SUM%28%272009-7%27%29,SUM%28%272009-8%27%29,SUM%28%272009-9%27%29,SUM%28%272009-10%27%29,SUM%28%272009-11%27%29,SUM%28%272009-12%27%29,SUM%28%272010-1%27%29,SUM%28%272010-2%27%29,SUM%28%272010-3%27%29%20FROM%20202272">Download
+<a href="https://www.google.com/fusiontables/exporttable?query=SELECT%20SUM%28%272003-10%27%29,SUM%28%272003-11%27%29,SUM%28%272003-12%27%29,SUM%28%272004-1%27%29,SUM%28%272004-2%27%29,SUM%28%272004-3%27%29,SUM%28%272004-4%27%29,SUM%28%272004-5%27%29,SUM%28%272004-6%27%29,SUM%28%272004-7%27%29,SUM%28%272004-8%27%29,SUM%28%272004-9%27%29,SUM%28%272004-10%27%29,SUM%28%272004-11%27%29,SUM%28%272004-12%27%29,SUM%28%272005-1%27%29,SUM%28%272005-2%27%29,SUM%28%272005-3%27%29,SUM%28%272005-4%27%29,SUM%28%272005-5%27%29,SUM%28%272005-6%27%29,SUM%28%272005-7%27%29,SUM%28%272005-8%27%29,SUM%28%272005-9%27%29,SUM%28%272005-10%27%29,SUM%28%272005-11%27%29,SUM%28%272005-12%27%29,SUM%28%272006-1%27%29,SUM%28%272006-2%27%29,SUM%28%272006-3%27%29,SUM%28%272006-4%27%29,SUM%28%272006-5%27%29,SUM%28%272006-6%27%29,SUM%28%272006-7%27%29,SUM%28%272006-8%27%29,SUM%28%272006-9%27%29,SUM%28%272006-10%27%29,SUM%28%272006-11%27%29,SUM%28%272006-12%27%29,SUM%28%272007-1%27%29,SUM%28%272007-2%27%29,SUM%28%272007-3%27%29,SUM%28%272007-4%27%29,SUM%28%272007-5%27%29,SUM%28%272007-6%27%29,SUM%28%272007-7%27%29,SUM%28%272007-8%27%29,SUM%28%272007-9%27%29,SUM%28%272007-10%27%29,SUM%28%272007-11%27%29,SUM%28%272007-12%27%29,SUM%28%272008-1%27%29,SUM%28%272008-2%27%29,SUM%28%272008-3%27%29,SUM%28%272008-4%27%29,SUM%28%272008-5%27%29,SUM%28%272008-6%27%29,SUM%28%272008-7%27%29,SUM%28%272008-8%27%29,SUM%28%272008-9%27%29,SUM%28%272008-10%27%29,SUM%28%272008-11%27%29,SUM%28%272008-12%27%29,SUM%28%272009-1%27%29,SUM%28%272009-2%27%29,SUM%28%272009-3%27%29,SUM%28%272009-4%27%29,SUM%28%272009-5%27%29,SUM%28%272009-6%27%29,SUM%28%272009-7%27%29,SUM%28%272009-8%27%29,SUM%28%272009-9%27%29,SUM%28%272009-10%27%29,SUM%28%272009-11%27%29,SUM%28%272009-12%27%29,SUM%28%272010-1%27%29,SUM%28%272010-2%27%29,SUM%28%272010-3%27%29%20FROM%20202272">Download
 CSV</a>
 
 
