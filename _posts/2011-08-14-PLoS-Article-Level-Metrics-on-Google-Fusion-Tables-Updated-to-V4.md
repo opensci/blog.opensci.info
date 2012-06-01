@@ -22,7 +22,7 @@ Google Fusion Tables provides an API and web based access for complex queries of
 
 [visplos]: /2011/06/14/Visualize-PLoS-Article-Level-Metrics-with-Google-Fusion-Tables-and-Spreadsheets/
 
-The [source file][sourcexls] used was "`plos-alm-v4-11302010.xls`". The previous version was "`PLoS ALM v3 05182010 Summary ALM Data`" [posted by PLoS][plosblog].
+The [source file][sourcexls] used was `plos-alm-v4-11302010.xls`. The previous version was `PLoS ALM v3 05182010 Summary ALM Data` [posted by PLoS][plosblog].
 
 [sourcexls]: http://www.plosone.org/static/plos-alm.zip
 [plosblog]: http://blogs.plos.org/plos/2010/07/plos-alm-data-in-google-fusion-tables/
