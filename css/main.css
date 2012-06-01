@@ -221,3 +221,16 @@ img.bigimage {
 
 #content {
   margin-top: 15px; }
+  
+  
+  
+code {
+  background: none repeat scroll 0 0 #E6E6E6;
+  border-radius: .25em;
+  -moz-border-radius: .25em;
+  -webkit-border-radius: .25em;
+  padding: 0.05em 0.1em;
+  display: inline-block;
+  margin-bottom: 0.1em;
+  margin-top: 0.1em;
+}
