@@ -4,9 +4,9 @@ title: PLoS Article Level Metrics Summary File Updated to V5
 uuid: f44502ff-d145-4185-9f65-28d4d23a42bb
 ---
 
-[PLoS Article Level Metrics][plosalm] data is available through both an [API][almapi] and in a [Summary Excel File][almxls]. The API data is updated more frequently, while the summary file provides a full copy of the data in one download.
+A complete copy of the [PLoS Article Level Metrics][plosalm] data is published in a [Summary Excel File][almxls]. While the [API][almapi] is updated more frequently, the .xls file provides all the data in one download.
 
-The new source file is `plos-alm-v5-09182011.xls` and seems to date from Sep 18, 2011. The [previous version V4][plosalmv4] was `plos-alm-v4-11302010.xls`.
+The updated .xls file is `plos-alm-v5-09182011.xls` dated September 18, 2011. The [previous version V4][plosalmv4] was `plos-alm-v4-11302010.xls` from November 30, 2010.
 <!--more-->
 
 [sourcexls]: http://www.plosone.org/static/plos-alm.zip
@@ -17,7 +17,7 @@ The new source file is `plos-alm-v5-09182011.xls` and seems to date from Sep 18,
 [almapi]: http://api.plos.org/alm/faq/
 [almxls]: http://www.plosone.org/static/plos-alm.zip
 
-This new version of the summary PLoS Article Level Metrics file has been uploaded to Google Fusion Tables.
+This new version of the summary PLoS Article Level Metrics file has also been uploaded to Google Fusion Tables.
 
 * [Summary ALM Data][summary]
 * [Combined Download][combined]
