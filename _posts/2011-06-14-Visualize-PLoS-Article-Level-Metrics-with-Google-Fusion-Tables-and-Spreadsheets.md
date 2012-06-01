@@ -99,9 +99,11 @@ For example, use an asterisk `*` to select all the columns from the [Summary ALM
 SELECT * FROM 204244
 {% endhighlight %}
 
-Example queries in this article include a Download CSV link to see the raw output from each query.
+*[Download CSV](https://www.google.com/fusiontables/exporttable?query=SELECT%20*%20FROM%20204244)*
 
-[Download CSV](https://www.google.com/fusiontables/exporttable?query=SELECT%20*%20FROM%20204244)
+Each example queries includes a *Download CSV* link to see the raw output from each query.
+
+
 
 The results of a query can be exported as CSV by appending the query to this base URL:
     https://www.google.com/fusiontables/exporttable?query=
