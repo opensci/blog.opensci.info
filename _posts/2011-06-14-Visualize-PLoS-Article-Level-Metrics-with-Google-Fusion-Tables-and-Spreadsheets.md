@@ -86,12 +86,12 @@ The history of downloads for each month is available in [Combined Download Stati
 
 ## Google Fusion Tables API ##
 
-The [Google Fusion Tables API] [gftapi] supports a range of queries similar to SQL. Some of the query statments available include SELECT, LIMIT, and SORT. See the [syntax reference][gftdev] for a full list of commands.
+The [Google Fusion Tables API] [gftapi] supports a range of queries similar to SQL. Some of the query statments available include `SELECT`, `LIMIT`, and `SORT`. See the [syntax reference][gftdev] for a full list of commands.
 
 [gftdev]: https://code.google.com/apis/fusiontables/docs/developers_reference.html
 
 ### Select ###
-A SELECT statement is used to choose the desired columns from a table. Options include FROM, WHERE, GROUP BY, OFFSET, and LIMIT.
+A `SELECT` statement is used to choose the desired columns from a table. The `SELECT` statement can be combined with options including `FROM`, `WHERE`, `GROUP BY`, `OFFSET`, and `LIMIT`.
 
 For example, use an asterisk `*` to select all the columns from the [Summary ALM Data table][summary] which is identified with its ID number:
 
@@ -99,73 +99,47 @@ For example, use an asterisk `*` to select all the columns from the [Summary ALM
 SELECT * FROM 204244
 {% endhighlight %}
 
-*[Download CSV](https://www.google.com/fusiontables/exporttable?query=SELECT%20*%20FROM%20204244)*
 
-Each example queries includes a *Download CSV* link to see the raw output from each query.
+### Limit Results ###
 
-
-
-The results of a query can be exported as CSV by appending the query to this base URL:
-    https://www.google.com/fusiontables/exporttable?query=
-
-Remember to use URL encoding if needed, for example:
-    https://www.google.com/fusiontables/exporttable?query=SELECT%20*%20FROM%20204244
-
-
-
-
-### Limit ###
-
-When working with large datasets a result may contain many records. Use the LIMIT option to restrict the number of rows. Google Docs only supports import up to 500kb.
+Query results can contain many records when working with large datasets. Use the LIMIT option to restrict the number of rows returned by any query. This makes the query results easier to work with in other programs such as Google Docs, which can only import up to 500kb of data.
 For example, to select the first 10 results of the [Summary ALM Data table][summary]:
 
 {% highlight sql %}
 SELECT * FROM 204244 LIMIT 10
 {% endhighlight %}
+*[Download CSV](https://www.google.com/fusiontables/exporttable?query=SELECT * FROM 204244 LIMIT 10)*
+[Example Spreadsheet](https://docs.google.com/spreadsheet/pub?hl=en_US&hl=en_US&key=0AuD5dr31WtX4dHc2RjVyLU1fVlEyYU04Mncxdk4zc2c&single=true&gid=0&output=html)
 
-[Download CSV](https://www.google.com/fusiontables/exporttable?query=SELECT%20*%20FROM%20204244%20LIMIT%2010)
+### Export CSV ###
 
+CSV results are available by appending the query to this base URL:
+
+    https://www.google.com/fusiontables/exporttable?query=
 
 ### Google Spreadsheets ###
 
-The CSV output can be loaded in many applications such as Google Spreadsheets. The importData() function imports the results of the query and the spreadsheet will automatically update.
+The CSV output can be loaded into other applications such as Google Spreadsheets. The `importData()` function imports the results of the query and the spreadsheet will automatically keep it updated.
 
 For example the formula:
+
     =importData("https://www.google.com/fusiontables/exporttable?query=SELECT * FROM 204244 LIMIT 10")
 
-Will import the results and display them in the [spreadsheet](https://docs.google.com/spreadsheet/pub?hl=en_US&hl=en_US&key=0AuD5dr31WtX4dHc2RjVyLU1fVlEyYU04Mncxdk4zc2c&single=true&gid=0&output=html) ([edit](https://docs.google.com/spreadsheet/ccc?key=0AuD5dr31WtX4dHc2RjVyLU1fVlEyYU04Mncxdk4zc2c&hl=en_US#gid=0)):
+Will import the results and display them in a [spreadsheet](https://docs.google.com/spreadsheet/pub?hl=en_US&hl=en_US&key=0AuD5dr31WtX4dHc2RjVyLU1fVlEyYU04Mncxdk4zc2c&single=true&gid=0&output=html) ([edit](https://docs.google.com/spreadsheet/ccc?key=0AuD5dr31WtX4dHc2RjVyLU1fVlEyYU04Mncxdk4zc2c&hl=en_US#gid=0)):
 
 
 <iframe src="http://spreadsheets.google.com/pub?key=tw6F5r-M_VQ2aM82w1vN3sg&amp;single=true&amp;gid=0&amp;output=html&amp;widget=true" frameborder="0" height="300" width="100%"></iframe>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ### Columns ###
 
-Choose which columns to include. Surround column names with single parenthesis for example such as for the Article Title column.
+Now that we have limited the number of rows, we can also limit the number of columns. Select only the needed columns by including their names. Surround the column name with a single parenthesis `'` if there are any specical characters such as spaces in the name.
 
-
-<a href="https://www.google.com/fusiontables/exporttable?query=SELECT%20%27Article%20Title%27,DOI,URL%20FROM%20204244%20LIMIT%2010">Download CSV</a>
 
 {% highlight sql %}
-SELECT 'Article Title',DOI,URL FROM 204244 LIMIT 10
+SELECT 'Article Title',DOI,URL,'Publication Year','Citations - CrossRef' FROM 204244 LIMIT 10
 {% endhighlight %}
+*[Example Spreadsheet](https://spreadsheets.google.com/spreadsheet/pub?key=0AuD5dr31WtX4dHc2RjVyLU1fVlEyYU04Mncxdk4zc2c&gid=2)*
 
 <iframe src="http://spreadsheets.google.com/pub?key=tw6F5r-M_VQ2aM82w1vN3sg&amp;single=true&amp;gid=2&amp;output=html&amp;widget=true" frameborder="0" height="300" width="100%"></iframe>
 
@@ -174,41 +148,45 @@ SELECT 'Article Title',DOI,URL FROM 204244 LIMIT 10
 
 
 ### Sort ###
-Sort by any column such as number of CrossRef citations. <a href="https://www.google.com/fusiontables/exporttable?query=SELECT%20*%20FROM%20204244%20ORDER%20BY%20%27Citations%20-%20CrossRef%27%20DESC%20LIMIT%2010">Download CSV</a>
+Sort by any column such as the number of CrossRef citations using the `ORDER BY` option.
 
 {% highlight sql %}
-SELECT * FROM 204244 ORDER BY 'Citations - CrossRef' DESC LIMIT 10
+SELECT 'Article Title',DOI,URL,'Publication Year','Citations - CrossRef' FROM 204244 ORDER BY 'Citations - CrossRef' DESC LIMIT 10
 {% endhighlight %}
+*[Example Spreadsheet](https://spreadsheets.google.com/spreadsheet/pub?key=0AuD5dr31WtX4dHc2RjVyLU1fVlEyYU04Mncxdk4zc2c&gid=3)*
+
 
 <iframe src="http://spreadsheets.google.com/pub?key=tw6F5r-M_VQ2aM82w1vN3sg&amp;single=true&amp;gid=3&amp;output=html&amp;widget=true" frameborder="0" height="300" width="100%"></iframe>
-<h3>Filter</h3>
 
-Add a filter for a particular value, such as articles published in 2009 only.<a href="https://www.google.com/fusiontables/exporttable?query=SELECT%20*%20FROM%20204244%20WHERE%20%27Publication%20Year%27%20=%202009%20ORDER%20BY%20%27Citations%20-%20CrossRef%27%20DESC%20LIMIT%2010">Download CSV</a>
-&nbsp;
+
+### Filter ###
+
+Add a filter for a particular using the `WHERE` option. For example only articles published in 2009.
 
 {% highlight sql %}
-SELECT * FROM 204244 WHERE 'Publication Year' = 2009 ORDER BY 'Citations - CrossRef' DESC LIMIT 10
+SELECT 'Article Title',DOI,URL,'Publication Year','Citations - CrossRef', FROM 204244 WHERE 'Publication Year' = 2009 ORDER BY 'Citations - CrossRef' DESC LIMIT 10
 {% endhighlight %}
+*[Example Spreadsheet](https://spreadsheets.google.com/spreadsheet/pub?key=0AuD5dr31WtX4dHc2RjVyLU1fVlEyYU04Mncxdk4zc2c&gid=4)*
 
-<iframe src="http://spreadsheets.google.com/pub?key=tw6F5r-M_VQ2aM82w1vN3sg&amp;single=true&amp;gid=4&amp;output=html&amp;widget=true" frameborder="0" height="300" width="100%"></iframe>
 
 
 ### Special Characters ###
-Besides using quotation marks special characters in column names can be escaped with backslash. This is needed when a column name itself contains a quotation mark.
-
+Besides using quotation marks special characters in column names can be escaped with backslash. This is needed when a column name itself contains a quotation mark, such as the `'Research Article' or 'non-Research Article'?` column.
 
 {% highlight sql %}
 SELECT '\'Research Article\' or \'non-Research Article\'?' FROM 204244 LIMIT 10
 {% endhighlight %}
+*[Download CSV](https://www.google.com/fusiontables/exporttable?query=SELECT%20'%5C'Research%20Article%5C'%20or%20%5C'non-Research%20Article%5C'%3F'%20FROM%20204244%20LIMIT%2010)*
+
 
 ### Column Reference ###
 
-It may be easier to reference columns by number instead of using their names. <a href="https://www.google.com/fusiontables/exporttable?query=SELECT%20col1,col2%20FROM%20204244%20LIMIT%2010">Download CSV</a>
+It can be easier to simply reference columns by their number instead of using names. For example, the first 2 columns.
 
 {% highlight sql %}
 SELECT col1,col2 FROM 204244 LIMIT 10
 {% endhighlight %}
-
+*[Download CSV](https://www.google.com/fusiontables/exporttable?query=SELECT%20col1,col2%20FROM%20204244%20LIMIT%2010)*
 
 
 ## Combined Download Statistics ##
