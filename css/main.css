@@ -234,3 +234,7 @@ code {
   margin-bottom: 0.1em;
   margin-top: 0.1em;
 }
+
+pre code{
+  display: block !important; 
+}
