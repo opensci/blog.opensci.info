@@ -8,7 +8,17 @@ uuid: 777dd893-0aee-4395-9802-63b9b0a50634
 
 ### Article Level Metrics ###
 
-The [Public Library of Science][plos] collects additional information for each article they publish including citations, downloads, web page views, and community response. These metrics have now been uploaded [uploaded][plosblog] to [Google Fusion Tables][gft], a free service for sharing data. Previously the the data was available through an [Excel XLS file][almxls] on the PLoS [Article Level Metrics][plosalm] site. 
+<a href="https://docs.google.com/spreadsheet/pub?key=0AuD5dr31WtX4dE1OZElxUmtJUWdVTDF0MW8zNEluQnc&gid=4"><img class="bigimage" src="/file/2011-06-14-Visualize-PLoS-Article-Level-Metrics-with-Google-Fusion-Tables-and-Spreadsheets/Download.History.Breakdown.Chart.png" alt="ALM data can be used to track article downloads over time."/></a>
+
+
+The [Public Library of Science][plos] collects information for each article they publish including citations, downloads, web page views, and community response. These metrics have now been uploaded [uploaded][plosblog] to [Google Fusion Tables][gft], a free service for sharing data. Previously the the data was available through an [Excel XLS file][almxls] on the PLoS [Article Level Metrics][plosalm] site. 
+
+[plos]: http://www.plos.org
+[plosblog]: http://blogs.plos.org/plos/2010/07/plos-alm-data-in-google-fusion-tables/
+[almxls]: http://www.plosone.org/static/plos-alm.zip
+[plosalm]: http://article-level-metrics.plos.org/
+[gft]: http://www.google.com/fusiontables/Home
+
 
 <!--more-->
 
@@ -25,14 +35,12 @@ The collected information is divided into 5 tables:
 * [PDF Downloads][pdf]
 * [XML Downloads][xml]
  
-[plos]: http://www.plos.org
-[plosblog]: http://blogs.plos.org/plos/2010/07/plos-alm-data-in-google-fusion-tables/
-[almxls]: http://www.plosone.org/static/plos-alm.zip
-[plosalm]: http://article-level-metrics.plos.org/
-[gft]: http://www.google.com/fusiontables/Home
 
-
-
+[summary]: http://tables.googlelabs.com/DataSource?snapid=61925
+[combined]: http://tables.googlelabs.com/DataSource?snapid=62323
+[html]: http://tables.googlelabs.com/DataSource?snapid=62324
+[pdf]: http://tables.googlelabs.com/DataSource?snapid=62524
+[xml]: http://tables.googlelabs.com/DataSource?snapid=62607
 
 ### Google Fusion Tables ###
 
@@ -51,7 +59,7 @@ On Google Fusion Tables each dataset can be viewed through a web browser. The fi
 
 ### Data Updated ###
 
-An updated version of this ALM data is now also available on Google Fusion Tables: [PLoS Article Level Metrics on Google Fusion Tables Updated to V4][plosalmv4].
+An updated version of this ALM data is now also available on Google Fusion Tables, [PLoS Article Level Metrics on Google Fusion Tables Updated to V4][plosalmv4].
 
 [plosalmv4]: /2011/08/14/PLoS-Article-Level-Metrics-on-Google-Fusion-Tables-Updated-to-V4/
 
@@ -71,19 +79,6 @@ The ID number for the [Summary ALM Data table][summary] is `204244`. This number
 <img class="mainimage bigimage" src="/file/2011-06-14-Visualize-PLoS-Article-Level-Metrics-with-Google-Fusion-Tables-and-Spreadsheets/Summary.ALM.Data.About.png" />
 
 
-[summary]: http://tables.googlelabs.com/DataSource?snapid=61925
-[combined]: http://tables.googlelabs.com/DataSource?snapid=62323
-[html]: http://tables.googlelabs.com/DataSource?snapid=62324
-[pdf]: http://tables.googlelabs.com/DataSource?snapid=62524
-[xml]: http://tables.googlelabs.com/DataSource?snapid=62607
-
-
-
-## Combined Download Statistics ##
-The history of downloads for each month is available in [Combined Download Statistics][combined]. The download history is also seperated by file type in the [HTML][html], [PDF][pdf], and [XML][xml] tables.
-
-
-
 ## Google Fusion Tables API ##
 
 The [Google Fusion Tables API] [gftapi] supports a range of queries similar to SQL. Some of the query statments available include `SELECT`, `LIMIT`, and `SORT`. See the [syntax reference][gftdev] for a full list of commands.
@@ -91,9 +86,9 @@ The [Google Fusion Tables API] [gftapi] supports a range of queries similar to S
 [gftdev]: https://code.google.com/apis/fusiontables/docs/developers_reference.html
 
 ### Select ###
-A `SELECT` statement is used to choose the desired columns from a table. The `SELECT` statement can be combined with options including `FROM`, `WHERE`, `GROUP BY`, `OFFSET`, and `LIMIT`.
+A `SELECT` statement is used to choose the desired columns from a table. Options include `FROM`, `WHERE`, `GROUP BY`, `OFFSET`, and `LIMIT`.
 
-For example, use an asterisk `*` to select all the columns from the [Summary ALM Data table][summary] which is identified with its ID number:
+Use an asterisk `*` to select all the columns from the [Summary ALM Data table][summary] which is identified with its ID number.
 
 {% highlight sql %}
 SELECT * FROM 204244
@@ -102,30 +97,32 @@ SELECT * FROM 204244
 
 ### Limit Results ###
 
-Query results can contain many records when working with large datasets. Use the LIMIT option to restrict the number of rows returned by any query. This makes the query results easier to work with in other programs such as Google Docs, which can only import up to 500kb of data.
-For example, to select the first 10 results of the [Summary ALM Data table][summary]:
+Use the `LIMIT` option to restrict the number of rows returned by any query. This makes the query results easier to work with in other programs such as Google Docs, which can only import up to 500kb of data.
+For example, to select the first 10 results of the [Summary ALM Data table][summary].
 
 {% highlight sql %}
 SELECT * FROM 204244 LIMIT 10
 {% endhighlight %}
-*[Download CSV](https://www.google.com/fusiontables/exporttable?query=SELECT * FROM 204244 LIMIT 10)*
-[Example Spreadsheet](https://docs.google.com/spreadsheet/pub?hl=en_US&hl=en_US&key=0AuD5dr31WtX4dHc2RjVyLU1fVlEyYU04Mncxdk4zc2c&single=true&gid=0&output=html)
+*[Example Spreadsheet](https://docs.google.com/spreadsheet/pub?hl=en_US&hl=en_US&key=0AuD5dr31WtX4dHc2RjVyLU1fVlEyYU04Mncxdk4zc2c&gid=0&output=html)* - *[Download CSV](https://www.google.com/fusiontables/exporttable?query=SELECT * FROM 204244 LIMIT 10)*
 
 ### Export CSV ###
 
-CSV results are available by appending the query to this base URL:
+Results can be exported in CSV format by adding the query on to a base URL.
 
     https://www.google.com/fusiontables/exporttable?query=
+    
+For example,
+
+    https://www.google.com/fusiontables/exporttable?query=SELECT * FROM 204244 LIMIT 10
+    Use URL encoding if needed.
 
 ### Google Spreadsheets ###
 
 The CSV output can be loaded into other applications such as Google Spreadsheets. The `importData()` function imports the results of the query and the spreadsheet will automatically keep it updated.
 
-For example the formula:
+To import the query results CSV and display it in an [Example Spreadsheet](https://docs.google.com/spreadsheet/pub?hl=en_US&hl=en_US&key=0AuD5dr31WtX4dHc2RjVyLU1fVlEyYU04Mncxdk4zc2c&gid=0&output=html) ([edit](https://docs.google.com/spreadsheet/ccc?key=0AuD5dr31WtX4dHc2RjVyLU1fVlEyYU04Mncxdk4zc2c&hl=en_US#gid=0)):
 
     =importData("https://www.google.com/fusiontables/exporttable?query=SELECT * FROM 204244 LIMIT 10")
-
-Will import the results and display them in a [spreadsheet](https://docs.google.com/spreadsheet/pub?hl=en_US&hl=en_US&key=0AuD5dr31WtX4dHc2RjVyLU1fVlEyYU04Mncxdk4zc2c&single=true&gid=0&output=html) ([edit](https://docs.google.com/spreadsheet/ccc?key=0AuD5dr31WtX4dHc2RjVyLU1fVlEyYU04Mncxdk4zc2c&hl=en_US#gid=0)):
 
 
 <iframe src="http://spreadsheets.google.com/pub?key=tw6F5r-M_VQ2aM82w1vN3sg&amp;single=true&amp;gid=0&amp;output=html&amp;widget=true" frameborder="0" height="300" width="100%"></iframe>
@@ -133,7 +130,7 @@ Will import the results and display them in a [spreadsheet](https://docs.google.
 
 ### Columns ###
 
-Now that we have limited the number of rows, we can also limit the number of columns. Select only the needed columns by including their names. Surround the column name with a single parenthesis `'` if there are any specical characters such as spaces in the name.
+The number of columns can be limited, like the number of rows. The needed columns can be selected by their names. Separate multiple names by commas. Surround column names with single parentheses `'` if the name contains any special characters such as spaces.
 
 
 {% highlight sql %}
@@ -141,14 +138,9 @@ SELECT 'Article Title',DOI,URL,'Publication Year','Citations - CrossRef' FROM 20
 {% endhighlight %}
 *[Example Spreadsheet](https://spreadsheets.google.com/spreadsheet/pub?key=0AuD5dr31WtX4dHc2RjVyLU1fVlEyYU04Mncxdk4zc2c&gid=2)*
 
-<iframe src="http://spreadsheets.google.com/pub?key=tw6F5r-M_VQ2aM82w1vN3sg&amp;single=true&amp;gid=2&amp;output=html&amp;widget=true" frameborder="0" height="300" width="100%"></iframe>
-
-
-
-
 
 ### Sort ###
-Sort by any column such as the number of CrossRef citations using the `ORDER BY` option.
+Results can be sorted by any column using the `ORDER BY` option. The sort column must also be included in the `SELECT` statement. For example, to sort by the number of CrossRef citations with highest first:
 
 {% highlight sql %}
 SELECT 'Article Title',DOI,URL,'Publication Year','Citations - CrossRef' FROM 204244 ORDER BY 'Citations - CrossRef' DESC LIMIT 10
@@ -156,12 +148,9 @@ SELECT 'Article Title',DOI,URL,'Publication Year','Citations - CrossRef' FROM 20
 *[Example Spreadsheet](https://spreadsheets.google.com/spreadsheet/pub?key=0AuD5dr31WtX4dHc2RjVyLU1fVlEyYU04Mncxdk4zc2c&gid=3)*
 
 
-<iframe src="http://spreadsheets.google.com/pub?key=tw6F5r-M_VQ2aM82w1vN3sg&amp;single=true&amp;gid=3&amp;output=html&amp;widget=true" frameborder="0" height="300" width="100%"></iframe>
-
-
 ### Filter ###
 
-Add a filter for a particular using the `WHERE` option. For example only articles published in 2009.
+Filter the results to match some value with the `WHERE` option. For example, only articles that were published in 2009:
 
 {% highlight sql %}
 SELECT 'Article Title',DOI,URL,'Publication Year','Citations - CrossRef', FROM 204244 WHERE 'Publication Year' = 2009 ORDER BY 'Citations - CrossRef' DESC LIMIT 10
@@ -169,92 +158,78 @@ SELECT 'Article Title',DOI,URL,'Publication Year','Citations - CrossRef', FROM 2
 *[Example Spreadsheet](https://spreadsheets.google.com/spreadsheet/pub?key=0AuD5dr31WtX4dHc2RjVyLU1fVlEyYU04Mncxdk4zc2c&gid=4)*
 
 
-
 ### Special Characters ###
-Besides using quotation marks special characters in column names can be escaped with backslash. This is needed when a column name itself contains a quotation mark, such as the `'Research Article' or 'non-Research Article'?` column.
+Quotation marks in a column name can be escaped with backslashes.
+
+To select the `'Research Article' or 'non-Research Article'?` column:
 
 {% highlight sql %}
-SELECT '\'Research Article\' or \'non-Research Article\'?' FROM 204244 LIMIT 10
+SELECT 'Article Title','\'Research Article\' or \'non-Research Article\'?' FROM 204244 LIMIT 10
 {% endhighlight %}
-*[Download CSV](https://www.google.com/fusiontables/exporttable?query=SELECT%20'%5C'Research%20Article%5C'%20or%20%5C'non-Research%20Article%5C'%3F'%20FROM%20204244%20LIMIT%2010)*
-
+*[Example Spreadsheet](https://docs.google.com/spreadsheet/pub?key=0AuD5dr31WtX4dHc2RjVyLU1fVlEyYU04Mncxdk4zc2c&gid=5&output=html)*
 
 ### Column Reference ###
 
-It can be easier to simply reference columns by their number instead of using names. For example, the first 2 columns.
+The columns can also be referenced by number instead of names. The first column is `col0`, the next `col1`, and so on. To select the first 3 columns:
 
 {% highlight sql %}
-SELECT col1,col2 FROM 204244 LIMIT 10
+SELECT col0,col1,col2 FROM 204244 LIMIT 10
 {% endhighlight %}
-*[Download CSV](https://www.google.com/fusiontables/exporttable?query=SELECT%20col1,col2%20FROM%20204244%20LIMIT%2010)*
+*[Example Spreadsheet](https://docs.google.com/spreadsheet/pub?key=0AuD5dr31WtX4dHc2RjVyLU1fVlEyYU04Mncxdk4zc2c&gid=6&output=html)*
 
 
 ## Combined Download Statistics ##
-
-<a href="http://tables.googlelabs.com/DataSource?snapid=62323">PLoS ALM v3 05182010 Combined Download Statistics</a> ID 202272
-
+[Combined Download Statistics][combined] shows the number of times each article was downloaded during a particular month. The download totals are also available separated by file type, in the [HTML][html], [PDF][pdf], and [XML][xml] tables. 
 
 ### Sort ###
-Sort by the 2010-3 column to find papers with the most recent downloads. <a href="https://www.google.com/fusiontables/exporttable?query=SELECT%20*%20FROM%20202272%20ORDER%20BY%20%272010-3%27%20DESC%20LIMIT%2010">Download CSV</a>
+Sort by the `2010-3` column to show the articles that had the most downloads in March 2010.
 
 {% highlight sql %}
-SELECT * FROM 202272 ORDER BY '2010-3' DESC LIMIT 10
+SELECT doi,'2010-3' FROM 202272 ORDER BY '2010-3' DESC LIMIT 10
 {% endhighlight %}
 
-<iframe src="http://spreadsheets.google.com/pub?key=0AuD5dr31WtX4dDJIWmMyQUlteURvN183c3JyYlo2d1E&amp;single=true&amp;gid=0&amp;output=html&amp;widget=true" frameborder="0" height="300" width="100%"></iframe>
+*[Example Spreadsheet](https://spreadsheets.google.com/pub?key=0AuD5dr31WtX4dDJIWmMyQUlteURvN183c3JyYlo2d1E&gid=0&output=html)*
 
-### Yearly Summary ###
+### Total Monthly Download ###
 
-Download totals over the past year:
-
-
+Use the `SUM()` function to add up the downloads for every article in a given month. To find the total downloads in January, 2010:
 
 {% highlight sql %}
-SELECT SUM('2009-3'),SUM('2009-4'),SUM('2009-5'),SUM('2009-6'),SUM('2009-7'),SUM('2009-8'),SUM('2009-9'),SUM('2009-10'),SUM('2009-11'),SUM('2009-12'),SUM('2010-1'),SUM('2010-2'),SUM('2010-3') FROM 202272
+SELECT SUM('2010-1') FROM 202272
 {% endhighlight %}
 
 
-<a href="https://www.google.com/fusiontables/exporttable?query=SELECT%20SUM%28%272009-3%27%29,SUM%28%272009-4%27%29,SUM%28%272009-5%27%29,SUM%28%272009-6%27%29,SUM%28%272009-7%27%29,SUM%28%272009-8%27%29,SUM%28%272009-9%27%29,SUM%28%272009-10%27%29,SUM%28%272009-11%27%29,SUM%28%272009-12%27%29,SUM%28%272010-1%27%29,SUM%28%272010-2%27%29,SUM%28%272010-3%27%29%20FROM%20202272">Download CSV</a>
-
-
-
-
-### Combined download sum history ###
+### Combined Download History ###
+A complete download history can be seen by summing all of the available columns.
 {% highlight sql %}
 SELECT SUM('2003-10'),SUM('2003-11'),SUM('2003-12'),SUM('2004-1'),SUM('2004-2'),SUM('2004-3'),SUM('2004-4'),SUM('2004-5'),SUM('2004-6'),SUM('2004-7'),SUM('2004-8'),SUM('2004-9'),SUM('2004-10'),SUM('2004-11'),SUM('2004-12'),SUM('2005-1'),SUM('2005-2'),SUM('2005-3'),SUM('2005-4'),SUM('2005-5'),SUM('2005-6'),SUM('2005-7'),SUM('2005-8'),SUM('2005-9'),SUM('2005-10'),SUM('2005-11'),SUM('2005-12'),SUM('2006-1'),SUM('2006-2'),SUM('2006-3'),SUM('2006-4'),SUM('2006-5'),SUM('2006-6'),SUM('2006-7'),SUM('2006-8'),SUM('2006-9'),SUM('2006-10'),SUM('2006-11'),SUM('2006-12'),SUM('2007-1'),SUM('2007-2'),SUM('2007-3'),SUM('2007-4'),SUM('2007-5'),SUM('2007-6'),SUM('2007-7'),SUM('2007-8'),SUM('2007-9'),SUM('2007-10'),SUM('2007-11'),SUM('2007-12'),SUM('2008-1'),SUM('2008-2'),SUM('2008-3'),SUM('2008-4'),SUM('2008-5'),SUM('2008-6'),SUM('2008-7'),SUM('2008-8'),SUM('2008-9'),SUM('2008-10'),SUM('2008-11'),SUM('2008-12'),SUM('2009-1'),SUM('2009-2'),SUM('2009-3'),SUM('2009-4'),SUM('2009-5'),SUM('2009-6'),SUM('2009-7'),SUM('2009-8'),SUM('2009-9'),SUM('2009-10'),SUM('2009-11'),SUM('2009-12'),SUM('2010-1'),SUM('2010-2'),SUM('2010-3') FROM 202272
 {% endhighlight %}
 
-<a href="https://www.google.com/fusiontables/exporttable?query=SELECT%20SUM%28%272003-10%27%29,SUM%28%272003-11%27%29,SUM%28%272003-12%27%29,SUM%28%272004-1%27%29,SUM%28%272004-2%27%29,SUM%28%272004-3%27%29,SUM%28%272004-4%27%29,SUM%28%272004-5%27%29,SUM%28%272004-6%27%29,SUM%28%272004-7%27%29,SUM%28%272004-8%27%29,SUM%28%272004-9%27%29,SUM%28%272004-10%27%29,SUM%28%272004-11%27%29,SUM%28%272004-12%27%29,SUM%28%272005-1%27%29,SUM%28%272005-2%27%29,SUM%28%272005-3%27%29,SUM%28%272005-4%27%29,SUM%28%272005-5%27%29,SUM%28%272005-6%27%29,SUM%28%272005-7%27%29,SUM%28%272005-8%27%29,SUM%28%272005-9%27%29,SUM%28%272005-10%27%29,SUM%28%272005-11%27%29,SUM%28%272005-12%27%29,SUM%28%272006-1%27%29,SUM%28%272006-2%27%29,SUM%28%272006-3%27%29,SUM%28%272006-4%27%29,SUM%28%272006-5%27%29,SUM%28%272006-6%27%29,SUM%28%272006-7%27%29,SUM%28%272006-8%27%29,SUM%28%272006-9%27%29,SUM%28%272006-10%27%29,SUM%28%272006-11%27%29,SUM%28%272006-12%27%29,SUM%28%272007-1%27%29,SUM%28%272007-2%27%29,SUM%28%272007-3%27%29,SUM%28%272007-4%27%29,SUM%28%272007-5%27%29,SUM%28%272007-6%27%29,SUM%28%272007-7%27%29,SUM%28%272007-8%27%29,SUM%28%272007-9%27%29,SUM%28%272007-10%27%29,SUM%28%272007-11%27%29,SUM%28%272007-12%27%29,SUM%28%272008-1%27%29,SUM%28%272008-2%27%29,SUM%28%272008-3%27%29,SUM%28%272008-4%27%29,SUM%28%272008-5%27%29,SUM%28%272008-6%27%29,SUM%28%272008-7%27%29,SUM%28%272008-8%27%29,SUM%28%272008-9%27%29,SUM%28%272008-10%27%29,SUM%28%272008-11%27%29,SUM%28%272008-12%27%29,SUM%28%272009-1%27%29,SUM%28%272009-2%27%29,SUM%28%272009-3%27%29,SUM%28%272009-4%27%29,SUM%28%272009-5%27%29,SUM%28%272009-6%27%29,SUM%28%272009-7%27%29,SUM%28%272009-8%27%29,SUM%28%272009-9%27%29,SUM%28%272009-10%27%29,SUM%28%272009-11%27%29,SUM%28%272009-12%27%29,SUM%28%272010-1%27%29,SUM%28%272010-2%27%29,SUM%28%272010-3%27%29%20FROM%20202272">Download
-CSV</a>
 
-
-<iframe width='100%' height='300' frameborder='0' src='https://spreadsheets.google.com/pub?key=0AuD5dr31WtX4dE1OZElxUmtJUWdVTDF0MW8zNEluQnc&hl=en&single=true&gid=5&output=html&widget=true'></iframe>
+*[Example Spreadsheet](https://spreadsheets.google.com/pub?key=0AuD5dr31WtX4dE1OZElxUmtJUWdVTDF0MW8zNEluQnc&hl=en&gid=5&output=html)*
 
 
 #### Chart ####
 
-After a little reformatting the download history can be seen in a chart.
+The total downloads can be plotted over multiple months.
 
-<script type="text/javascript" src="//ajax.googleapis.com/ajax/static/modules/gviz/1.0/chart.js"> {"chartType":"ColumnChart","dataSourceUrl":"//spreadsheets0.google.com/tq?key=0AuD5dr31WtX4dE1OZElxUmtJUWdVTDF0MW8zNEluQnc&range=B1%3ACA2&gid=5&transpose=1&headers=-1&pub=1","options":{"titleY":"","titleX":"","pointSize":7,"colors":["#4684EE","#DC3912","#FF9900","#008000","#666666","#4942CC","#CB4AC5","#D6AE00","#336699","#DD4477","#AAAA11","#66AA00","#888888","#994499","#DD5511","#22AA99","#999999","#705770","#109618","#A32929"],"smoothLine":false,"is3D":false,"lineSize":2,"hasLabelsColumn":true,"title":"Combined Download History","legend":"none","pointSizeOther":7,"reverseAxis":false,"isStacked":false,"width":650,"height":551},"packages":"corechart","refreshInterval":5} </script>
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/static/modules/gviz/1.0/chart.js"> {"dataSourceUrl":"//docs.google.com/spreadsheet/tq?key=0AuD5dr31WtX4dE1OZElxUmtJUWdVTDF0MW8zNEluQnc&transpose=1&headers=0&range=B1%3ACA2&gid=5&pub=1","options":{"vAxes":[{"useFormatFromData":false,"title":"","formatOptions":{"source":"inline","scaleFactor":null},"minValue":null,"viewWindowMode":"pretty","format":"0.##","viewWindow":{"min":null,"max":null},"logScale":false,"maxValue":null},{"useFormatFromData":true,"viewWindowMode":"pretty","viewWindow":{}}],"series":{"0":{"pointSize":0,"targetAxisIndex":1,"lineWidth":2}},"booleanRole":"certainty","title":"Combined Download History","animation":{"duration":500},"legend":"none","useFirstColumnAsDomain":true,"hAxis":{"useFormatFromData":true,"slantedTextAngle":60,"slantedText":true},"isStacked":false,"width":"100%","height":404},"state":{},"chartType":"AreaChart"} </script>
 
 
 ### Usage Breakdown ###
-These queries can also be used with the type breakdown tables.
-
-Breakdown by download type tables
+The same query can be used with each of the file type breakdown tables.
 
 
-<a href="http://tables.googlelabs.com/DataSource?snapid=62324">PLoS ALM v3 05182010 HTML Views</a> ID 202552
+Table IDs:
+<a href="http://tables.googlelabs.com/DataSource?snapid=62324">HTML</a> `202552`
+<a href="http://tables.googlelabs.com/DataSource?snapid=62524">PDF</a> `203967`
+<a href="http://tables.googlelabs.com/DataSource?snapid=62607">XML</a> `203785`
 
-<a href="http://tables.googlelabs.com/DataSource?snapid=62524">PLoS ALM v3 05182010 PDF Downloads</a> ID 203967
+*[Example Spreadsheet](https://spreadsheets.google.com/spreadsheet/pub?hl=en&key=0AuD5dr31WtX4dE1OZElxUmtJUWdVTDF0MW8zNEluQnc&hl=en&gid=3)*
 
-<a href="http://tables.googlelabs.com/DataSource?snapid=62607">PLoS ALM v3 05182010 XML Downloads</a> ID 203785
+Plot the different file types together in a chart to compare their usage.
 
-<script type="text/javascript" src="//ajax.googleapis.com/ajax/static/modules/gviz/1.0/chart.js"> {"chartType":"ColumnChart","dataSourceUrl":"//spreadsheets0.google.com/tq?key=0AuD5dr31WtX4dE1OZElxUmtJUWdVTDF0MW8zNEluQnc&range=A1%3ACA4&gid=3&transpose=1&headers=1&pub=1","options":{"titleY":"","titleX":"","pointSize":7,"colors":["#4684EE","#DC3912","#FF9900","#008000","#666666","#4942CC","#CB4AC5","#D6AE00","#336699","#DD4477","#AAAA11","#66AA00","#888888","#994499","#DD5511","#22AA99","#999999","#705770","#109618","#A32929"],"smoothLine":false,"is3D":false,"lineSize":2,"hasLabelsColumn":true,"title":"Usage History Breakdown","legend":"bottom","pointSizeOther":7,"reverseAxis":false,"isStacked":true,"width":650,"height":551},"packages":"corechart","refreshInterval":5} </script>
-
-
-
-
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/static/modules/gviz/1.0/chart.js"> {"dataSourceUrl":"//docs.google.com/spreadsheet/tq?key=0AuD5dr31WtX4dE1OZElxUmtJUWdVTDF0MW8zNEluQnc&transpose=1&headers=1&range=A1%3ACA4&gid=3&pub=1","options":{"vAxes":[{"useFormatFromData":true,"title":"","minValue":null,"viewWindowMode":"pretty","viewWindow":{"min":null,"max":null},"maxValue":null},{"useFormatFromData":true,"viewWindowMode":"pretty","viewWindow":{}}],"series":{"2":{"targetAxisIndex":1},"1":{"targetAxisIndex":1},"0":{"targetAxisIndex":1}},"title":"Download History Breakdown","booleanRole":"certainty","animation":{"duration":500},"legend":"in","useFirstColumnAsDomain":true,"hAxis":{"useFormatFromData":true,"slantedTextAngle":60,"slantedText":true},"isStacked":false,"width":"100%","height":404},"state":{},"chartType":"AreaChart"} </script>
 
 
 
@@ -271,7 +246,7 @@ There are several groupings. The most downloaded papers are 10.1371/journal.pbio
 
 <!--
 
-<iframe width='100%' height='300' frameborder='0' src='https://spreadsheets.google.com/pub?key=0AuD5dr31WtX4dE1OZElxUmtJUWdVTDF0MW8zNEluQnc&hl=en&single=true&gid=0&output=html&widget=true'></iframe>
+<iframe width='100%' height='300' frameborder='0' src='https://spreadsheets.google.com/pub?key=0AuD5dr31WtX4dE1OZElxUmtJUWdVTDF0MW8zNEluQnc&hl=en&gid=0&output=html&widget=true'></iframe>
 
 
 -->
