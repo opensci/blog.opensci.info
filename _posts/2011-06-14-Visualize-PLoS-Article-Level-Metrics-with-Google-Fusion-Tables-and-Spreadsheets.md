@@ -200,7 +200,7 @@ SELECT SUM('2010-1') FROM 202272
 
 
 ### Combined Download History ###
-A complete download history can be seen by summing all of the available columns.
+The complete history of downloads can be seen by summing all of the available columns.
 {% highlight sql %}
 SELECT SUM('2003-10'),SUM('2003-11'),SUM('2003-12'),SUM('2004-1'),SUM('2004-2'),SUM('2004-3'),SUM('2004-4'),SUM('2004-5'),SUM('2004-6'),SUM('2004-7'),SUM('2004-8'),SUM('2004-9'),SUM('2004-10'),SUM('2004-11'),SUM('2004-12'),SUM('2005-1'),SUM('2005-2'),SUM('2005-3'),SUM('2005-4'),SUM('2005-5'),SUM('2005-6'),SUM('2005-7'),SUM('2005-8'),SUM('2005-9'),SUM('2005-10'),SUM('2005-11'),SUM('2005-12'),SUM('2006-1'),SUM('2006-2'),SUM('2006-3'),SUM('2006-4'),SUM('2006-5'),SUM('2006-6'),SUM('2006-7'),SUM('2006-8'),SUM('2006-9'),SUM('2006-10'),SUM('2006-11'),SUM('2006-12'),SUM('2007-1'),SUM('2007-2'),SUM('2007-3'),SUM('2007-4'),SUM('2007-5'),SUM('2007-6'),SUM('2007-7'),SUM('2007-8'),SUM('2007-9'),SUM('2007-10'),SUM('2007-11'),SUM('2007-12'),SUM('2008-1'),SUM('2008-2'),SUM('2008-3'),SUM('2008-4'),SUM('2008-5'),SUM('2008-6'),SUM('2008-7'),SUM('2008-8'),SUM('2008-9'),SUM('2008-10'),SUM('2008-11'),SUM('2008-12'),SUM('2009-1'),SUM('2009-2'),SUM('2009-3'),SUM('2009-4'),SUM('2009-5'),SUM('2009-6'),SUM('2009-7'),SUM('2009-8'),SUM('2009-9'),SUM('2009-10'),SUM('2009-11'),SUM('2009-12'),SUM('2010-1'),SUM('2010-2'),SUM('2010-3') FROM 202272
 {% endhighlight %}
@@ -211,13 +211,13 @@ SELECT SUM('2003-10'),SUM('2003-11'),SUM('2003-12'),SUM('2004-1'),SUM('2004-2'),
 
 #### Chart ####
 
-The total downloads can be plotted over multiple months.
+The history of download volume can be plotted over multiple months. This chart shows the increase in downloads over time, with various peaks such as in January 2007, and troughs such as in April 2009.
 
-<script type="text/javascript" src="//ajax.googleapis.com/ajax/static/modules/gviz/1.0/chart.js"> {"dataSourceUrl":"//docs.google.com/spreadsheet/tq?key=0AuD5dr31WtX4dE1OZElxUmtJUWdVTDF0MW8zNEluQnc&transpose=1&headers=0&range=B1%3ACA2&gid=5&pub=1","options":{"vAxes":[{"useFormatFromData":false,"title":"","formatOptions":{"source":"inline","scaleFactor":null},"minValue":null,"viewWindowMode":"pretty","format":"0.##","viewWindow":{"min":null,"max":null},"logScale":false,"maxValue":null},{"useFormatFromData":true,"viewWindowMode":"pretty","viewWindow":{}}],"series":{"0":{"pointSize":0,"targetAxisIndex":1,"lineWidth":2}},"booleanRole":"certainty","title":"Combined Download History","animation":{"duration":500},"legend":"none","useFirstColumnAsDomain":true,"hAxis":{"useFormatFromData":true,"slantedTextAngle":60,"slantedText":true},"isStacked":false,"width":"100%","height":404},"state":{},"chartType":"AreaChart"} </script>
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/static/modules/gviz/1.0/chart.js"> {"dataSourceUrl":"//docs.google.com/spreadsheet/tq?key=0AuD5dr31WtX4dE1OZElxUmtJUWdVTDF0MW8zNEluQnc&transpose=1&headers=0&range=B1%3ACA2&gid=5&pub=1","options":{"vAxes":[{"title":"","useFormatFromData":false,"formatOptions":{"source":"inline","scaleFactor":null},"minValue":null,"viewWindowMode":"pretty","format":"0.##","logScale":false,"viewWindow":{"min":null,"max":null},"maxValue":null},{"useFormatFromData":true,"viewWindowMode":"pretty","viewWindow":{}}],"series":{"0":{"pointSize":0,"targetAxisIndex":1,"lineWidth":2}},"title":"Combined Download History","booleanRole":"certainty","animation":{"duration":500},"legend":"none","useFirstColumnAsDomain":true,"hAxis":{"useFormatFromData":true},"isStacked":false,"width":"100%","height":483},"state":{},"chartType":"AreaChart"} </script>
 
 
-### Usage Breakdown ###
-The same query can be used with each of the file type breakdown tables.
+### Breakdown by Download Type ###
+In addition to the total download counts, there is also a download history for each type of file format: HTML, PDF, and XML. The same query can be used again with these file type breakdown tables to compare the downloads of each file type.
 
 
 Table IDs:
@@ -227,16 +227,21 @@ Table IDs:
 
 *[Example Spreadsheet](https://spreadsheets.google.com/spreadsheet/pub?hl=en&key=0AuD5dr31WtX4dE1OZElxUmtJUWdVTDF0MW8zNEluQnc&hl=en&gid=3)*
 
-Plot the different file types together in a chart to compare their usage.
+Plotting the different file type histories together in a chart allows a comparison of their usage. This chart shows that HTML downloads have grown the quickest, and while PDF downloads have also increased, XML downloads peaked around 2008 and have since declined.
 
-<script type="text/javascript" src="//ajax.googleapis.com/ajax/static/modules/gviz/1.0/chart.js"> {"dataSourceUrl":"//docs.google.com/spreadsheet/tq?key=0AuD5dr31WtX4dE1OZElxUmtJUWdVTDF0MW8zNEluQnc&transpose=1&headers=1&range=A1%3ACA4&gid=3&pub=1","options":{"vAxes":[{"useFormatFromData":true,"title":"","minValue":null,"viewWindowMode":"pretty","viewWindow":{"min":null,"max":null},"maxValue":null},{"useFormatFromData":true,"viewWindowMode":"pretty","viewWindow":{}}],"series":{"2":{"targetAxisIndex":1},"1":{"targetAxisIndex":1},"0":{"targetAxisIndex":1}},"title":"Download History Breakdown","booleanRole":"certainty","animation":{"duration":500},"legend":"in","useFirstColumnAsDomain":true,"hAxis":{"useFormatFromData":true,"slantedTextAngle":60,"slantedText":true},"isStacked":false,"width":"100%","height":404},"state":{},"chartType":"AreaChart"} </script>
-
-
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/static/modules/gviz/1.0/chart.js"> {"dataSourceUrl":"//docs.google.com/spreadsheet/tq?key=0AuD5dr31WtX4dE1OZElxUmtJUWdVTDF0MW8zNEluQnc&transpose=1&headers=1&range=A1%3ACA4&gid=3&pub=1","options":{"vAxes":[{"title":"","useFormatFromData":true,"minValue":null,"viewWindowMode":"pretty","viewWindow":{"min":null,"max":null},"maxValue":null},{"useFormatFromData":true,"viewWindowMode":"pretty","viewWindow":{}}],"series":{"2":{"targetAxisIndex":1},"1":{"targetAxisIndex":1},"0":{"targetAxisIndex":1}},"booleanRole":"certainty","title":"Download History Breakdown","animation":{"duration":500},"legend":"in","useFirstColumnAsDomain":true,"hAxis":{"useFormatFromData":true},"isStacked":false,"width":"100%","height":483},"state":{},"chartType":"AreaChart"} </script>
 
 
-#### Top 50 90 Days ####
-<script type="text/javascript" src="//ajax.googleapis.com/ajax/static/modules/gviz/1.0/chart.js"> {"chartType":"LineChart","chartName":"Chart 3","dataSourceUrl":"//spreadsheets.google.com/tq?key=0AuD5dr31WtX4dDJIWmMyQUlteURvN183c3JyYlo2d1E&range=A1%3AG51&gid=3&transpose=1&headers=1&pub=1","options":{"displayAnnotations":true,"showTip":true,"reverseCategories":false,"dataMode":"markers","maxAlternation":1,"pointSize":"2","colors":["#3366CC","#DC3912","#FF9900","#109618","#990099","#0099C6","#DD4477","#66AA00","#B82E2E","#316395"],"smoothLine":false,"lineWidth":"2","labelPosition":"right","is3D":false,"logScale":true,"hasLabelsColumn":true,"wmode":"opaque","title":"","legend":"none","allowCollapse":true,"pointSizeOther":"2","reverseAxis":false,"mapType":"hybrid","isStacked":false,"width":650,"height":434},"packages":"corechart","refreshInterval":5} </script>
 
+
+#### Top 10 Articles 6 Month History ####
+In addition to the overall download trends, the metric data includes usage history for individual articles. By selecting articles with the highest usage in the most recent month, 
+
+{% highlight sql %}
+SELECT doi,'2010-3' FROM 202272 ORDER BY '2010-3' DESC LIMIT 10
+{% endhighlight %}
+
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/static/modules/gviz/1.0/chart.js"> {"dataSourceUrl":"//docs.google.com/spreadsheet/tq?key=0AuD5dr31WtX4dDJIWmMyQUlteURvN183c3JyYlo2d1E&transpose=1&headers=1&range=A1%3AG11&gid=3&pub=1","options":{"titleTextStyle":{"bold":true,"color":"#000","fontSize":"14"},"series":{"3":{"pointSize":4,"lineWidth":3},"2":{"pointSize":4,"lineWidth":3},"1":{"pointSize":4,"lineWidth":3},"0":{"pointSize":4,"lineWidth":3},"7":{"pointSize":4,"lineWidth":3},"6":{"pointSize":4,"lineWidth":3},"5":{"pointSize":4,"lineWidth":3},"4":{"pointSize":4,"lineWidth":3},"9":{"pointSize":4,"lineWidth":3},"8":{"pointSize":4,"lineWidth":3}},"curveType":"","animation":{"duration":500},"width":"100%","lineWidth":2,"hAxis":{"useFormatFromData":true,"viewWindowMode":"pretty","viewWindow":{}},"vAxes":[{"useFormatFromData":true,"title":"Combined Downloads","viewWindowMode":"pretty","viewWindow":{}},{"useFormatFromData":true,"viewWindowMode":"pretty","viewWindow":{}}],"booleanRole":"certainty","title":"Top 10 Article History","height":483,"interpolateNulls":false,"legend":"none"},"state":{},"chartType":"LineChart","chartName":"Chart 1"} </script>
 
 There are several groupings. The most downloaded papers are 10.1371/journal.pbio.1000322 and 10.1371/journal.pone.0009505 which are new this month.  Some have decreased since the previous month such as 10.1371/journal.pone.0009042 and 10.1371/journal.pone.0008733 while others such as 10.1371/journal.pcbi.1000361 and 10.1371/journal.pgen.1000862 have increased.
 
