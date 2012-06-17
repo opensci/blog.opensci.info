@@ -11,7 +11,7 @@ uuid: 777dd893-0aee-4395-9802-63b9b0a50634
 <a href="https://docs.google.com/spreadsheet/pub?key=0AuD5dr31WtX4dE1OZElxUmtJUWdVTDF0MW8zNEluQnc&gid=4"><img class="bigimage" src="/file/2011-06-14-Visualize-PLoS-Article-Level-Metrics-with-Google-Fusion-Tables-and-Spreadsheets/Download.History.Breakdown.Chart.png" alt="ALM data can be used to track article downloads over time."/></a>
 
 
-The [Public Library of Science][plos] collects information for each article they publish including citations, downloads, web page views, and community response. These metrics have now been uploaded [uploaded][plosblog] to [Google Fusion Tables][gft], a free service for sharing data. Previously the the data was available through an [Excel XLS file][almxls] on the PLoS [Article Level Metrics][plosalm] site. 
+The [Public Library of Science][plos] collects information for each article they publish. This set of metrics include citations, web downloads and page views, and community responses. The data is available in an [Excel XLS file][almxls] on the PLoS [Article Level Metrics][plosalm] site. Now the metric information has also been uploaded [uploaded][plosblog] to [Google Fusion Tables][gft], a free service for sharing data.
 
 [plos]: http://www.plos.org
 [plosblog]: http://blogs.plos.org/plos/2010/07/plos-alm-data-in-google-fusion-tables/
@@ -27,7 +27,7 @@ The [Public Library of Science][plos] collects information for each article they
 {:toc}
 
 
-The collected information is divided into 5 tables:
+The metric information is divided into 5 tables:
 
 * [Summary ALM Data][summary]
 * [Combined Download Statistics][combined]
@@ -44,7 +44,7 @@ The collected information is divided into 5 tables:
 
 ### Google Fusion Tables ###
 
-[Google Fusion Tables][gft] is a public data storage service that can be accessed through both a web browser and an API. Unlike other online spreadsheet programs, large [datasets up to 100mb][gftlimit] are supported. Sorting, grouping, and other queries can be performed with the [Google Fusion Tables API][gftapi] using an SQL-like query language . Query results can be exported to common formats for use in other visualization tools such as [Google Spreadsheets][gdocs].
+[Google Fusion Tables][gft] is a public data storage service that can be accessed through both a web browser and an API. Large [datasets up to 100mb][gftlimit] are supported, unlike other online spreadsheets. The [Google Fusion Tables API][gftapi] supports an SQL-like query language that allows sorting, grouping, and other queries. The query results can be exported in common formats for use in other visualization tools such as [Google Spreadsheets][gdocs].
 
 [gdocs]: https://docs.google.com
 [gftapi]: https://code.google.com/apis/fusiontables/
@@ -52,16 +52,10 @@ The collected information is divided into 5 tables:
 
 
 ### Web Based View ###
-On Google Fusion Tables each dataset can be viewed through a web browser. The first 100 rows and several columns are shown, and each column can be sorted ascending or descending. Additional operations such as filtering, aggregation, and visualization are available through the menu system. For example, one of the PLoS tables that includes much of the collected article metrics is [Summary ALM Data table][summary].
+Each dataset on Google Fusion Tables can be viewed through the web browser. The first 100 rows and several columns are shown, with each column sortable. The menu system allows additional operations such as filtering, aggregating, and visualizing.
+
+The [Summary ALM Data table][summary] can be browsed through this web interface.
 <a href="http://www.google.com/fusiontables/DataSource?snapid=61925"><img class="mainimage bigimage" src="/file/2011-06-14-Visualize-PLoS-Article-Level-Metrics-with-Google-Fusion-Tables-and-Spreadsheets/Google.Fusion.Tables.Summary.ALM.Data.png" /></a>
-
-
-
-### Data Updated ###
-
-An updated version of this ALM data is now also available on Google Fusion Tables, [PLoS Article Level Metrics on Google Fusion Tables Updated to V4][plosalmv4].
-
-[plosalmv4]: /2011/08/14/PLoS-Article-Level-Metrics-on-Google-Fusion-Tables-Updated-to-V4/
 
 
 
@@ -261,11 +255,18 @@ There are several groupings. The most downloaded papers are 10.1371/journal.pbio
 
 
 
-## Additional Materials
+## Additional Materials ##
 
 [All Spreadsheets][gsheet]
 [gsheet]: https://docs.google.com/leaf?id=0B-D5dr31WtX4NDdlY2U3ZTAtMmM3MC00MDZkLTkzZTAtMjVjOTFlZmU0Mjlk&hl=en
 
 [All sample files][samplefiles]
 [samplefiles]: https://github.com/mchelen/blog.opensci.info/tree/gh-pages/file/2011-06-14-Visualize-PLoS-Article-Level-Metrics-with-Google-Fusion-Tables-and-Spreadsheets
+
+
+## Data Updated ##
+
+An updated version of this ALM data is now also available on Google Fusion Tables, [PLoS Article Level Metrics on Google Fusion Tables Updated to V4][plosalmv4].
+
+[plosalmv4]: /2011/08/14/PLoS-Article-Level-Metrics-on-Google-Fusion-Tables-Updated-to-V4/
 
