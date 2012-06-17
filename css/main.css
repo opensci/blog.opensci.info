@@ -135,6 +135,19 @@ body {
     #footer .about div {
       padding-left: 94px;
       width: 50%; }
+  #footer .subscribe {
+    float: left;
+    margin-top: 1em; }
+    #footer .subscribe img {
+      position: relative;
+      top: 5px;
+      left: .5em; }
+    #footer .subscribe div {
+      padding-left: 94px;
+      width: 50%; }
+    #footer .subscribe h3 {
+      float: left;
+      margin-right: .5em; }
 
 .my_pic {
   float: right; }
