@@ -11,7 +11,7 @@ uuid: 777dd893-0aee-4395-9802-63b9b0a50634
 <a href="https://docs.google.com/spreadsheet/pub?key=0AuD5dr31WtX4dE1OZElxUmtJUWdVTDF0MW8zNEluQnc&gid=4"><img class="bigimage" src="/file/2011-06-14-Visualize-PLoS-Article-Level-Metrics-with-Google-Fusion-Tables-and-Spreadsheets/Download.History.Breakdown.Chart.png" alt="ALM data can be used to track article downloads over time."/></a>
 
 
-The [Public Library of Science][plos] collects information for each article they publish. This set of metrics include citations, web downloads and page views, and community responses. The data is available in an [Excel XLS file][almxls] on the PLoS [Article Level Metrics][plosalm] site. Now the metric information has also been uploaded [uploaded][plosblog] to [Google Fusion Tables][gft], a free service for sharing data.
+The [Public Library of Science][plos] collects information for each article they publish. These metrics include citations, downloads, web page views, and community responses. The data is available in an [Excel XLS file][almxls] on the PLoS [Article Level Metrics][plosalm] site. Now the metric information has also been uploaded [uploaded][plosblog] to [Google Fusion Tables][gft], a free service for sharing data.
 
 [plos]: http://www.plos.org
 [plosblog]: http://blogs.plos.org/plos/2010/07/plos-alm-data-in-google-fusion-tables/
@@ -44,11 +44,12 @@ The metric information is divided into 5 tables:
 
 ### Google Fusion Tables ###
 
-[Google Fusion Tables][gft] is a public data storage service that can be accessed through both a web browser and an API. Large [datasets up to 100mb][gftlimit] are supported, unlike other online spreadsheets. The [Google Fusion Tables API][gftapi] supports an SQL-like query language that allows sorting, grouping, and other queries. The query results can be exported in common formats for use in other visualization tools such as [Google Spreadsheets][gdocs].
+[Google Fusion Tables][gft] is a public data storage service that can be accessed through both a web browser and an API. Large datasets [up to 100mb][gftlimit] can be uploaded, unlike other online spreadsheets which allow [only 20 mb][gsheetlimit]. The [Google Fusion Tables API][gftapi] provides an SQL-like query language that allows sorting, grouping, and other queries. The query results can be exported in common formats such as CSV for use in other visualization tools including [Google Spreadsheets][gdocs].
 
 [gdocs]: https://docs.google.com
 [gftapi]: https://code.google.com/apis/fusiontables/
 [gftlimit]: https://code.google.com/p/fusion-tables/issues/detail?id=261#c1
+[gsheetlimit]: https://support.google.com/docs/bin/answer.py?hl=en&answer=37603
 
 
 ### Web Based View ###
@@ -61,7 +62,7 @@ The [Summary ALM Data table][summary] can be browsed through this web interface.
 
 ## Summary ALM Data ##
 
-The [Summary ALM Data][summary] table contains basic information about each article such as the article title, the journal it was published in, and the publication date. The metric information conists of citation counts, usage, and community metrics. The citation counts are from CrossRef, PubMed Central, and Scopus. Usage metrics are based on website page accesses and downloads: HTML page views, PDF downloads, and XML downloads. Community reactions are an assessment of Blog coverage, Trackbacks, and Social Bookmarks.
+The [Summary ALM Data][summary] table contains basic information about each article such as the article title, the journal it was published in, and the publication date. The metric information consists of citation counts, number of downloads, and community responses. The citation counts are from CrossRef, PubMed Central, and Scopus. Usage metrics are based on website page accesses and downloads: HTML page views, PDF downloads, and XML downloads. Community reactions are a measurement of coverage in specific blogs such as Postgenomic and Nature Blogs, along with all Trackbacks, and Social Bookmarks from CiteULike and Connotea.
 
 
 <br clear="all" />
