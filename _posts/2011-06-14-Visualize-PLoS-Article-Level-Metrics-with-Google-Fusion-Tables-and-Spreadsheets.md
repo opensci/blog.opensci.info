@@ -55,16 +55,48 @@ The metric information is divided into 5 tables:
 ### Web Based View ###
 Each dataset on Google Fusion Tables can be viewed through the web browser. The first 100 rows and several columns are shown, with each column sortable. The menu system allows additional operations such as filtering, aggregating, and visualizing.
 
-The [Summary ALM Data table][summary] can be browsed through this web interface.
-<a href="http://www.google.com/fusiontables/DataSource?snapid=61925"><img class="mainimage bigimage" src="/file/2011-06-14-Visualize-PLoS-Article-Level-Metrics-with-Google-Fusion-Tables-and-Spreadsheets/Google.Fusion.Tables.Summary.ALM.Data.png" /></a>
-
-
 
 ## Summary ALM Data ##
 
 The [Summary ALM Data][summary] table contains basic information about each article such as the article title, the journal it was published in, and the publication date. The metric information consists of citation counts, number of downloads, and community responses. The citation counts are from CrossRef, PubMed Central, and Scopus. Usage metrics are based on website page accesses and downloads: HTML page views, PDF downloads, and XML downloads. Community reactions are a measurement of coverage in specific blogs such as Postgenomic and Nature Blogs, along with all Trackbacks, and Social Bookmarks from CiteULike and Connotea.
 
+The [Summary ALM Data table][summary] can be browsed through the web based view.
+<a href="http://www.google.com/fusiontables/DataSource?snapid=61925"><img class="mainimage bigimage" src="/file/2011-06-14-Visualize-PLoS-Article-Level-Metrics-with-Google-Fusion-Tables-and-Spreadsheets/Google.Fusion.Tables.Summary.ALM.Data.png" /></a>
 
+
+### Sort ###
+
+Sort any column by clicking on column title. Results can be sorted in ascending or descending order.
+<a href="/file/2011-06-14-Visualize-PLoS-Article-Level-Metrics-with-Google-Fusion-Tables-and-Spreadsheets/Google.Fusion.Tables.Sort.Menu.png"><img class="mainimage bigimage" src="/file/2011-06-14-Visualize-PLoS-Article-Level-Metrics-with-Google-Fusion-Tables-and-Spreadsheets/Google.Fusion.Tables.Sort.Menu.png" /></a>
+
+Sorting by Publication Date in descending order shows the most recent articles.
+<a href="/file/2011-06-14-Visualize-PLoS-Article-Level-Metrics-with-Google-Fusion-Tables-and-Spreadsheets/Google.Fusion.Tables.Sort.Results.png"><img class="mainimage bigimage" src="/file/2011-06-14-Visualize-PLoS-Article-Level-Metrics-with-Google-Fusion-Tables-and-Spreadsheets/Google.Fusion.Tables.Sort.Results.png" /></a>
+
+### Filter ###
+The filter option allows matching for certain values. 
+<a href="/file/2011-06-14-Visualize-PLoS-Article-Level-Metrics-with-Google-Fusion-Tables-and-Spreadsheets/Google.Fusion.Tables.Filter.Menu.png"><img class="mainimage bigimage" src="/file/2011-06-14-Visualize-PLoS-Article-Level-Metrics-with-Google-Fusion-Tables-and-Spreadsheets/Google.Fusion.Tables.Filter.Menu.png" /></a>
+
+Select a column to match, an operator such as equal, greater than, or less than, and the value to match.
+<a href="/file/2011-06-14-Visualize-PLoS-Article-Level-Metrics-with-Google-Fusion-Tables-and-Spreadsheets/Google.Fusion.Tables.Filter.Options.png"><img class="mainimage bigimage" src="/file/2011-06-14-Visualize-PLoS-Article-Level-Metrics-with-Google-Fusion-Tables-and-Spreadsheets/Google.Fusion.Tables.Filter.Options.png" /></a>
+Filtering for a Publication Year equal to 2005 will show only articles published that year.
+<a href="/file/2011-06-14-Visualize-PLoS-Article-Level-Metrics-with-Google-Fusion-Tables-and-Spreadsheets/Google.Fusion.Tables.Filter.Results.png"><img class="mainimage bigimage" src="/file/2011-06-14-Visualize-PLoS-Article-Level-Metrics-with-Google-Fusion-Tables-and-Spreadsheets/Google.Fusion.Tables.Filter.Results.png" /></a>
+
+
+### Aggregate ###
+
+
+
+<a href="/file/2011-06-14-Visualize-PLoS-Article-Level-Metrics-with-Google-Fusion-Tables-and-Spreadsheets/Google.Fusion.Tables.Aggregate.Menu.png"><img class="mainimage bigimage" src="/file/2011-06-14-Visualize-PLoS-Article-Level-Metrics-with-Google-Fusion-Tables-and-Spreadsheets/Google.Fusion.Tables.Aggregate.Menu.png" /></a>
+
+
+<a href="/file/2011-06-14-Visualize-PLoS-Article-Level-Metrics-with-Google-Fusion-Tables-and-Spreadsheets/Google.Fusion.Tables.Aggregate.Options.png"><img class="mainimage bigimage" src="/file/2011-06-14-Visualize-PLoS-Article-Level-Metrics-with-Google-Fusion-Tables-and-Spreadsheets/Google.Fusion.Tables.Aggregate.Options.png" /></a>
+
+<a href="/file/2011-06-14-Visualize-PLoS-Article-Level-Metrics-with-Google-Fusion-Tables-and-Spreadsheets/Google.Fusion.Tables.Aggregate.Results.png"><img class="mainimage bigimage" src="/file/2011-06-14-Visualize-PLoS-Article-Level-Metrics-with-Google-Fusion-Tables-and-Spreadsheets/Google.Fusion.Tables.Aggregate.Results.png" /></a>
+
+### Visualize ###
+
+
+### Table ID ###
 <br clear="all" />
 <img class="mainimage" src="/file/2011-06-14-Visualize-PLoS-Article-Level-Metrics-with-Google-Fusion-Tables-and-Spreadsheets/Google.Fusion.Tables.About.Menu.png" style="width:150px;float:left;"/>
 Every table is referenced by an ID number. The ID number can be seen in File -> About.
