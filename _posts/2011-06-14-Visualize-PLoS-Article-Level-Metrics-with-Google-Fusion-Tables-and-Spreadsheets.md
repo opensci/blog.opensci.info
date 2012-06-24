@@ -78,19 +78,22 @@ The filter option allows matching for certain values.
 
 Select a column to match, an operator such as equal, greater than, or less than, and the value to match.
 <a href="/file/2011-06-14-Visualize-PLoS-Article-Level-Metrics-with-Google-Fusion-Tables-and-Spreadsheets/Google.Fusion.Tables.Filter.Options.png"><img class="mainimage bigimage" src="/file/2011-06-14-Visualize-PLoS-Article-Level-Metrics-with-Google-Fusion-Tables-and-Spreadsheets/Google.Fusion.Tables.Filter.Options.png" /></a>
-Filtering for a Publication Year equal to 2005 will show only articles published that year.
+Filter for a Publication Year equal to 2005 to show only articles published in that year.
 <a href="/file/2011-06-14-Visualize-PLoS-Article-Level-Metrics-with-Google-Fusion-Tables-and-Spreadsheets/Google.Fusion.Tables.Filter.Results.png"><img class="mainimage bigimage" src="/file/2011-06-14-Visualize-PLoS-Article-Level-Metrics-with-Google-Fusion-Tables-and-Spreadsheets/Google.Fusion.Tables.Filter.Results.png" /></a>
 
 
 ### Aggregate ###
 
-
+Aggregate performs operations across all rows of a column. The functions available include Sum, Average, Maximum, Minimum, and Count.
+The results can also be grouped together by a particular column.
 
 <a href="/file/2011-06-14-Visualize-PLoS-Article-Level-Metrics-with-Google-Fusion-Tables-and-Spreadsheets/Google.Fusion.Tables.Aggregate.Menu.png"><img class="mainimage bigimage" src="/file/2011-06-14-Visualize-PLoS-Article-Level-Metrics-with-Google-Fusion-Tables-and-Spreadsheets/Google.Fusion.Tables.Aggregate.Menu.png" /></a>
 
 
+To look at the total number of citations, pick the Sum for each type of citation. Then group the results by Journal.
 <a href="/file/2011-06-14-Visualize-PLoS-Article-Level-Metrics-with-Google-Fusion-Tables-and-Spreadsheets/Google.Fusion.Tables.Aggregate.Options.png"><img class="mainimage bigimage" src="/file/2011-06-14-Visualize-PLoS-Article-Level-Metrics-with-Google-Fusion-Tables-and-Spreadsheets/Google.Fusion.Tables.Aggregate.Options.png" /></a>
 
+The citations are then totaled for each Journal.
 <a href="/file/2011-06-14-Visualize-PLoS-Article-Level-Metrics-with-Google-Fusion-Tables-and-Spreadsheets/Google.Fusion.Tables.Aggregate.Results.png"><img class="mainimage bigimage" src="/file/2011-06-14-Visualize-PLoS-Article-Level-Metrics-with-Google-Fusion-Tables-and-Spreadsheets/Google.Fusion.Tables.Aggregate.Results.png" /></a>
 
 ### Visualize ###
@@ -236,7 +239,7 @@ SELECT SUM('2003-10'),SUM('2003-11'),SUM('2003-12'),SUM('2004-1'),SUM('2004-2'),
 *[Example Spreadsheet](https://spreadsheets.google.com/pub?key=0AuD5dr31WtX4dE1OZElxUmtJUWdVTDF0MW8zNEluQnc&hl=en&gid=5&output=html)*
 
 
-#### Chart ####
+### Chart ###
 
 The history of download volume can be plotted over multiple months. This chart shows the increase in downloads over time, with various peaks such as in January 2007, and troughs such as in April 2009.
 
