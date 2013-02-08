@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <style>img{ height: 100px; float: left; }</style>
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+</head>
+<body>
+  <div id="images">
+  </div>
+  <script>
+    $.getJSON("http://alm.plos.org/articles/10.1371/journal.pone.0000443.json?callback=?",
+      {
+      history: "0",
+    },
+    function(data) {
+      
+      var items = [];
+      items.push('<li>DOI: ' + data.article.doi + '</li>');
+      items.push('<li>Published: ' + data.article.published + '</li>');
+/*      items.push('<li>' + data.article.source[1].source + '</li>');
+      items.push('<li>' + data.article.source[1].count + '</li>');
+      items.push('<li>' + data.article.source[2].source + '</li>');
+      items.push('<li>' + data.article.source[2].count + '</li>')
+*/      
+      $.each(data.article.source, function(i, v) {
+        if (v.source == "Scopus") {
+          items.push('<li>Source: ' + v.source + '</li>');
+          items.push('<li>Count: ' + v.count + '</li>');
+          items.push('<li>Updated At:' + v.updated_at + '</li>');
+          return;
+        }
+      });
+      
+      
+      
+      
+      
+      $('<ul/>', {
+        'class': 'my-new-list',
+        html: items.join('')
+      }).appendTo('body');
+
+    }
+    );
+  </script>
+</body>
