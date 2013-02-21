@@ -2,8 +2,20 @@
 layout: post
 title: PLoS ALM Visualization
 uuid: 8c6563f5-7230-4a97-b888-7a1536b5b746
-published: false
+published: true
 ---
+
+
+
+
+test3.html
+https://developers.google.com/chart/interactive/docs/fusiontables
+
+
+test4.html --- start here
+https://developers.google.com/fusiontables/docs/samples/gviz_datatable
+
+
 
 
 top 10 articles
