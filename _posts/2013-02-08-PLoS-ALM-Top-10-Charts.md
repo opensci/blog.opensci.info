@@ -106,3 +106,34 @@ select * from csv where url="https://www.google.com/fusiontables/exporttable?que
 http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20csv%20where%20url%3D'https%3A%2F%2Fwww.google.com%2Ffusiontables%2Fexporttable%3Fquery%3Dselect%2B*%2Bfrom%2B1W7-apvjDSgsT5jRy4lAcxYJgsGVIcFhudiFN0J0%2Bwhere%2Bcol0%2Bcontains%2Bignoring%2Bcase%2B%2527pmed%2527%2Band%2Bcol1%2B%253E%253D%2B%2527Jan%2B1%252C%2B2010%2527%2Band%2Bcol1%2B%253C%253D%2B%2527Dec%2B31%252C%2B2010%2527%2Border%2Bby%2Bcol10%2Bdesc%2Blimit%2B10'&format=json&diagnostics=true&callback=?
 
 http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20csv%20where%20url%3D%22https%3A%2F%2Fwww.google.com%2Ffusiontables%2Fexporttable%3Fquery%3Dselect%2Bcol0%2Ccol1%2Ccol2%2Ccol10%2Bfrom%2B1W7-apvjDSgsT5jRy4lAcxYJgsGVIcFhudiFN0J0%2Bwhere%2Bcol0%2Bcontains%2Bignoring%2Bcase%2B%2527pmed%2527%2Band%2Bcol1%2B%253E%253D%2B%2527Jan%2B1%252C%2B2010%2527%2Band%2Bcol1%2B%253C%253D%2B%2527Dec%2B31%252C%2B2010%2527%2Border%2Bby%2Bcol10%2Bdesc%2Blimit%2B10%22&format=json&diagnostics=true&callback=?
+
+
+
+
+select col0,col1,col2,col10 from 1W7-apvjDSgsT5jRy4lAcxYJgsGVIcFhudiFN0J0 where col0 contains ignoring case 'pmed' and col1 >= 'Jan 1, 2010' and col1 <= 'Dec 31, 2010' order by col10 desc limit 10
+
+
+
+
+
+
+https://developers.google.com/chart/interactive/docs/fusiontables
+
+
+
+https://developers.google.com/fusiontables/docs/samples/gviz_datatable
+
+
+https://developers.google.com/chart/interactive/docs/reference#DataView
+
+https://developers.google.com/chart/interactive/docs/reference#patternformatter
+
+https://developers.google.com/chart/interactive/docs/reference#formatters
+
+
+https://developers.google.com/chart/interactive/docs/datatables_dataviews
+
+https://developers.google.com/chart/interactive/docs/reference#DataView_setColumns
+
+
+
