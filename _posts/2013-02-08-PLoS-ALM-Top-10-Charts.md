@@ -6,6 +6,10 @@ published: true
 ---
 
 
+http://article-level-metrics.plos.org/files/2012/10/alm_report_2013-01-08.csv.zip
+
+
+https://www.google.com/fusiontables/data?docid=1RvztK1sSqPC4FAfwTeLUeMhQJMjADCsTllEyF-8
 
 
 test3.html
