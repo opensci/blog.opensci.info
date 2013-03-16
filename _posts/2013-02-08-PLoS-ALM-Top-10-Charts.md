@@ -5,15 +5,33 @@ uuid: 8c6563f5-7230-4a97-b888-7a1536b5b746
 published: true
 ---
 
-
+data source:
+http://article-level-metrics.plos.org/plos-alm-data/
 http://article-level-metrics.plos.org/files/2012/10/alm_report_2013-01-08.csv.zip
 
-
+upload to fusion tables
 https://www.google.com/fusiontables/data?docid=1RvztK1sSqPC4FAfwTeLUeMhQJMjADCsTllEyF-8
+
+
 
 
 test3.html
 https://developers.google.com/chart/interactive/docs/fusiontables
+
+{% highlight javascript linenos %}
+google.visualization.drawChart({
+        "containerId": "visualization_div",
+        "dataSourceUrl": 'http://www.google.com/fusiontables/gvizdata?tq=',
+        "query":"SELECT Year, Austria, Bulgaria, Denmark, Greece FROM 641716",
+        "refreshInterval": 5,
+        "chartType": "BarChart",
+        "options": {
+          "title":"Yearly Coffee Consumption by Country",
+          "vAxis": {"title": "Year"},
+          "hAxis": {"title": "Cups"}
+        }
+      });
+{% endhighlight %}
 
 
 test4.html --- start here
