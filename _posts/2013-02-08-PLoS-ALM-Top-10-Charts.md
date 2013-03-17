@@ -5,13 +5,28 @@ uuid: 8c6563f5-7230-4a97-b888-7a1536b5b746
 published: true
 ---
 
-data source:
-http://article-level-metrics.plos.org/plos-alm-data/
-http://article-level-metrics.plos.org/files/2012/10/alm_report_2013-01-08.csv.zip
 
-upload to fusion tables
-https://www.google.com/fusiontables/data?docid=1RvztK1sSqPC4FAfwTeLUeMhQJMjADCsTllEyF-8
+PLoS ALM Data
+---
+Full copies of the PLoS ALM data is available periodically on [their website][plosalmdata]. The file we want is the "Monthly zip file of the summary spreadsheet for the entire ALM data set (all articles)". Currently the latest version is [alm_report_2013-01-08.csv.zip][]. This ZIP file contains a single CSV text file of all the data.
 
+[plosalmdata]: http://article-level-metrics.plos.org/plos-alm-data/
+[alm_report_2013-01-08.csv.zip]: http://article-level-metrics.plos.org/files/2012/10/alm_report_2013-01-08.csv.zip
+
+
+
+Google Fusion Tables
+---
+This CSV file can be uploaded directly to [Google Fusion Tables][].
+
+
+
+[Google Fusion Tables]: http://www.google.com/drive/start/apps.html#fusiontables
+
+
+upload to fusion tables [mytable][mytable]
+
+[mytable]: https://www.google.com/fusiontables/data?docid=1RvztK1sSqPC4FAfwTeLUeMhQJMjADCsTllEyF-8
 
 
 
@@ -34,8 +49,36 @@ google.visualization.drawChart({
 {% endhighlight %}
 
 
+
+
+
+
 test4.html --- start here
 https://developers.google.com/fusiontables/docs/samples/gviz_datatable
+
+{% highlight javascript linenos %}
+  function drawTable() {
+        var query = "SELECT 'Scoring Team' as Scoring, " +
+            "'Receiving Team' as Receiving, 'Minute of goal' as Minute " +
+            'FROM 1VlPiBCkYt_Vio-JT3UwM-U__APurJvPb6ZEJPg';
+        var team = document.getElementById('team').value;
+        if (team) {
+          query += " WHERE 'Scoring Team' = '" + team + "'";
+        }
+        var queryText = encodeURIComponent(query);
+        var gvizQuery = new google.visualization.Query(
+            'http://www.google.com/fusiontables/gvizdata?tq=' + queryText);
+
+        gvizQuery.send(function(response) {
+          var table = new google.visualization.Table(
+              document.getElementById('visualization'));
+          table.draw(response.getDataTable(), {
+            showRowNumber: true
+          });
+        });
+      }
+{% endhighlight %}
+
 
 
 
