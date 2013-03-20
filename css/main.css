@@ -253,9 +253,9 @@ pre code{
 }
 
 pre {
-  padding: .25em;
-  margin: 1em 4em 1em 1em;
-  background: none repeat scroll 0 0 #EBEBEB;
+  padding: 0.25em 0.25em 0.25em 2em;
+  margin: 1em 1em .5em .5em;
+  background: none repeat scroll 0 0 #646464;
   border-radius: .25em;
   -moz-border-radius: .25em;
   -webkit-border-radius: .25em;

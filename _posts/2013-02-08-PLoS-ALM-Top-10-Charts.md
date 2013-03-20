@@ -8,7 +8,7 @@ published: true
 
 PLoS ALM Data
 ---
-Full copies of the PLoS ALM data is available periodically on [their website][plosalmdata]. The file we want is the "Monthly zip file of the summary spreadsheet for the entire ALM data set (all articles)". Currently the latest version is [alm_report_2013-01-08.csv.zip][]. This ZIP file contains a single CSV text file of all the data.
+Full copies of the PLoS ALM data is available periodically on [their website][plosalmdata]. The file we want is the "Monthly zip file of the summary spreadsheet for the entire ALM data set (all articles)". This ZIP file contains a single CSV text file of all the data. The latest version available is [alm_report_2013-01-08.csv.zip][]. 
 
 [plosalmdata]: http://article-level-metrics.plos.org/plos-alm-data/
 [alm_report_2013-01-08.csv.zip]: http://article-level-metrics.plos.org/files/2012/10/alm_report_2013-01-08.csv.zip
@@ -17,25 +17,26 @@ Full copies of the PLoS ALM data is available periodically on [their website][pl
 
 Google Fusion Tables
 ---
-This CSV file can be uploaded directly to [Google Fusion Tables][].
+The CSV file can be uploaded directly to [Google Fusion Tables][]. Once the data is uploaded, it can be [browsed online][mytable].
 
+
+
+
+<a href="https://www.google.com/fusiontables/data?docid=1RvztK1sSqPC4FAfwTeLUeMhQJMjADCsTllEyF-8"><img src ="/file/2013-02-08-PLoS-ALM-Top-10-Charts/mytable.png" class="mainimage bigimage"/></a>
 
 
 [Google Fusion Tables]: http://www.google.com/drive/start/apps.html#fusiontables
-
-
-upload to fusion tables [mytable][]
-
 [mytable]: https://www.google.com/fusiontables/data?docid=1RvztK1sSqPC4FAfwTeLUeMhQJMjADCsTllEyF-8
 
 
-
 test3.html
+
+
 https://developers.google.com/chart/interactive/docs/fusiontables
 
 
 example:
-{% highlight javascript linenos=table %}
+{% highlight javascript linenos hl_lines=4 %}
 google.visualization.drawChart({
         "containerId": "visualization_div",
         "dataSourceUrl": 'http://www.google.com/fusiontables/gvizdata?tq=',
@@ -52,8 +53,8 @@ google.visualization.drawChart({
 
 
 
-{% highlight javascript %}
-"query":"select col0,col1,col2,col10 from 1W7-apvjDSgsT5jRy4lAcxYJgsGVIcFhudiFN0J0 where col0 contains ignoring case 'pmed' and col1 >= 'Jan 1, 2010' and col1 <= 'Dec 31, 2010' order by col10 desc limit 10",
+{% highlight javascript linenos linenostart=4 hl_lines=1 %}
+        "query":"select col0,col1,col2,col10 from 1W7-apvjDSgsT5jRy4lAcxYJgsGVIcFhudiFN0J0 where col0 contains ignoring case 'pmed' and col1 >= 'Jan 1, 2010' and col1 <= 'Dec 31, 2010' order by col10 desc limit 10",
 {% endhighlight %}
 
 
