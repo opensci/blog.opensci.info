@@ -24,7 +24,7 @@ This CSV file can be uploaded directly to [Google Fusion Tables][].
 [Google Fusion Tables]: http://www.google.com/drive/start/apps.html#fusiontables
 
 
-upload to fusion tables [mytable][mytable]
+upload to fusion tables [mytable][]
 
 [mytable]: https://www.google.com/fusiontables/data?docid=1RvztK1sSqPC4FAfwTeLUeMhQJMjADCsTllEyF-8
 
@@ -33,7 +33,9 @@ upload to fusion tables [mytable][mytable]
 test3.html
 https://developers.google.com/chart/interactive/docs/fusiontables
 
-{% highlight javascript linenos %}
+
+example:
+{% highlight javascript linenos=table %}
 google.visualization.drawChart({
         "containerId": "visualization_div",
         "dataSourceUrl": 'http://www.google.com/fusiontables/gvizdata?tq=',
@@ -50,6 +52,17 @@ google.visualization.drawChart({
 
 
 
+{% highlight javascript %}
+"query":"select col0,col1,col2,col10 from 1W7-apvjDSgsT5jRy4lAcxYJgsGVIcFhudiFN0J0 where col0 contains ignoring case 'pmed' and col1 >= 'Jan 1, 2010' and col1 <= 'Dec 31, 2010' order by col10 desc limit 10",
+{% endhighlight %}
+
+
+
+[test3.html][]
+
+
+
+[test3.html]: /file/2013-02-08-PLoS-ALM-Top-10-Charts/test3.html
 
 
 
