@@ -1,7 +1,5 @@
 markdown: kramdown
-auto: true
 permalink: pretty
-server: false
 pygments: true
 exclude:
   - start.sh

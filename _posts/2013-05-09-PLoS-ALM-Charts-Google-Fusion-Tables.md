@@ -31,25 +31,52 @@ There are several options to [access ALM data][almdata]. One of those options is
 
 Google Fusion Tables
 ---
-The CSV file can be uploaded directly to [Google Fusion Tables][gft]. Once the data is uploaded, it can be [browsed online][mytable].
+The CSV file can be uploaded directly to [Google Fusion Tables][gft]. Once the data is uploaded, it can be browsed through the [online viewer][mytable].
 
 <a href="https://www.google.com/fusiontables/data?docid=1AIg949Hskgwe1TQWE6p0rp3M1Z_L2cft8rB9y3s"><img src ="/file/2013-05-09-PLoS-ALM-Charts-Google-Fusion-Tables/mytable.png" class="mainimage bigimage"/></a>
 
 
-
-
 [mytable]: https://www.google.com/fusiontables/data?docid=1AIg949Hskgwe1TQWE6p0rp3M1Z_L2cft8rB9y3s
 
-The columns we want are the article doi, publication date, and title.
 
-instead of using their full column names, they can be referenced simply as col0, col1, and col2 
+Fusion Table Query
+---
+Let's say we want to show a portion of this dataset on a webpage. The Google Charts API will let us query the Fusion Table directly and render the results with Javascript.
 
-samplechart.html
+For example, we can see the most cited (Scopus) articles published in 2010.
 
-https://developers.google.com/chart/interactive/docs/fusiontables
+The columns we want are the article `doi`, `publication_date`, `title`, and `scopus`. Using standard SQL syntax.
+
+The table name used after the `from` command is `1AIg949Hskgwe1TQWE6p0rp3M1Z_L2cft8rB9y3s` which is seen in the [public table][mytable] URL and in *File > About this table*.
 
 
-example:
+{% highlight sql %}
+SELECT doi, publication_date, title, scopus FROM 1AIg949Hskgwe1TQWE6p0rp3M1Z_L2cft8rB9y3s WHERE publication_date >= '2010-01-01 00:00:00' AND publication_date < '2011-01-01 00:00:00' ORDER BY scopus desc LIMIT 10
+{% endhighlight %}
+
+To check if the query is working, append it to this url: `https://www.google.com/fusiontables/exporttable?query=`
+
+URL encoding may be required, for [example][query].
+
+
+
+[query]: https://www.google.com/fusiontables/exporttable?query=select%20doi%2C%20publication_date%2C%20title%2C%20scopus%20from%201AIg949Hskgwe1TQWE6p0rp3M1Z_L2cft8rB9y3s%20where%20publication_date%20%3E%3D%20%272010-01-01%2000%3A00%3A00%27%20and%20publication_date%20%3C%20%272011-01-01%2000%3A00%3A00%27%20order%20by%20scopus%20desc%20limit%2010
+
+
+
+
+
+
+
+Google Charts
+---
+Now that we have the query ready, it's time to display the results using Google Charts. There is [sample code][drawchartdemo] that uses [google.visualization.drawChart()][drawchart].
+
+
+[drawchartdemo]: https://developers.google.com/chart/interactive/docs/fusiontables
+[drawchart]: https://developers.google.com/chart/interactive/docs/reference#google.visualization.drawchart
+
+
 {% highlight javascript linenos hl_lines=4 %}
 google.visualization.drawChart({
         "containerId": "visualization_div",
@@ -65,53 +92,31 @@ google.visualization.drawChart({
       });
 {% endhighlight %}
 
+Line 4 is where the `query` value is set. Replace the sample query with our custom query.
 
-line 4 is where the query is built.
-{% highlight javascript linenos linenostart=4 hl_lines=1 %}
-        "query":"select col0,col1,col2,col10 from 1W7-apvjDSgsT5jRy4lAcxYJgsGVIcFhudiFN0J0 where col0 contains ignoring case 'pmed' and col1 >= 'Jan 1, 2010' and col1 <= 'Dec 31, 2010' order by col10 desc limit 10",
+
+{% highlight javascript linenos hl_lines=4 %}
+      google.visualization.drawChart({
+        "containerId": "visualization_div",
+        "dataSourceUrl": 'http://www.google.com/fusiontables/gvizdata?tq=',
+        "query":"select doi, publication_date, title, scopus from 1AIg949Hskgwe1TQWE6p0rp3M1Z_L2cft8rB9y3s where publication_date >= '2010-01-01 00:00:00' and publication_date < '2011-01-01 00:00:00' order by scopus desc limit 10",
+        "chartType": "Table",
+        "options": {
+          "showRowNumber": true,
+          "alternatingRowStyle": true,
+          "allowHtml": true,          
+        }
+      });
 {% endhighlight %}
 
 
-
-[samplechart.html][]
-
-
-
-[samplechart.html]: /file/2013-05-09-PLoS-ALM-Charts-Google-Fusion-Tables/samplechart.html
+Change the `chartType` to `Table` to have the results display as an HTML table. Other settings such as `showRowNumber` is helpful since the query results are ranked. `alternatingRowStyle` makes the rows easier to distinguish. The `allowHtml` setting is needed because the titles contain other markup tags that should be hidden during display. Some other options that are helpful when embedding are `height` and `width`.
 
 
 
+Completed [chart][customchart]
 
-
-
-
-
-
-
-
-
-https://developers.google.com/chart/interactive/docs/fusiontables
-
-
-
-https://developers.google.com/fusiontables/docs/samples/gviz_datatable
-
-
-https://developers.google.com/chart/interactive/docs/reference#DataView
-
-https://developers.google.com/chart/interactive/docs/reference#patternformatter
-
-https://developers.google.com/chart/interactive/docs/reference#formatters
-
-
-https://developers.google.com/chart/interactive/docs/datatables_dataviews
-
-https://developers.google.com/chart/interactive/docs/reference#DataView_setColumns
-
-
-
-
-
+[customchart]: /file/2013-05-09-PLoS-ALM-Charts-Google-Fusion-Tables/samplechart.html
 
 
   <div id="visualization_div" >Loading...</div>
