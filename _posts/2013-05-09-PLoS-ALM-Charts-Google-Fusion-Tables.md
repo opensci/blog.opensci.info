@@ -3,21 +3,26 @@ layout: post
 title: PLoS ALM Charts with Google Fusion Tables
 uuid: 8c6563f5-7230-4a97-b888-7a1536b5b746
 published: true
+headsuffix:   <script type="text/javascript" src="http://www.google.com/jsapi"></script> <script type="text/javascript" src="/file/2013-05-09-PLoS-ALM-Charts-Google-Fusion-Tables/samplechart.js"></script>
 ---
 
-[PLoS Article Level Metrics][plosalm] provides multiple [download options][plosalmdata] for the metrics data. One of the options is a bulk [CSV file][bulkcsv]. The CSV file can then be uploaded to [Google Fusion Tables][gft] which provides a [free API][gftapi] for SQL-like queries. The query results can be loaded directly into a visualization using [Google Charts][gcharts].
+[PLoS Article Level Metrics][plosalm] provides multiple [download options][plosalmdata] for the metrics data. One of the options is a bulk [CSV file][bulkcsv]. The CSV file can then be uploaded to [Google Fusion Tables][gft] which provides a [free API][gftapi] for SQL-like queries. The query results can be loaded directly into a Javascript display using [Google Charts][gcharts].
 
 [plosalm]: http://article-level-metrics.plos.org/
 [gft]: http://www.google.com/drive/apps.html#fusiontables
 [gftapi]: https://developers.google.com/fusiontables/
 [gcharts]: https://developers.google.com/chart/ 
 
+<a href="/file/2013-05-09-PLoS-ALM-Charts-Google-Fusion-Tables/samplechart.html"><img src ="/file/2013-05-09-PLoS-ALM-Charts-Google-Fusion-Tables/mychart.png" class="mainimage bigimage"/></a>
+
+
 <!--more-->
+
 
 
 PLoS ALM Data
 ---
-There are several options to [access ALM data][almdata]. One of those options is a bulk download of all data called the *Monthly zip file of the summary spreadsheet for the entire ALM data set (all articles)*. This is a ZIP compressed archive of a single CSV file that includes all the ALM data. The latest version available is [alm_report_2013-04-11.csv.zip][bulkcsv]. 
+There are several options to [access ALM data][almdata]. One of those options is a bulk download of all data called the *Monthly zip file of the summary spreadsheet for the entire ALM data set (all articles)*. The latest version available is [alm_report_2013-04-11.csv.zip][bulkcsv]. This is a ZIP compressed archive of a single CSV file that includes all the ALM data. 
 
 [almdata]: http://article-level-metrics.plos.org/plos-alm-data/
 [bulkcsv]: http://article-level-metrics.plos.org/files/2012/10/alm_report_2013-04-11.csv.zip
@@ -39,7 +44,7 @@ The columns we want are the article doi, publication date, and title.
 
 instead of using their full column names, they can be referenced simply as col0, col1, and col2 
 
-test3.html
+samplechart.html
 
 https://developers.google.com/chart/interactive/docs/fusiontables
 
@@ -68,11 +73,11 @@ line 4 is where the query is built.
 
 
 
-[test3.html][]
+[samplechart.html][]
 
 
 
-[test3.html]: /file/2013-05-09-PLoS-ALM-Charts-Google-Fusion-Tables/test3.html
+[samplechart.html]: /file/2013-05-09-PLoS-ALM-Charts-Google-Fusion-Tables/samplechart.html
 
 
 
@@ -105,3 +110,8 @@ https://developers.google.com/chart/interactive/docs/reference#DataView_setColum
 
 
 
+
+
+
+
+  <div id="visualization_div" >Loading...</div>
