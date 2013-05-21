@@ -3,7 +3,7 @@ layout: post
 title: PLoS ALM Charts with Google Fusion Tables
 uuid: 8c6563f5-7230-4a97-b888-7a1536b5b746
 published: true
-headsuffix:   <script type="text/javascript" src="http://www.google.com/jsapi"></script> <script type="text/javascript" src="/file/2013-05-09-PLoS-ALM-Charts-Google-Fusion-Tables/samplechart.js"></script>
+headsuffix:   <script type="text/javascript" src="http://www.google.com/jsapi"></script> <script type="text/javascript" src="/file/2013-05-09-PLoS-ALM-Charts-Google-Fusion-Tables/table.js"></script>
 ---
 
 [PLoS Article Level Metrics][plosalm] provides multiple [download options][plosalmdata] for the metrics data. One of the options is a bulk [CSV file][bulkcsv]. The CSV file can then be uploaded to [Google Fusion Tables][gft] which provides a [free API][gftapi] for SQL-like queries. The query results can be loaded directly into a Javascript display using [Google Charts][gcharts].
@@ -13,7 +13,7 @@ headsuffix:   <script type="text/javascript" src="http://www.google.com/jsapi"><
 [gftapi]: https://developers.google.com/fusiontables/
 [gcharts]: https://developers.google.com/chart/ 
 
-<a href="/file/2013-05-09-PLoS-ALM-Charts-Google-Fusion-Tables/samplechart.html"><img src ="/file/2013-05-09-PLoS-ALM-Charts-Google-Fusion-Tables/mychart.png" class="mainimage bigimage"/></a>
+<a href="/file/2013-05-09-PLoS-ALM-Charts-Google-Fusion-Tables/table.html"><img src ="/file/2013-05-09-PLoS-ALM-Charts-Google-Fusion-Tables/mychart.png" class="mainimage bigimage"/></a>
 
 
 <!--more-->
@@ -31,19 +31,21 @@ There are several options to [access ALM data][almdata]. One of those options is
 
 Google Fusion Tables
 ---
-The CSV file can be uploaded directly to [Google Fusion Tables][gft]. Once the data is uploaded, it can be browsed through the [online viewer][mytable].
+The article metrics CSV file can be uploaded directly to Fusion Tables and [browsed online][mytable]. The data can be filtered, sorted, and aggragated. For example, we might want to see which articles received the most citations from Scopus. Instead of looking at all articles, we could limit the results to articles published in 2010.
+
+[mytable]: https://www.google.com/fusiontables/data?docid=1AIg949Hskgwe1TQWE6p0rp3M1Z_L2cft8rB9y3s
 
 <a href="https://www.google.com/fusiontables/data?docid=1AIg949Hskgwe1TQWE6p0rp3M1Z_L2cft8rB9y3s"><img src ="/file/2013-05-09-PLoS-ALM-Charts-Google-Fusion-Tables/mytable.png" class="mainimage bigimage"/></a>
 
 
-[mytable]: https://www.google.com/fusiontables/data?docid=1AIg949Hskgwe1TQWE6p0rp3M1Z_L2cft8rB9y3s
+For example, we could sort the 
 
 
 Fusion Table Query
 ---
-Let's say we want to show a portion of this dataset on a webpage. The Google Charts API will let us query the Fusion Table directly and render the results with Javascript.
+The Google Charts API lets us query the Fusion Table directly and render the results with Javascript. That makes it possible to display the results directly in a webpage. 
 
-For example, we can see the most cited (Scopus) articles published in 2010.
+For example, 
 
 The columns we want are the article `doi`, `publication_date`, `title`, and `scopus`. Using standard SQL syntax.
 
@@ -116,7 +118,7 @@ Change the `chartType` to `Table` to have the results display as an HTML table. 
 
 Completed [chart][customchart]
 
-[customchart]: /file/2013-05-09-PLoS-ALM-Charts-Google-Fusion-Tables/samplechart.html
+[customchart]: /file/2013-05-09-PLoS-ALM-Charts-Google-Fusion-Tables/table.html
 
 
   <div id="visualization_div" >Loading...</div>
