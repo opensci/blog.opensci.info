@@ -6,23 +6,39 @@ published: true
 headsuffix:   <script type="text/javascript" src="http://www.google.com/jsapi"></script> <script type="text/javascript" src="/file/2013-05-09-PLoS-ALM-Charts-Google-Fusion-Tables/table.js"></script>
 ---
 
-[PLoS Article Level Metrics][plosalm] provides multiple [download options][plosalmdata] for the metrics data. One of the options is a bulk [CSV file][bulkcsv]. The CSV file can then be uploaded to [Google Fusion Tables][gft] which provides a [free API][gftapi] for SQL-like queries. The query results can be loaded directly into a Javascript display using [Google Charts][gcharts].
+*Display charts of PLoS Article Level Metrics data with Google Charts and Fusion Tables*
+
+The Public Library of Science publishes [Article Level Metrics data][plosalmdata] for all of their articles. The [bulk CSV][bulkcsv] includes citation counts and online usage metrics.
+
+By uploading the data to Google Fusion Tables, the dataset can be queried using an [SQL-like API][gftapi]. With [Google Charts][gcharts] the results of those queries can be visualized in a web browser.
+
+
+<a href="/file/2013-05-09-PLoS-ALM-Charts-Google-Fusion-Tables/table.html">
+  <img src ="/file/2013-05-09-PLoS-ALM-Charts-Google-Fusion-Tables/mychart.png" class="mainimage" />
+</a>
+
+*Uploaded ALM data can also be browsed online*
+
 
 [plosalm]: http://article-level-metrics.plos.org/
+
+
+
+Google Fusion Tables API supports filtering and aggregation features compared to the default [PLoS ALM API][almapi]. GFT also integrates with GCharts api to display the query results.
+
+
+
+[almapi]: http://api.plos.org/alm/using-the-alm-api/
+[plosalmdata]: http://article-level-metrics.plos.org/plos-alm-data/
 [gft]: http://www.google.com/drive/apps.html#fusiontables
 [gftapi]: https://developers.google.com/fusiontables/
 [gcharts]: https://developers.google.com/chart/ 
-
-<a href="/file/2013-05-09-PLoS-ALM-Charts-Google-Fusion-Tables/table.html"><img src ="/file/2013-05-09-PLoS-ALM-Charts-Google-Fusion-Tables/mychart.png" class="mainimage bigimage"/></a>
 
 
 <!--more-->
 
 
-
-PLoS ALM Data
----
-There are several options to [access ALM data][almdata]. One of those options is a bulk download of all data called the *Monthly zip file of the summary spreadsheet for the entire ALM data set (all articles)*. The latest version available is [alm_report_2013-04-11.csv.zip][bulkcsv]. This is a ZIP compressed archive of a single CSV file that includes all the ALM data. 
+The latest version of the CSV file is [alm_report_2013-04-11.csv.zip][bulkcsv]
 
 [almdata]: http://article-level-metrics.plos.org/plos-alm-data/
 [bulkcsv]: http://article-level-metrics.plos.org/files/2012/10/alm_report_2013-04-11.csv.zip
@@ -38,34 +54,24 @@ The article metrics CSV file can be uploaded directly to Fusion Tables and [brow
 <a href="https://www.google.com/fusiontables/data?docid=1AIg949Hskgwe1TQWE6p0rp3M1Z_L2cft8rB9y3s"><img src ="/file/2013-05-09-PLoS-ALM-Charts-Google-Fusion-Tables/mytable.png" class="mainimage bigimage"/></a>
 
 
-For example, we could sort the 
-
-
 Fusion Table Query
 ---
-The Google Charts API lets us query the Fusion Table directly and render the results with Javascript. That makes it possible to display the results directly in a webpage. 
+The GFT API supports an SQL-like syntax. We can `SELECT` certain columns to use in our result.
 
-For example, 
+The columns we want are the article `doi`, `publication_date`, `title`, and `scopus`.
 
-The columns we want are the article `doi`, `publication_date`, `title`, and `scopus`. Using standard SQL syntax.
-
-The table name used after the `from` command is `1AIg949Hskgwe1TQWE6p0rp3M1Z_L2cft8rB9y3s` which is seen in the [public table][mytable] URL and in *File > About this table*.
+The table name used after the `from` command is `1AIg949Hskgwe1TQWE6p0rp3M1Z_L2cft8rB9y3s` which is seen in the [table][mytable] URL and in *File > About this table*.
 
 
 {% highlight sql %}
-SELECT doi, publication_date, title, scopus FROM 1AIg949Hskgwe1TQWE6p0rp3M1Z_L2cft8rB9y3s WHERE publication_date >= '2010-01-01 00:00:00' AND publication_date < '2011-01-01 00:00:00' ORDER BY scopus desc LIMIT 10
+SELECT doi, publication_date, title, scopus FROM 1AIg949Hskgwe1TQWE6p0rp3M1Z_L2cft8rB9y3s WHERE publication_date >= '2010-01-01' AND publication_date < '2011-01-01' ORDER BY scopus desc LIMIT 10
 {% endhighlight %}
 
-To check if the query is working, append it to this url: `https://www.google.com/fusiontables/exporttable?query=`
+To check if the query is working, append it to this URL: `https://www.google.com/fusiontables/exporttable?query=`
 
-URL encoding may be required, for [example][query].
+[Example][query]
 
-
-
-[query]: https://www.google.com/fusiontables/exporttable?query=select%20doi%2C%20publication_date%2C%20title%2C%20scopus%20from%201AIg949Hskgwe1TQWE6p0rp3M1Z_L2cft8rB9y3s%20where%20publication_date%20%3E%3D%20%272010-01-01%2000%3A00%3A00%27%20and%20publication_date%20%3C%20%272011-01-01%2000%3A00%3A00%27%20order%20by%20scopus%20desc%20limit%2010
-
-
-
+[query]: https%3A%2F%2Fwww.google.com%2Ffusiontables%2Fexporttable%3Fquery%3DSELECT%20doi%2C%20publication_date%2C%20title%2C%20scopus%20FROM%201AIg949Hskgwe1TQWE6p0rp3M1Z_L2cft8rB9y3s%20WHERE%20publication_date%20%3E%3D%20%272010-01-01%27%20AND%20publication_date%20%3C%20%272011-01-01%27%20ORDER%20BY%20scopus%20desc%20LIMIT%2010
 
 
 
@@ -74,6 +80,7 @@ Google Charts
 ---
 Now that we have the query ready, it's time to display the results using Google Charts. There is [sample code][drawchartdemo] that uses [google.visualization.drawChart()][drawchart].
 
+The `drawChart()` function can be passed the query directly.
 
 [drawchartdemo]: https://developers.google.com/chart/interactive/docs/fusiontables
 [drawchart]: https://developers.google.com/chart/interactive/docs/reference#google.visualization.drawchart
@@ -112,7 +119,7 @@ Line 4 is where the `query` value is set. Replace the sample query with our cust
 {% endhighlight %}
 
 
-Change the `chartType` to `Table` to have the results display as an HTML table. Other settings such as `showRowNumber` is helpful since the query results are ranked. `alternatingRowStyle` makes the rows easier to distinguish. The `allowHtml` setting is needed because the titles contain other markup tags that should be hidden during display. Some other options that are helpful when embedding are `height` and `width`.
+Change the `chartType` to `Table` to have the results display as an HTML table. Other settings such as `showRowNumber` are helpful since the query results are ranked. `alternatingRowStyle` makes the rows easier to distinguish. The `allowHtml` setting is needed because the titles contain other markup tags. Some other options that are helpful when embedding are `height` and `width`.
 
 
 
