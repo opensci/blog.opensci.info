@@ -8,7 +8,7 @@ title: Open Science Info Blog
         <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
       
         <div class="body">
-            {{ post.content | postmorefilter: post.url, "Read the rest of this entry" }}
+          {{ post.content | split:"<!-- more -->" | first }}
         </div>
         
         <div class="meta">
