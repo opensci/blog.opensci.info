@@ -3,7 +3,7 @@ layout: post
 title: PLoS ALM Charts with Google Fusion Tables
 uuid: 8c6563f5-7230-4a97-b888-7a1536b5b746
 published: true
-headsuffix:   <script type="text/javascript" src="http://www.google.com/jsapi"></script> <script type="text/javascript" src="/file/2013-05-09-PLoS-ALM-Charts-Google-Fusion-Tables/table.js"></script>
+headsuffix:   <script type="text/javascript" src="http://www.google.com/jsapi"></script> <script type="text/javascript" src="/file/8c6563f5-7230-4a97-b888-7a1536b5b746/table.js"></script>
 ---
 
 *Display charts of PLoS Article Level Metrics data with Google Charts and Fusion Tables*
@@ -13,8 +13,8 @@ The Public Library of Science publishes [Article Level Metrics data][plosalmdata
 By uploading the data to Google Fusion Tables, the dataset can be queried using an [SQL-like API][gftapi]. With [Google Charts][gcharts] the results of those queries can be visualized in a web browser.
 
 
-<a href="/file/2013-05-09-PLoS-ALM-Charts-Google-Fusion-Tables/table.html">
-  <img src ="/file/2013-05-09-PLoS-ALM-Charts-Google-Fusion-Tables/mychart.png" class="mainimage" />
+<a href="/file/8c6563f5-7230-4a97-b888-7a1536b5b746/table.html">
+  <img src ="/file/8c6563f5-7230-4a97-b888-7a1536b5b746/mychart.png" class="mainimage" />
 </a>
 
 *Uploaded ALM data can also be browsed online*
@@ -51,7 +51,7 @@ The article metrics CSV file can be uploaded directly to Fusion Tables and [brow
 
 [mytable]: https://www.google.com/fusiontables/data?docid=1AIg949Hskgwe1TQWE6p0rp3M1Z_L2cft8rB9y3s
 
-<a href="https://www.google.com/fusiontables/data?docid=1AIg949Hskgwe1TQWE6p0rp3M1Z_L2cft8rB9y3s"><img src ="/file/2013-05-09-PLoS-ALM-Charts-Google-Fusion-Tables/mytable.png" class="mainimage bigimage"/></a>
+<a href="https://www.google.com/fusiontables/data?docid=1AIg949Hskgwe1TQWE6p0rp3M1Z_L2cft8rB9y3s"><img src ="/file/8c6563f5-7230-4a97-b888-7a1536b5b746/mytable.png" class="mainimage bigimage"/></a>
 
 
 Fusion Table Query
@@ -125,7 +125,7 @@ Change the `chartType` to `Table` to have the results display as an HTML table. 
 
 Completed [chart][customchart]
 
-[customchart]: /file/2013-05-09-PLoS-ALM-Charts-Google-Fusion-Tables/table.html
+[customchart]: /file/8c6563f5-7230-4a97-b888-7a1536b5b746/table.html
 
 
   <div id="visualization_div" >Loading...</div>
