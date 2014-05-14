@@ -3,12 +3,11 @@
       google.visualization.drawChart({
         "containerId": "visualization_div",
         "dataSourceUrl": 'http://www.google.com/fusiontables/gvizdata?tq=',
-        "query":"select doi,publication_date,title,scopus from 1zkfQ7rtG9UI5a8rPDk2bpD6d0QbgP63h2v2l9YzW order by scopus desc limit 10",
-        "chartType": "Table",
+        "query":"select title,scopus,crossref,pubmed from 1zkfQ7rtG9UI5a8rPDk2bpD6d0QbgP63h2v2l9YzW order by scopus desc limit 10",
+        "chartType": "ColumnChart",
         "options": {
-          "showRowNumber": true,
-          "alternatingRowStyle": true,
-          "allowHtml": true,          
+          "width":600,
+          "height":400,                    
         }
       });
     }

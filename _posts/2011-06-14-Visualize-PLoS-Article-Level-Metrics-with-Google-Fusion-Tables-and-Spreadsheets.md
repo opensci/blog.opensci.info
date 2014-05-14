@@ -20,7 +20,7 @@ The [Public Library of Science][plos] collects information for each article they
 [gft]: http://www.google.com/fusiontables/Home
 
 
-<!--more-->
+<!-- more -->
 
 
 * Table of Contents
