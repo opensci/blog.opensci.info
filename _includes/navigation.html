@@ -4,7 +4,7 @@
 	        {% for link in site.links %}
 			<li>
 				{% if link.external %}
-					<a href="{{ link.url }}">{{ link.title }}</a>
+					<a href="{{ link.url }}" target="_blank">{{ link.title }}</a>
 				{% else %}
 					<a href="{{ site.url }}{{ link.url }}">{{ link.title }}</a>
 				{% endif %} 
