@@ -13,8 +13,9 @@ tags: [Jekyll, theme, themes, responsive, blog, minimalism]
         <a href="{{ site.url }}{{ post.url }}">
           {{ post.title }}
         </a>
+        <span class="entry-date"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time></span>
       </h2>
-      <span class="entry-date"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time></span>
+      
       <div class="body">
         {{ post.content | split:"<!-- more -->" | first }}
       </div>
