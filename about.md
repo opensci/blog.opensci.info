@@ -13,4 +13,4 @@ image:
 
 Discussing open access, data, standards, notebooks, and information sharing to support science research and education.
 
-All original content released as <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 Public Domain <img src="{{ site.url }}/images/cc-zero.png" alt="Public Domain"></a>
+All original content released as <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 Public Domain <img src="{{ site.url }}/images/cc-zero.png" alt="Public Domain" style="margin-left: auto; margin-right: auto; width: 25%; display:block;"></a>
