@@ -4,6 +4,7 @@ permalink: /about/
 title: About Open Science Info
 tags: [OpenSci]
 modified: 2013-09-13
+logo: false
 image:
   feature: louis_15_bg_101202-feature.jpg
 #  credit: Michael Rose
