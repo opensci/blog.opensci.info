@@ -16,14 +16,14 @@ This data can be uploaded to Google Fusion Tables, which allows SQL-like queries
 
 
 
-*Data on Fusion Tables can be embedded in a webpage*
+*Data on Fusion Tables can be visualized using pure Javascript and HTML*
 
 <a href="/file/8c6563f5-7230-4a97-b888-7a1536b5b746/table.html">
   <img src ="/file/8c6563f5-7230-4a97-b888-7a1536b5b746/mychart.png" class="mainimage" />
 </a>
 
-<a href="/file/8c6563f5-7230-4a97-b888-7a1536b5b746/table.html">
-  <img src ="/file/8c6563f5-7230-4a97-b888-7a1536b5b746/mychart2.png" class="mainimage" />
+<a href="https://www.google.com/fusiontables/DataSource?docid=1zkfQ7rtG9UI5a8rPDk2bpD6d0QbgP63h2v2l9YzW&pli=1#rows:id=12">
+  <img src ="/file/8c6563f5-7230-4a97-b888-7a1536b5b746/gft.browse.online.png" class="mainimage" />
 </a>
 
 
@@ -33,24 +33,26 @@ This data can be uploaded to Google Fusion Tables, which allows SQL-like queries
 [gft]: http://www.google.com/drive/apps.html#fusiontables
 [gftapi]: https://developers.google.com/fusiontables/
 [gcharts]: https://developers.google.com/chart/ 
+[almdata]: http://article-level-metrics.plos.org/plos-alm-data/
+[bulkcsv]: http://article-level-metrics.plos.org/files/2012/10/alm_report_2014-03-10.csv
+
 
 
 <!-- more -->
 
-[almdata]: http://article-level-metrics.plos.org/plos-alm-data/
-[bulkcsv]: http://article-level-metrics.plos.org/files/2012/10/alm_report_2014-03-10.csv
 
- Google Fusion Tables API supports filtering and aggregation features compared to the default [PLoS ALM API][almapi].
+Google Fusion Tables API supports filtering and aggregation features compared to the default [PLoS ALM API][almapi].
+
 [almapi]: http://api.plos.org/alm/using-the-alm-api/
 
 
 Google Fusion Tables
 ---
-The article metrics CSV file can be uploaded directly to Fusion Tables and [browsed online][mytable]. The web interface allows sorting, filtering, and aggragation. For example, we might can filter by `publication_date` to show only articles from 2010, and then sorty by the most Scopus citations.
+The article metrics CSV file can be uploaded directly to Fusion Tables and [browsed online][mytable]. The web interface allows sorting, filtering, and aggragation. For example, we might can filter by `publication_date` to show only articles from 2013, and then sorty by the most CrossRef citations.
 
 [mytable]: https://www.google.com/fusiontables/data?docid=1zkfQ7rtG9UI5a8rPDk2bpD6d0QbgP63h2v2l9YzW
 
-<a href="https://www.google.com/fusiontables/data?docid=1PWWI0KDelh9VJiROBUGaiW2Y37AJMS9ZilT64b8"><img src ="/file/8c6563f5-7230-4a97-b888-7a1536b5b746/mytable.png" class="mainimage bigimage"/></a>
+<a href="https://www.google.com/fusiontables/data?docid=1PWWI0KDelh9VJiROBUGaiW2Y37AJMS9ZilT64b8"><img src ="/file/8c6563f5-7230-4a97-b888-7a1536b5b746/gft.filter.sort.png" class="mainimage"/></a>
 *The web interface shows a filtered, sorted result*
 
 Fusion Table API
