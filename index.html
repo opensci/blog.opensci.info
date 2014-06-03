@@ -11,9 +11,10 @@ tags: [Jekyll, theme, themes, responsive, blog, minimalism]
     <article>
       <h2>
         <a href="{{ site.url }}{{ post.url }}">
-          {{ post.title }} <span class="entry-date"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time></span>
+          {{ post.title }}
         </a>
       </h2>
+      <span class="entry-date"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time></span>
       <div class="body">
         {{ post.content | split:"<!-- more -->" | first }}
       </div>
