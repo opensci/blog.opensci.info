@@ -16,7 +16,7 @@ This data can be uploaded to Google Fusion Tables, which allows SQL-like queries
 
 
 
-*Data on Fusion Tables can be visualized using pure Javascript and HTML*
+*Data on Fusion Tables can be visualized using only Javascript and HTML.*
 
 <a href="/file/8c6563f5-7230-4a97-b888-7a1536b5b746/table.html">
   <img src ="/file/8c6563f5-7230-4a97-b888-7a1536b5b746/mychart.png" class="mainimage" />
