@@ -6,7 +6,7 @@ tags: [OpenSci]
 modified: 2013-09-13
 logo: false
 image:
-  feature: louis_15_bg_101202-feature-341.jpg
+  feature: louis_15_bg_101202-feature-256.jpg
 #  credit: Michael Rose
 #  creditlink: http://mademistakes.com
 ---
