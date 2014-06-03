@@ -2,6 +2,7 @@
 layout: post
 title: PLoS Article Level Metrics Summary File Updated to V5
 uuid: f44502ff-d145-4185-9f65-28d4d23a42bb
+comments: true
 ---
 
 A complete copy of the [PLoS Article Level Metrics][plosalm] data is published in a [Summary Excel File][almxls]. While the [API][almapi] is updated more frequently, the .xls file provides all the data in one download.

@@ -2,8 +2,9 @@
 layout: post
 title: PLoS ALM Charts with Google Fusion Tables
 uuid: 8c6563f5-7230-4a97-b888-7a1536b5b746
-published: false
-headsuffix:   <script type="text/javascript" src="http://www.google.com/jsapi"></script> <script type="text/javascript" src="/file/8c6563f5-7230-4a97-b888-7a1536b5b746/table.js"></script>
+published: true
+comments: true
+
 ---
 
 *Display charts of PLoS Article Level Metrics data with Google Fusion Tables and Google Charts*
@@ -12,19 +13,6 @@ All articles published by the Public Library of Science have [Article Level Metr
 
 This data can be uploaded to Google Fusion Tables, which allows SQL-like queries through [their API][gftapi]. The query results can then be displayed in a a web browser with Javascript libraries like [Google Charts][gcharts].
 
-
-
-
-
-*Data on Fusion Tables can be visualized using only Javascript and HTML.*
-
-<a href="/file/8c6563f5-7230-4a97-b888-7a1536b5b746/table.html">
-  <img src ="/file/8c6563f5-7230-4a97-b888-7a1536b5b746/mychart.png" class="mainimage" />
-</a>
-
-<a href="https://www.google.com/fusiontables/DataSource?docid=1zkfQ7rtG9UI5a8rPDk2bpD6d0QbgP63h2v2l9YzW&pli=1#rows:id=12">
-  <img src ="/file/8c6563f5-7230-4a97-b888-7a1536b5b746/gft.browse.online.png" class="mainimage" />
-</a>
 
 
 
@@ -38,7 +26,25 @@ This data can be uploaded to Google Fusion Tables, which allows SQL-like queries
 
 
 
+*Data on Fusion Tables can be visualized using only Javascript and HTML.*
+
+<a href="/file/8c6563f5-7230-4a97-b888-7a1536b5b746/table.html">
+  <img src ="/file/8c6563f5-7230-4a97-b888-7a1536b5b746/mychart.png" class="mainimage" />
+</a>
+
+
 <!-- more -->
+
+<a href="https://www.google.com/fusiontables/DataSource?docid=1zkfQ7rtG9UI5a8rPDk2bpD6d0QbgP63h2v2l9YzW&pli=1#rows:id=12">
+  <img src ="/file/8c6563f5-7230-4a97-b888-7a1536b5b746/gft.browse.online.png" class="mainimage" />
+</a>
+
+
+
+
+
+
+
 
 
 Google Fusion Tables API supports filtering and aggregation features compared to the default [PLoS ALM API][almapi].
