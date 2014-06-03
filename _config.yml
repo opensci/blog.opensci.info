@@ -39,9 +39,13 @@ links:
     url: /articles/
   - title: About
     url: /about/
-  - title: Twitter
+  - title: Follow
     url: https://twitter.com/opensci
     external: true
+  - title: Fork
+    url: https://github.com/opensci/blog.opensci.info
+    external: true
+
 
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 timezone:    America/New_York
