@@ -2,7 +2,7 @@
 layout: post
 title: PLoS ALM Charts with Google Fusion Tables
 uuid: 8c6563f5-7230-4a97-b888-7a1536b5b746
-published: true
+published: false
 headsuffix:   <script type="text/javascript" src="http://www.google.com/jsapi"></script> <script type="text/javascript" src="/file/8c6563f5-7230-4a97-b888-7a1536b5b746/table.js"></script>
 ---
 
