@@ -10,7 +10,7 @@ url:              //localhost:4000
 # Owner/author information
 owner:
   name:           Open Science Info
-  avatar:         bio-photo.jpg
+  avatar:         site-logo.jpg
   email:          you@email.com
   # Social networking links used in footer. Update and remove as you like.
   twitter: opensci
@@ -39,9 +39,9 @@ links:
     url: /articles/
   - title: About
     url: /about/
-#  - title: Made Mistakes
-#    url: http://mademistakes.com
-#    external: true
+  - title: Twitter
+    url: https://twitter.com/opensci
+    external: true
 
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 timezone:    America/New_York
