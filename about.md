@@ -11,6 +11,10 @@ image:
 #  creditlink: http://mademistakes.com
 ---
 
+<span style="text-align:center;display:block;width:100%;">
 Discussing open access, data, standards, notebooks, and information sharing to support science research and education.
 
-<span style="text-algin:center;">All original content released as CC0 Public Domain</span> <a href="https://creativecommons.org/publicdomain/zero/1.0/"><img src="{{ site.url }}/images/cc-zero.png" alt="Public Domain" style="margin-left: auto; margin-right: auto; width: 25%; display:block;"></a>
+All original content released as CC0 Public Domain.
+
+<a href="https://creativecommons.org/publicdomain/zero/1.0/"><img src="{{ site.url }}/images/cc-zero.png" alt="Public Domain" style="margin-left: auto; margin-right: auto; width: 25%; display:block;"></a>
+</span>
