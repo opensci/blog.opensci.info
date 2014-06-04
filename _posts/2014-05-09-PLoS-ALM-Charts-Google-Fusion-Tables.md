@@ -9,11 +9,9 @@ comments: true
 
 *Display charts of PLoS Article Level Metrics data with Google Fusion Tables and Google Charts*
 
-All articles published by the Public Library of Science have [Article Level Metrics][plosalmdata] collected, including citation counts, web views, and online bookmarks. All the metrics are available combined into a single [CSV file][bulkcsv].
+All articles published by the Public Library of Science have [Article Level Metrics][plosalmdata] collected. These metrics include citation counts, web views, and online bookmarks, and can be accessed through the PLoS [ALM API][almapi]. In addition, the metrics can be downloaded in bulk through a [CSV file][bulkcsv].
 
-This data can be uploaded to Google Fusion Tables, which allows SQL-like queries through [their API][gftapi]. The query results can then be displayed in a a web browser with Javascript libraries like [Google Charts][gcharts].
-
-
+The bulk CSV data can then be uploaded to Google Fusion Tables, a free data hosting service that allows online browsing, filtering, and SQL-like queries through [their API][gftapi]. The Javascript [Google Charts][gcharts] library integrates tightly with the Fusion Tables API to visualize the query results in a web browser.
 
 
 [plosalm]: http://article-level-metrics.plos.org/
@@ -23,15 +21,16 @@ This data can be uploaded to Google Fusion Tables, which allows SQL-like queries
 [gcharts]: https://developers.google.com/chart/ 
 [almdata]: http://article-level-metrics.plos.org/plos-alm-data/
 [bulkcsv]: http://article-level-metrics.plos.org/files/2012/10/alm_report_2014-03-10.csv
+[almapi]: http://api.plos.org/alm/using-the-alm-api/
 
 
 
-*Data on Fusion Tables can be visualized using only Javascript and HTML.*
 
-<a href="/file/8c6563f5-7230-4a97-b888-7a1536b5b746/table.html">
-  <img src ="/file/8c6563f5-7230-4a97-b888-7a1536b5b746/mychart.png" class="mainimage" />
+<a href="/file/8c6563f5-7230-4a97-b888-7a1536b5b746/columnChart.html">
+  <img src ="/file/8c6563f5-7230-4a97-b888-7a1536b5b746/columnChart.png" class="mainimage" />
 </a>
-
+  
+> Google Charts can visualize data from Fusion Tables using only Javascript and HTML.
 
 <!-- more -->
 
@@ -47,22 +46,24 @@ This data can be uploaded to Google Fusion Tables, which allows SQL-like queries
 
 
 
+<!--
 Google Fusion Tables API supports filtering and aggregation features compared to the default [PLoS ALM API][almapi].
+-->
 
-[almapi]: http://api.plos.org/alm/using-the-alm-api/
 
 
-Google Fusion Tables
----
+
+# Google Fusion Tables #
+
 The article metrics CSV file can be uploaded directly to Fusion Tables and [browsed online][mytable]. The web interface allows sorting, filtering, and aggragation. For example, we might can filter by `publication_date` to show only articles from 2013, and then sorty by the most CrossRef citations.
 
 [mytable]: https://www.google.com/fusiontables/data?docid=1zkfQ7rtG9UI5a8rPDk2bpD6d0QbgP63h2v2l9YzW
 
 <a href="https://www.google.com/fusiontables/data?docid=1PWWI0KDelh9VJiROBUGaiW2Y37AJMS9ZilT64b8"><img src ="/file/8c6563f5-7230-4a97-b888-7a1536b5b746/gft.filter.sort.png" class="mainimage"/></a>
-*The web interface shows a filtered, sorted result*
+> The web interface shows a filtered, sorted result*
 
-Fusion Table API
----
+## Fusion Tables API ##
+
 The query options from the web interface can be used through an API. The syntax is similar to an SQL query. 
 
 * `SELECT` Picks the columns to include in the results.
