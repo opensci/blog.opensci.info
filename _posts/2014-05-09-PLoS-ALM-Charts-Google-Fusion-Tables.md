@@ -30,7 +30,7 @@ The bulk CSV data can then be uploaded to Google Fusion Tables, a free data host
   <img src ="/file/8c6563f5-7230-4a97-b888-7a1536b5b746/columnChart.png" class="mainimage" />
 </a>
   
-> Google Charts can visualize data from Fusion Tables using only Javascript and HTML.
+> Google Charts can visualize data from Fusion Tables using Javascript and HTML
 
 <!-- more -->
 
