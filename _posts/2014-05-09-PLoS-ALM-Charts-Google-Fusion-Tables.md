@@ -69,16 +69,16 @@ The query options from the web interface can be used through an API. The syntax 
 
 The complete query:
 {% highlight sql %}
-SELECT title, crossref, scopus, pubmed FROM 1zkfQ7rtG9UI5a8rPDk2bpD6d0QbgP63h2v2l9YzW WHERE publication_date >= '2013-01-01' AND publication_date < '2014-01-01' ORDER BY scopus desc LIMIT 10
+SELECT title, crossref, scopus, pubmed FROM 1zkfQ7rtG9UI5a8rPDk2bpD6d0QbgP63h2v2l9YzW WHERE publication_date >= '2013-01-01' AND publication_date < '2014-01-01' ORDER BY crossref desc LIMIT 10
 {% endhighlight %}
 
 You can download the [CSV results][query] of a query by appending the query to this URL: `https://www.google.com/fusiontables/exporttable?query=`
 
-[query]: https://www.google.com/fusiontables/exporttable?query=SELECT%20doi%2C%20publication_date%2C%20title%2C%20scopus%20FROM%201FpM0r2LnO7RHM9dh4uO118tjIEBBuN0B0sauuh0%20WHERE%20publication_date%20%3E%3D%20%272010-01-01%27%20AND%20publication_date%20%3C%3D%20%272010-12-31%27%20ORDER%20BY%20scopus%20desc%20LIMIT%2010
+[query]: https://www.google.com/fusiontables/exporttable?query=SELECT%20title%2C%20crossref%2C%20scopus%2C%20pubmed%20FROM%201zkfQ7rtG9UI5a8rPDk2bpD6d0QbgP63h2v2l9YzW%20WHERE%20publication_date%20%3E%3D%20%272013-01-01%27%20AND%20publication_date%20%3C%20%272014-01-01%27%20ORDER%20BY%20crossref%20desc%20LIMIT%2010
 
 To quickly test queries during development, use the [Hurl.it HTTP Request tool][querytest].
 
-[querytest]: http://www.hurl.it/?url=www.google.com/fusiontables/exporttable&method=get&args=%7B%22query%22%3A%5B%22SELECT%20title%2C%20crossref%2C%20scopus%2C%20pubmed%20FROM%201zkfQ7rtG9UI5a8rPDk2bpD6d0QbgP63h2v2l9YzW%20WHERE%20publication_date%20%3E%3D%20%272013-01-01%27%20AND%20publication_date%20%3C%20%272014-01-01%27%20ORDER%20BY%20scopus%20desc%20LIMIT%2010%22%5D%7D
+[querytest]: http://www.hurl.it/?url=www.google.com/fusiontables/exporttable&method=get&args=%7B%22query%22%3A%5B%22SELECT%20title%2C%20crossref%2C%20scopus%2C%20pubmed%20FROM%201zkfQ7rtG9UI5a8rPDk2bpD6d0QbgP63h2v2l9YzW%20WHERE%20publication_date%20%3E%3D%20%272013-01-01%27%20AND%20publication_date%20%3C%20%272014-01-01%27%20ORDER%20BY%20crossref%20desc%20LIMIT%2010%22%5D%7D
 
 
 
@@ -149,7 +149,7 @@ Completed [chart][customchart]
 Even this basic chart has an element of interactivity. When the user hovers their mouse on a column, a label will appear sshowing the full article title and an exact citation count. This provides important detail without consuming additional screen space.
 
 
-Although this is a basic query and visualization, we can see what the top CrossRef cited articles were for 2013, and compare their citation counts. For example the #1 article received approximately twice as many citations as the #3 article. We can see 
+Although this is a basic query and visualization, we can see what the top CrossRef cited articles were for 2013, and compare their citation counts. For example the #1 article received approximately twice as many citations as the #3 article. We can also see that most of the top-cited CrossRef articles had fewer Scopus citations, except for "Post-Treatment HIV-1 Controllers..." and "A Guide to Enterotypes across the..." which for some reason received more Scopus than CrossRef citations. We can also see that "PKC? Phosphorylates PI3K? to..." received a high amount of Crossref citations, it received relatively few Scopus and zero Pubmed citations. These differences may be due to article awareness, citation inclusion methods, and timeframe. While it is impossible to draw conclusions from a single chart, even this basic visualization can indicate possible areas of interest for further study.
 
 
 
