@@ -4,6 +4,8 @@ title: PLoS ALM Charts with Google Fusion Tables
 uuid: 8c6563f5-7230-4a97-b888-7a1536b5b746
 published: true
 comments: true
+customhead:   <script type="text/javascript" src="http://www.google.com/jsapi"></script><script type="text/javascript" src="/file/8c6563f5-7230-4a97-b888-7a1536b5b746/columnChart.js"></script>
+
 ---
 
 *Learn to visualize Article Level Metrics data using Google Fusion Tables and Google Charts*
@@ -136,15 +138,20 @@ Change these settings in the `options` area:
 {% endhighlight %}
 
 
-To use all available space on the page the `visualization_div` can be set to have a `height` and `width` of `100%` or adapted for whatever size you wish.
+The `visualization_div` can be set to have a desired `height` and `width` such as `100%` to use all available space. 
+
 {% highlight html %}
-  <div id="visualization_div" style="width: 100%; height: 100%;"></div>
+  <div id="visualization_div" style="width: 100%; height: 100%;">Loading...</div>
 {% endhighlight %}
 
-The rest of the sample code can be left as-is. 
-Completed [chart][customchart]
+Adding some text like "Loading..." helps prevent users from being confused by a blank screen if the visualization takes time to load. The rest of the sample code can be left as-is. 
+
+<div id="visualization_div" style="width: 90%; height: 400px; margin-left:auto;margin-right:auto;margin-bottom:.5em;">Loading...</div>
+
+> The final chart can be embedded in a web page or [displayed on its own][customchart]
 
 [customchart]: /file/8c6563f5-7230-4a97-b888-7a1536b5b746/columnChart.html
+
 
 Even this basic chart has an element of interactivity. When the user hovers their mouse on a column, a label will appear sshowing the full article title and an exact citation count. This provides important detail without consuming additional screen space.
 
