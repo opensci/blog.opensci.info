@@ -4,15 +4,13 @@ title: PLoS ALM Charts with Google Fusion Tables
 uuid: 8c6563f5-7230-4a97-b888-7a1536b5b746
 published: true
 comments: true
-
 ---
 
-*Display charts of PLoS Article Level Metrics data with Google Fusion Tables and Google Charts*
+*Learn to visualize Article Level Metrics data using Google Fusion Tables and Google Charts*
 
-All articles published by the Public Library of Science have [Article Level Metrics][plosalmdata] collected. These metrics include citation counts, web views, and online bookmarks, and can be accessed through the PLoS [ALM API][almapi]. In addition, the metrics can be downloaded in bulk through a [CSV file][bulkcsv].
+All articles published by the Public Library of Science have [Article Level Metrics][plosalmdata] collected. These metrics include citation counts, web views, online bookmarks, and more. The metrics are available through the [PLoS ALM API][almapi] and in a [bulk CSV file][bulkcsv] (2014-03-10 as of now).
 
-The bulk CSV data can then be uploaded to Google Fusion Tables, a free data hosting service that allows online browsing, filtering, and SQL-like queries through [their API][gftapi]. The Javascript [Google Charts][gcharts] library integrates tightly with the Fusion Tables API to visualize the query results in a web browser.
-
+The CSV data can be uploaded to Google Fusion Tables, a free data hosting service that allows web-based browsing, filtering, and aggregation. The [Fusion Tables API][gftapi] supports SQL-like queries and integrates tightly with the Javascript [Google Charts][gcharts] library allowing visualization of query results in a web browser.
 
 [plosalm]: http://article-level-metrics.plos.org/
 [plosalmdata]: http://article-level-metrics.plos.org/plos-alm-data/
@@ -30,19 +28,9 @@ The bulk CSV data can then be uploaded to Google Fusion Tables, a free data host
   <img src ="/file/8c6563f5-7230-4a97-b888-7a1536b5b746/columnChart.png" class="mainimage" />
 </a>
   
-> Google Charts can visualize data from Fusion Tables using Javascript and HTML
+> Google Charts can visualize data from Fusion Tables with Javascript.
 
 <!-- more -->
-
-<a href="https://www.google.com/fusiontables/DataSource?docid=1zkfQ7rtG9UI5a8rPDk2bpD6d0QbgP63h2v2l9YzW&pli=1#rows:id=12">
-  <img src ="/file/8c6563f5-7230-4a97-b888-7a1536b5b746/gft.browse.online.png" class="mainimage" />
-</a>
-
-
-
-
-
-
 
 
 
@@ -55,44 +43,52 @@ Google Fusion Tables API supports filtering and aggregation features compared to
 
 # Google Fusion Tables #
 
-The article metrics CSV file can be uploaded directly to Fusion Tables and [browsed online][mytable]. The web interface allows sorting, filtering, and aggragation. For example, we might can filter by `publication_date` to show only articles from 2013, and then sorty by the most CrossRef citations.
+<a href="https://www.google.com/fusiontables/DataSource?docid=1zkfQ7rtG9UI5a8rPDk2bpD6d0QbgP63h2v2l9YzW&pli=1#rows:id=12">
+  <img src ="/file/8c6563f5-7230-4a97-b888-7a1536b5b746/gft.browse.online.png" class="mainimage" />
+</a>
 
-[mytable]: https://www.google.com/fusiontables/data?docid=1zkfQ7rtG9UI5a8rPDk2bpD6d0QbgP63h2v2l9YzW
+> Data can be browsed after uploading the CSV
 
-<a href="https://www.google.com/fusiontables/data?docid=1PWWI0KDelh9VJiROBUGaiW2Y37AJMS9ZilT64b8"><img src ="/file/8c6563f5-7230-4a97-b888-7a1536b5b746/gft.filter.sort.png" class="mainimage"/></a>
-> The web interface shows a filtered, sorted result*
+The article metrics CSV file can be uploaded directly to Fusion Tables and [browsed online][mytable]. The web interface allows sorting, filtering, and aggregation. For example, we can filter by `publication_date` to show only articles from 2013, then sort by the most CrossRef citations.
+
+[mytable]: https://www.google.com/fusiontables/DataSource?docid=1zkfQ7rtG9UI5a8rPDk2bpD6d0QbgP63h2v2l9YzW&pli=1#rows:id=12
+
+<a href="https://www.google.com/fusiontables/DataSource?docid=1zkfQ7rtG9UI5a8rPDk2bpD6d0QbgP63h2v2l9YzW#rows:id=13"><img src ="/file/8c6563f5-7230-4a97-b888-7a1536b5b746/gft.filter.sort.png" alt="2013 sorted by CrossRef" class="mainimage"/></a>
+
+> The web interface shows a filtered, sorted result
 
 ## Fusion Tables API ##
 
 The query options from the web interface can be used through an API. The syntax is similar to an SQL query. 
 
 * `SELECT` Picks the columns to include in the results.
-* `FROM` Uses the unique identifier of the data table which can be found in *File > About this table* or in the URL: `1FpM0r2LnO7RHM9dh4uO118tjIEBBuN0B0sauuh0`
-* `WHERE` Filters the results by the value of a column. Dates within a certain range can be filtered by using inequality operators and `AND` for multiple filters.
+* `FROM` Uses the unique identifier of the data table which can be found in *File > About this table* or in the URL: `1zkfQ7rtG9UI5a8rPDk2bpD6d0QbgP63h2v2l9YzW`
+* `WHERE` Filters the results by the value of a column. Dates within a certain range can be filtered by using inequality operators and `AND` for multiple filters. Use `>=` to include article published on or after 2013-01-01 and `<` to include only article published before 2014-01-01.
 * `ORDER BY` Sorts the results using a selected column and in the chosen sort direction.
-* `LIMIT` Returns only the specified number of results. This prevents loading too much data into a browser causing it to slow down.
+* `LIMIT` Returns only the specified number of results. This prevents loading too much data into a browser causing it to slow down and is useful for testing queries.
 
 The complete query:
 {% highlight sql %}
-SELECT doi, publication_date, title, scopus FROM 1FpM0r2LnO7RHM9dh4uO118tjIEBBuN0B0sauuh0 WHERE publication_date >= '2010-01-01' AND publication_date <= '2010-12-31' ORDER BY scopus desc LIMIT 10
+SELECT title, crossref, scopus, pubmed FROM 1zkfQ7rtG9UI5a8rPDk2bpD6d0QbgP63h2v2l9YzW WHERE publication_date >= '2013-01-01' AND publication_date < '2014-01-01' ORDER BY scopus desc LIMIT 10
 {% endhighlight %}
 
-Queries [can be tested][query] by appending the query to this URL: `https://www.google.com/fusiontables/exporttable?query=`
-
-
+You can download the [CSV results][query] of a query by appending the query to this URL: `https://www.google.com/fusiontables/exporttable?query=`
 
 [query]: https://www.google.com/fusiontables/exporttable?query=SELECT%20doi%2C%20publication_date%2C%20title%2C%20scopus%20FROM%201FpM0r2LnO7RHM9dh4uO118tjIEBBuN0B0sauuh0%20WHERE%20publication_date%20%3E%3D%20%272010-01-01%27%20AND%20publication_date%20%3C%3D%20%272010-12-31%27%20ORDER%20BY%20scopus%20desc%20LIMIT%2010
+
+To quickly test queries during development, use the [Hurl.it HTTP Request tool][querytest].
+
+[querytest]: http://www.hurl.it/?url=www.google.com/fusiontables/exporttable&method=get&args=%7B%22query%22%3A%5B%22SELECT%20title%2C%20crossref%2C%20scopus%2C%20pubmed%20FROM%201zkfQ7rtG9UI5a8rPDk2bpD6d0QbgP63h2v2l9YzW%20WHERE%20publication_date%20%3E%3D%20%272013-01-01%27%20AND%20publication_date%20%3C%20%272014-01-01%27%20ORDER%20BY%20scopus%20desc%20LIMIT%2010%22%5D%7D
 
 
 
 
 Google Charts
 ---
-Now that the query is ready, it's time to display the results using Google Charts. The query can be passed directly to the [`drawChart()`][drawchart] function. There is a [sample code][drawchartdemo] that does this.
+Now that the query is ready, it's time to display the results using Google Charts. Because of the tight integration between Fusion Tables and Google Charts, the query can be passed directly to the [`drawChart()`][drawchart] function. There is [sample code][drawchartdemo] that does this.
 
 [drawchartdemo]: https://developers.google.com/chart/interactive/docs/fusiontables
 [drawchart]: https://developers.google.com/chart/interactive/docs/reference#google.visualization.drawchart
-
 
 {% highlight javascript linenos hl_lines=4 %}
 google.visualization.drawChart({
@@ -109,39 +105,52 @@ google.visualization.drawChart({
       });
 {% endhighlight %}
 
+> Fusion Tables query can be specified directly in the Javascript
+
 Line 4 is where the `query` value is set. Replace the sample query with our custom query.
 
-Remove line 5 `refreshInterval` because the source data is not being changed.
+Remove `refreshInterval` on line 5 because the source data is not being changed.
 
-Instead of a bar chart, change `chartType` to `Table`. This will show query results in an interactive HTML table.
+Instead of a bar chart, change `chartType` to `ColumnChart` selects the type of chart among the supported [chart types][charttypes].
 
-Change these settings in the `options` area.
+Change these settings in the `options` area:
 
 * `showRowNumber` is helpful since the query results are ranked.
-* `alternatingRowStyle` makes the rows easier to distinguish.
-* `allowHtml` is needed because the titles contain other markup tags.
 
+* `title` a title to describe the chart.
+* `vAxis` controls settings for the vertical axis, such as `title` to show what the axis is measuring.
 
+[charttypes]: https://developers.google.com/apps-script/reference/charts/chart-type
 
 {% highlight javascript linenos hl_lines=4 %}
       google.visualization.drawChart({
         "containerId": "visualization_div",
         "dataSourceUrl": 'http://www.google.com/fusiontables/gvizdata?tq=',
-        "query":"SELECT doi, publication_date, title, scopus FROM 1FpM0r2LnO7RHM9dh4uO118tjIEBBuN0B0sauuh0 WHERE publication_date >= '2010-01-01' AND publication_date <= '2010-12-31' ORDER BY scopus desc LIMIT 10",
-        "chartType": "Table",
+        "query":"select title,crossref,scopus,pubmed from 1zkfQ7rtG9UI5a8rPDk2bpD6d0QbgP63h2v2l9YzW where publication_date >= '2013-01-01 00:00:00' and publication_date < '2014-01-01 00:00:00' order by crossref desc limit 10",
+        "chartType": "ColumnChart",
         "options": {
-          "showRowNumber": true,
-          "alternatingRowStyle": true,
-          "allowHtml": true,          
+          "title": "Top 10 Crossref Cited PLoS Articles from 2013",
+          "vAxis": {"title": "Citations"},
         }
       });
 {% endhighlight %}
 
-The size of the visualization can also be adjusted with `height` and `width`.
 
+To use all available space on the page the `visualization_div` can be set to have a `height` and `width` of `100%` or adapted for whatever size you wish.
+{% highlight html %}
+  <div id="visualization_div" style="width: 100%; height: 100%;"></div>
+{% endhighlight %}
+
+The rest of the sample code can be left as-is. 
 Completed [chart][customchart]
 
-[customchart]: /file/8c6563f5-7230-4a97-b888-7a1536b5b746/table.html
+[customchart]: /file/8c6563f5-7230-4a97-b888-7a1536b5b746/columnChart.html
+
+Even this basic chart has an element of interactivity. When the user hovers their mouse on a column, a label will appear sshowing the full article title and an exact citation count. This provides important detail without consuming additional screen space.
 
 
-  <div id="visualization_div" >Loading...</div>
+Although this is a basic query and visualization, we can see what the top CrossRef cited articles were for 2013, and compare their citation counts. For example the #1 article received approximately twice as many citations as the #3 article. We can see 
+
+
+
+Additional options would be to add more user interaction, such as allowing the user to choose which year to filter by, and which citation sources to include and sort. Additionally we might add links via the DOI so that users could click directly from the visualization through to the actual article. These features will be explored in upcoming articles.
