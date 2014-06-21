@@ -10,7 +10,7 @@ customhead:   <script type="text/javascript" src="http://www.google.com/jsapi"><
 
 *Learn to visualize Article Level Metrics data using Google Fusion Tables and Google Charts*
 
-All articles published by the Public Library of Science have [Article Level Metrics][plosalmdata] collected. These metrics include citation counts, web views, online bookmarks, and more. The metrics are available through the [PLoS ALM API][almapi] and in a [bulk CSV file][bulkcsv] (2014-03-10 as of now).
+All articles published by the Public Library of Science have [Article Level Metrics][plosalmdata] collected. These metrics include citation counts, web views, online bookmarks, and more. The metrics are available through the [PLoS ALM API][almapi] and in a [bulk CSV file][bulkcsv].
 
 The CSV data can be uploaded to Google Fusion Tables, a free data hosting service that allows web-based browsing, filtering, and aggregation. The [Fusion Tables API][gftapi] supports SQL-like queries and integrates tightly with the Javascript [Google Charts][gcharts] library allowing visualization of query results in a web browser.
 
@@ -49,7 +49,7 @@ Google Fusion Tables API supports filtering and aggregation features compared to
   <img src ="/file/8c6563f5-7230-4a97-b888-7a1536b5b746/gft.browse.online.png" class="mainimage" />
 </a>
 
-> Data can be browsed after uploading the CSV
+> Data can be browsed online after uploading the CSV
 
 The article metrics CSV file can be uploaded directly to Fusion Tables and [browsed online][mytable]. The web interface allows sorting, filtering, and aggregation. For example, we can filter by `publication_date` to show only articles from 2013, then sort by the most CrossRef citations.
 
@@ -63,31 +63,31 @@ The article metrics CSV file can be uploaded directly to Fusion Tables and [brow
 
 The query options from the web interface can be used through an API. The syntax is similar to an SQL query. 
 
-* `SELECT` Picks the columns to include in the results.
-* `FROM` Uses the unique identifier of the data table which can be found in *File > About this table* or in the URL: `1zkfQ7rtG9UI5a8rPDk2bpD6d0QbgP63h2v2l9YzW`
-* `WHERE` Filters the results by the value of a column. Dates within a certain range can be filtered by using inequality operators and `AND` for multiple filters. Use `>=` to include article published on or after 2013-01-01 and `<` to include only article published before 2014-01-01.
-* `ORDER BY` Sorts the results using a selected column and in the chosen sort direction.
-* `LIMIT` Returns only the specified number of results. This prevents loading too much data into a browser causing it to slow down and is useful for testing queries.
+* `SELECT` Pick the columns to include in the results.
+* `FROM` Use the unique identifier of the data table which can be found in *File > About this table* or in the URL: `1zkfQ7rtG9UI5a8rPDk2bpD6d0QbgP63h2v2l9YzW`
+* `WHERE` Filter the results by the value of a column. Dates within a certain range can be filtered by using inequality operators with `AND` for multiple filters. Use `>=` to include article published on or after 2013-01-01 and `<` to include only article published before 2014-01-01.
+* `ORDER BY` Sort the results using a selected column and in the chosen sort direction.
+* `LIMIT` Return only the specified number of results. This prevents loading too much data into a browser causing it to slow down, and also is useful for testing queries.
 
-The complete query:
+The complete query for the top 10 CrossRef cited papers from 2013:
 {% highlight sql %}
 SELECT title, crossref, scopus, pubmed FROM 1zkfQ7rtG9UI5a8rPDk2bpD6d0QbgP63h2v2l9YzW WHERE publication_date >= '2013-01-01' AND publication_date < '2014-01-01' ORDER BY crossref desc LIMIT 10
 {% endhighlight %}
 
-You can download the [CSV results][query] of a query by appending the query to this URL: `https://www.google.com/fusiontables/exporttable?query=`
-
-[query]: https://www.google.com/fusiontables/exporttable?query=SELECT%20title%2C%20crossref%2C%20scopus%2C%20pubmed%20FROM%201zkfQ7rtG9UI5a8rPDk2bpD6d0QbgP63h2v2l9YzW%20WHERE%20publication_date%20%3E%3D%20%272013-01-01%27%20AND%20publication_date%20%3C%20%272014-01-01%27%20ORDER%20BY%20crossref%20desc%20LIMIT%2010
-
-To quickly test queries during development, use the [Hurl.it HTTP Request tool][querytest].
+To test queries during development, use the [Hurl.it HTTP Request tool][querytest].
 
 [querytest]: http://www.hurl.it/?url=www.google.com/fusiontables/exporttable&method=get&args=%7B%22query%22%3A%5B%22SELECT%20title%2C%20crossref%2C%20scopus%2C%20pubmed%20FROM%201zkfQ7rtG9UI5a8rPDk2bpD6d0QbgP63h2v2l9YzW%20WHERE%20publication_date%20%3E%3D%20%272013-01-01%27%20AND%20publication_date%20%3C%20%272014-01-01%27%20ORDER%20BY%20crossref%20desc%20LIMIT%2010%22%5D%7D
 
+
+The results of a query can also be [downloaded as a CSV][query] by appending the query to this URL: `https://www.google.com/fusiontables/exporttable?query=`
+
+[query]: https://www.google.com/fusiontables/exporttable?query=SELECT%20title%2C%20crossref%2C%20scopus%2C%20pubmed%20FROM%201zkfQ7rtG9UI5a8rPDk2bpD6d0QbgP63h2v2l9YzW%20WHERE%20publication_date%20%3E%3D%20%272013-01-01%27%20AND%20publication_date%20%3C%20%272014-01-01%27%20ORDER%20BY%20crossref%20desc%20LIMIT%2010
 
 
 
 Google Charts
 ---
-Now that the query is ready, it's time to display the results using Google Charts. Because of the tight integration between Fusion Tables and Google Charts, the query can be passed directly to the [`drawChart()`][drawchart] function. There is [sample code][drawchartdemo] that does this.
+Now that the query is ready, it is time to display the results using Google Charts. Because of the tight integration between Fusion Tables and Google Charts, the query can be written directly in the Javascript code.
 
 [drawchartdemo]: https://developers.google.com/chart/interactive/docs/fusiontables
 [drawchart]: https://developers.google.com/chart/interactive/docs/reference#google.visualization.drawchart
@@ -107,22 +107,23 @@ google.visualization.drawChart({
       });
 {% endhighlight %}
 
-> Fusion Tables query can be specified directly in the Javascript
+> Fusion Tables query is written directly in the Javascript
 
-Line 4 is where the `query` value is set. Replace the sample query with our custom query.
+Using this [sample code][drawchartdemo] we can modify a few lines of the [`drawChart()`][drawchart] function to visualize our data.
 
-Remove `refreshInterval` on line 5 because the source data is not being changed.
+* Line 4 is where the `query` value is set. Replace the sample query with our custom query.
+* Remove `refreshInterval` on line 5 because the source data is not being changed.
+* Instead of `BarChart`, change `chartType` to `ColumnChart` to select the type of chart.
 
-Instead of a bar chart, change `chartType` to `ColumnChart` selects the type of chart among the supported [chart types][charttypes].
+<!-- among the supported [chart types][charttypes].
+[charttypes]: https://developers.google.com/apps-script/reference/charts/chart-type
+-->
 
 Change these settings in the `options` area:
 
-* `showRowNumber` is helpful since the query results are ranked.
+* `title` A title to describe the chart.
+* `vAxis` Control settings for the vertical axis, such as `title` to show what the axis is measuring.
 
-* `title` a title to describe the chart.
-* `vAxis` controls settings for the vertical axis, such as `title` to show what the axis is measuring.
-
-[charttypes]: https://developers.google.com/apps-script/reference/charts/chart-type
 
 {% highlight javascript linenos hl_lines=4 %}
       google.visualization.drawChart({
@@ -137,14 +138,17 @@ Change these settings in the `options` area:
       });
 {% endhighlight %}
 
+The `visualization_div` can be styled like any HTML element, such as with a desired `height` and `width`.
+Adding some text like "Loading..." helps prevent users from being confused by a blank space while the visualization loads.
 
-The `visualization_div` can be set to have a desired `height` and `width` such as `100%` to use all available space. 
 
 {% highlight html %}
-  <div id="visualization_div" style="width: 100%; height: 100%;">Loading...</div>
+  <div id="visualization_div" style="width: 100%; height: 800px;">Loading...</div>
 {% endhighlight %}
 
-Adding some text like "Loading..." helps prevent users from being confused by a blank screen if the visualization takes time to load. The rest of the sample code can be left as-is. 
+
+<a href="view-source:/file/8c6563f5-7230-4a97-b888-7a1536b5b746/columnChart.html" target="_blank">View final source code</a>
+
 
 <div id="visualization_div" style="width: 90%; height: 400px; margin-left:auto;margin-right:auto;margin-bottom:.5em;">Loading...</div>
 
@@ -152,8 +156,9 @@ Adding some text like "Loading..." helps prevent users from being confused by a 
 
 [customchart]: /file/8c6563f5-7230-4a97-b888-7a1536b5b746/columnChart.html
 
+The result is a query performed live on the dataset, with the results displayed in any web browser with a visualization.
 
-Even this basic chart has an element of interactivity. When the user hovers their mouse on a column, a label will appear sshowing the full article title and an exact citation count. This provides important detail without consuming additional screen space.
+Even this basic chart has an element of interactivity. When the user hovers their mouse on a column, a label will appear showing the full article title and an exact citation count. This provides important detail without consuming additional screen space.
 
 
 Although this is a basic query and visualization, we can see what the top CrossRef cited articles were for 2013, and compare their citation counts. For example the #1 article received approximately twice as many citations as the #3 article. We can also see that most of the top-cited CrossRef articles had fewer Scopus citations, except for "Post-Treatment HIV-1 Controllers..." and "A Guide to Enterotypes across the..." which for some reason received more Scopus than CrossRef citations. We can also see that "PKC? Phosphorylates PI3K? to..." received a high amount of Crossref citations, it received relatively few Scopus and zero Pubmed citations. These differences may be due to article awareness, citation inclusion methods, and timeframe. While it is impossible to draw conclusions from a single chart, even this basic visualization can indicate possible areas of interest for further study.
