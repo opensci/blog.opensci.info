@@ -14,6 +14,8 @@ All articles published by the Public Library of Science have [Article Level Metr
 
 The CSV data can be uploaded to Google Fusion Tables, a free data hosting service that allows web-based browsing, filtering, and aggregation. The [Fusion Tables API][gftapi] supports SQL-like queries and integrates tightly with the Javascript [Google Charts][gcharts] library allowing visualization of query results in a web browser.
 
+The advantage of JS is that it is crossplatform and works in any web browser, and allows interaction with the data.
+
 [plosalm]: http://article-level-metrics.plos.org/
 [plosalmdata]: http://article-level-metrics.plos.org/plos-alm-data/
 [gft]: http://www.google.com/drive/apps.html#fusiontables
@@ -59,7 +61,7 @@ The article metrics CSV file can be uploaded directly to Fusion Tables and [brow
 
 > The web interface shows a filtered, sorted result
 
-## Fusion Tables API ##
+# Fusion Tables API #
 
 The query options from the web interface can be used through an API. The syntax is similar to an SQL query. 
 
@@ -85,8 +87,8 @@ The results of a query can also be [downloaded as a CSV][query] by appending the
 
 
 
-Google Charts
----
+# Google Charts #
+
 Now that the query is ready, it is time to display the results using Google Charts. Because of the tight integration between Fusion Tables and Google Charts, the query can be written directly in the Javascript code.
 
 [drawchartdemo]: https://developers.google.com/chart/interactive/docs/fusiontables
@@ -149,20 +151,22 @@ Adding some text like "Loading..." helps prevent users from being confused by a 
 
 <a href="view-source:/file/8c6563f5-7230-4a97-b888-7a1536b5b746/columnChart.html" target="_blank">View final source code</a>
 
+# Results #
 
 <div id="visualization_div" style="width: 90%; height: 400px; margin-left:auto;margin-right:auto;margin-bottom:.5em;">Loading...</div>
 
-> The final chart can be embedded in a web page or [displayed on its own][customchart]
+> The final chart can be embedded in a web page or displayed [on its own][customchart]
 
 [customchart]: /file/8c6563f5-7230-4a97-b888-7a1536b5b746/columnChart.html
 
-The result is a query performed live on the dataset, with the results displayed in any web browser with a visualization.
+The result is a query performed live on the dataset, with the results visualized in any web browser.
 
-Even this basic chart has an element of interactivity. When the user hovers their mouse on a column, a label will appear showing the full article title and an exact citation count. This provides important detail without consuming additional screen space.
-
-
-Although this is a basic query and visualization, we can see what the top CrossRef cited articles were for 2013, and compare their citation counts. For example the #1 article received approximately twice as many citations as the #3 article. We can also see that most of the top-cited CrossRef articles had fewer Scopus citations, except for "Post-Treatment HIV-1 Controllers..." and "A Guide to Enterotypes across the..." which for some reason received more Scopus than CrossRef citations. We can also see that "PKC? Phosphorylates PI3K? to..." received a high amount of Crossref citations, it received relatively few Scopus and zero Pubmed citations. These differences may be due to article awareness, citation inclusion methods, and timeframe. While it is impossible to draw conclusions from a single chart, even this basic visualization can indicate possible areas of interest for further study.
+Because it uses Javascript, even this basic chart can be interactive. When the user hovers their mouse on a column, a label appears showing the full article title and an exact citation count. This provides important detail without taking additional screen space or overloading the user with information.
 
 
+Although this is a basic query and chart, we can clearly see what the top CrossRef cited articles were for 2013, and compare their citation counts. For example the #1 article received approximately twice as many citations as the #3 article. We can also see that most of the top-cited CrossRef articles had fewer Scopus citations, except for "Post-Treatment HIV-1 Controllers..." and "A Guide to Enterotypes across the..." which for some reason received more Scopus than CrossRef citations. We can also see that while "PKC? Phosphorylates PI3K? to..." received a high amount of Crossref citations, it received few Scopus and zero Pubmed citations. These differences may be due to article awareness, citation inclusion methods, or timeframe. While it is impossible to draw conclusions from a single chart, even this basic visualization can indicate areas of possible interest for further study.
+
+
+# Next Step #
 
 Additional options would be to add more user interaction, such as allowing the user to choose which year to filter by, and which citation sources to include and sort. Additionally we might add links via the DOI so that users could click directly from the visualization through to the actual article. These features will be explored in upcoming articles.
