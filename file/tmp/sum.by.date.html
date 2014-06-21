@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <title>Google Visualization API Sample</title>
+  <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+  <script type="text/javascript">
+
+
+
+    google.load('visualization', '1', {packages: ['corechart']});
+    function drawVisualization() {
+      google.visualization.drawChart({
+        "containerId": "visualization_div",
+        "dataSourceUrl": 'http://www.google.com/fusiontables/gvizdata?tq=',
+
+"query":"select publication_date,sum(pubmed),sum(crossref),sum(scopus) from 1AIg949Hskgwe1TQWE6p0rp3M1Z_L2cft8rB9y3s WHERE doi LIKE '%pone%' GROUP BY publication_date ORDER BY publication_date DESC",
+
+        "chartType": "ScatterChart",
+        "options": {
+          "title": "Something",
+          "height": 900,
+//          "chartArea.width":"500",
+//          "chartArea.height":"500",
+          "vAxis": {"title": "Foo","logScale":"true" },
+          "hAxis": {"title": "Bar",},
+          "pointSize":5,
+          
+        }
+      });
+    }
+    google.setOnLoadCallback(drawVisualization);
+
+
+
+
+
+
+
+
+
+</script>
+</head>
+<body style="font-family: Arial;border: 0 none;">
+  <div id="visualization_div" style="width: 1100px; height: 640px;">Loading...</div>
+</body>
+</html>
