@@ -8,7 +8,6 @@
         "options": {
           "title": "Top 10 Crossref Cited PLoS Articles from 2013",
           "vAxis": {"title": "Citations"},
-          "height": 800,
         }
       });
     }

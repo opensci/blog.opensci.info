@@ -5,8 +5,9 @@
   <title>Google Visualization API Sample</title>
   <script type="text/javascript" src="http://www.google.com/jsapi"></script>
   <script type="text/javascript">
-      google.load('visualization', '1', {packages: ['corechart']});
+    google.load('visualization', '1', {packages: ['corechart']});
     function drawVisualization() {
+      var queryText = encodeURIComponent("SELECT Year, Austria, Bulgaria, Denmark, Greece FROM 18k8XNgsc5ktLP2EHMCpoKIwymsVlzVV-xVuceA");
       google.visualization.drawChart({
         "containerId": "visualization_div",
         "dataSourceUrl": 'http://www.google.com/fusiontables/gvizdata?tq=',
@@ -15,13 +16,15 @@
         "options": {
           "title": "Top 10 Crossref Cited PLoS Articles from 2013",
           "vAxis": {"title": "Citations"},
+          "height": 800,
         }
       });
     }
+
     google.setOnLoadCallback(drawVisualization);
   </script>
 </head>
 <body style="font-family: Arial;border: 0 none;">
-  <div id="visualization_div" style="width: 100%; height: 800px;">Loading...</div>
+  <div id="visualization_div" style="width: 100%; height: 100%;">Loading...</div>
 </body>
 </html>
