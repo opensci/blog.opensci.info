@@ -1,11 +1,12 @@
 --- 
 layout: post
 title: PLoS ALM Charts with Google Fusion Tables
-uuid: 8c6563f5
+uuid: 8c6563f5-7230-4a97-b888-7a1536b5b746
+short_uuid: 8c6563f5
+redirect_from: "/8c6563f5/"
 published: true
 comments: true
 customhead:   <script type="text/javascript" src="http://www.google.com/jsapi"></script><script type="text/javascript" src="/file/8c6563f5/columnChart.js"></script>
-redirect_from: "/8c6563f5/"
 ---
 
 *Learn to visualize Article Level Metrics data using Google Fusion Tables and Google Charts*
