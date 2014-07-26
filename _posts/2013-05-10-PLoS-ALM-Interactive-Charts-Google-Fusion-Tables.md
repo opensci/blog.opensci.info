@@ -2,14 +2,21 @@
 layout: post
 title: PLoS ALM Interactive Charts with Google Fusion Tables
 uuid: 769a9bc2-b86c-11e2-8b71-6c626d8ab8fe
-published: false
+published: true
 ---
 
  --- start here
 [test4.html][]
 
 
-[test4.html]: /file/2013-02-08-PLoS-ALM-Top-10-Charts/test4.html
+[test4.html]: /file/{{ page.uuid }}/test4.html
+
+ - [foo](/file/{{ page.uuid }}/test5.html)
+ - [foo1](/file/{{ page.uuid }}/test6.html)
+ - [foo2](/file/{{ page.uuid }}/test7.html)
+ - [foo3](/file/{{ page.uuid }}/test8.html)
+ - [foo4](/file/{{ page.uuid }}/test9.html)
+ - [foo5](/file/{{ page.uuid }}/test10.html)
 
 
 https://developers.google.com/fusiontables/docs/samples/gviz_datatable
