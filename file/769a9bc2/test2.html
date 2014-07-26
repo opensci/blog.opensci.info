@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <style>img{ height: 100px; float: left; }</style>
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+  <script src="http://www.datatables.net/download/build/jquery.dataTables.min.js"></script>
+  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+  <script type='text/javascript'>
+
+      google.load('visualization', '1', {packages:['table']});
+
+      google.setOnLoadCallback(drawTable);
+      
+      function drawTable() {
+        var data = new google.visualization.DataTable();
+          data.addColumn('string', 'DOI');
+          data.addColumn('string', 'Published');
+          data.addColumn('string', 'Title');
+          data.addColumn('number', 'Scopus');
+
+
+    $.getJSON("http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20csv%20where%20url%3D%22https%3A%2F%2Fwww.google.com%2Ffusiontables%2Fexporttable%3Fquery%3Dselect%2Bcol0%2Ccol1%2Ccol2%2Ccol10%2Bfrom%2B1W7-apvjDSgsT5jRy4lAcxYJgsGVIcFhudiFN0J0%2Bwhere%2Bcol0%2Bcontains%2Bignoring%2Bcase%2B%2527pmed%2527%2Band%2Bcol1%2B%253E%253D%2B%2527Jan%2B1%252C%2B2010%2527%2Band%2Bcol1%2B%253C%253D%2B%2527Dec%2B31%252C%2B2010%2527%2Border%2Bby%2Bcol10%2Bdesc%2Blimit%2B10%22&callback=?",
+      {
+        format: "json",
+        diagnostics: "true",
+      },
+      function(data) {  
+        var items = [];
+        $.each(data.query.results.row, function(key, val) {        
+          items.push('<tr>');
+          $.each(val, function(i, v) {
+            items.push('<td>' + v + '</td>');
+            return;
+          items.push('</tr>');
+         });
+         return; 
+        });
+      }
+    );
+
+
+          data.addRows([
+            ['10.1371/journal.pmed.1000316', '2010-07-27','Social Relationships and Mortality Risk: A Meta-analytic Review',130],
+          ]);
+
+        var table = new google.visualization.Table(document.getElementById('table_div'));
+        table.draw(data, {showRowNumber: true});
+}
+  </script>
+</head>
+
+<body>
+
+
+<div id='table_div'></div>
+
+</body>
