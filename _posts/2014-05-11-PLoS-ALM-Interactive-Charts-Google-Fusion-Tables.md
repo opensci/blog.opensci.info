@@ -2,7 +2,7 @@
 layout: post
 title: PLoS ALM Interactive Charts with Google Fusion Tables
 uuid: 769a9bc2-b86c-11e2-8b71-6c626d8ab8fe
-published: true
+published: false
 redirect_from: "/769a9bc2"
 ---
 
