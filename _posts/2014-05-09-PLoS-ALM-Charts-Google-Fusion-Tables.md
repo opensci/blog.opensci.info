@@ -7,7 +7,7 @@ shortid: 7230
 redirect_from: /7230/
 published: true
 comments: true
-customhead:   <script type="text/javascript" src="http://www.google.com/jsapi"></script><script type="text/javascript" src="/file/8c6563f5/columnChart.js"></script>
+customhead:   <script type="text/javascript" src="http://www.google.com/jsapi"></script><script type="text/javascript" src="/file/7230/columnChart.js"></script>
 ---
 
 *Learn to visualize Article Level Metrics data using Google Fusion Tables and Google Charts*
@@ -30,8 +30,8 @@ The advantage of JS is that it is crossplatform and works in any web browser, an
 
 
 
-<a href="/file/8c6563f5/columnChart.html">
-  <img src ="/file/8c6563f5/columnChart.png" class="mainimage" />
+<a href="/file/7230/columnChart.html">
+  <img src ="/file/7230/columnChart.png" class="mainimage" />
 </a>
   
 > Google Charts can visualize data from Fusion Tables with Javascript.
@@ -50,7 +50,7 @@ Google Fusion Tables API supports filtering and aggregation features compared to
 # Google Fusion Tables #
 
 <a href="https://www.google.com/fusiontables/DataSource?docid=1zkfQ7rtG9UI5a8rPDk2bpD6d0QbgP63h2v2l9YzW&pli=1#rows:id=12">
-  <img src ="/file/8c6563f5/gft.browse.online.png" class="mainimage" />
+  <img src ="/file/7230/gft.browse.online.png" class="mainimage" />
 </a>
 
 > Data can be browsed online after uploading the CSV
@@ -59,7 +59,7 @@ The article metrics CSV file can be uploaded directly to Fusion Tables and [brow
 
 [mytable]: https://www.google.com/fusiontables/DataSource?docid=1zkfQ7rtG9UI5a8rPDk2bpD6d0QbgP63h2v2l9YzW&pli=1#rows:id=12
 
-<a href="https://www.google.com/fusiontables/DataSource?docid=1zkfQ7rtG9UI5a8rPDk2bpD6d0QbgP63h2v2l9YzW#rows:id=13"><img src ="/file/8c6563f5/gft.filter.sort.png" alt="2013 sorted by CrossRef" class="mainimage"/></a>
+<a href="https://www.google.com/fusiontables/DataSource?docid=1zkfQ7rtG9UI5a8rPDk2bpD6d0QbgP63h2v2l9YzW#rows:id=13"><img src ="/file/7230/gft.filter.sort.png" alt="2013 sorted by CrossRef" class="mainimage"/></a>
 
 > The web interface shows a filtered, sorted result
 
@@ -151,7 +151,7 @@ Adding some text like "Loading..." helps prevent users from being confused by a 
 {% endhighlight %}
 
 
-<a href="view-source:/file/8c6563f5/columnChart.html" target="_blank">View final source code</a>
+<a href="view-source:/file/7230/columnChart.html" target="_blank">View final source code</a>
 
 # Results #
 
@@ -159,7 +159,7 @@ Adding some text like "Loading..." helps prevent users from being confused by a 
 
 > The final chart can be embedded in a web page or displayed [on its own][customchart]
 
-[customchart]: /file/8c6563f5/columnChart.html
+[customchart]: /file/7230/columnChart.html
 
 The result is a query performed live on the dataset, with the results visualized in any web browser.
 
