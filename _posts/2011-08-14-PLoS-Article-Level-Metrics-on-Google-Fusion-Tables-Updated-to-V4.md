@@ -9,7 +9,7 @@ redirect_from: /7f99/
 ---
 
 The latest version of the bulk PLoS Article Level Metrics data has been uploaded to Google Fusion Tables.
-
+<!-- more -->
 * [Summary ALM Data][summary]
 * [Combined Download Statistics][combined]
 * [HTML Views][html]

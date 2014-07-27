@@ -23,7 +23,7 @@ The updated .xls file is `plos-alm-v5-09182011.xls` dated September 18, 2011. Th
 [almxls]: http://www.plosone.org/static/plos-alm.zip
 
 This new version of the summary PLoS Article Level Metrics file has also been uploaded to Google Fusion Tables.
-
+<!-- more -->
 * [Summary ALM Data][summary]
 * [Combined Download][combined]
 * [HTML Views][html]
