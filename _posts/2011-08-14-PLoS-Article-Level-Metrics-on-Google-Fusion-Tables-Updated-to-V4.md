@@ -2,6 +2,10 @@
 layout: post
 title: PLoS Article Level Metrics on Google Fusion Tables Updated to V4
 uuid: 2d6cc4e2-7f99-4d75-94d1-5f166f487ca9
+shortid: 7f99
+permalink: /7f99/PLoS-Article-Level-Metrics-Google-Fusion-Tables-Updated-V4
+published: true
+redirect_from: /7f99/
 ---
 
 The latest version of the bulk PLoS Article Level Metrics data has been uploaded to Google Fusion Tables.

@@ -1,9 +1,10 @@
 --- 
 layout: post
 title: PLoS ALM Charts with Google Fusion Tables
+permalink: /7230/PLoS-ALM-Charts-with-Google-Fusion-Tables
 uuid: 8c6563f5-7230-4a97-b888-7a1536b5b746
-short_uuid: 8c6563f5
-redirect_from: "/8c6563f5/"
+shortid: 7230
+redirect_from: /7230/
 published: true
 comments: true
 customhead:   <script type="text/javascript" src="http://www.google.com/jsapi"></script><script type="text/javascript" src="/file/8c6563f5/columnChart.js"></script>

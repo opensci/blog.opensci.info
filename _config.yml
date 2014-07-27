@@ -55,7 +55,7 @@ highlighter: pygments
 markdown:    kramdown
 
 # https://github.com/mojombo/jekyll/wiki/Permalinks
-permalink:   /:year/:month/:day/:title/
+permalink:   /:title/
 
 kramdown:
   auto_ids: true

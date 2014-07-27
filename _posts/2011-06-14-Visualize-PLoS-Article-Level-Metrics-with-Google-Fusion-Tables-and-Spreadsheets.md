@@ -1,7 +1,13 @@
 --- 
 layout: post
 title: Visualize PLoS Article Level Metrics with Google Fusion Tables and Spreadsheets
+permalink: /0aee/Visualize-PLoS-Article-Level-Metrics-Google-Fusion-Tables-Spreadsheets
 uuid: 777dd893-0aee-4395-9802-63b9b0a50634
+shortid: 0aee
+published: true
+redirect_from:
+  - /0aee/
+  - /2011/06/14/Visualize-PLoS-Article-Level-Metrics-with-Google-Fusion-Tables-and-Spreadsheets/
 ---
 
 ## Introduction ##
