@@ -1,13 +1,29 @@
 --- 
 layout: post
 title: PLoS ALM Interactive Charts with Google Fusion Tables
+permalink: /b86c/PLoS-ALM-Interactive-Charts-Google-Fusion-Tables
 uuid: 769a9bc2-b86c-11e2-8b71-6c626d8ab8fe
 shortid: b86c
-published: false
 redirect_from: /b86c/
+published: true
+comments: true
 ---
 
- --- start here
+In the [previous part][part1] of this article series we made a chart showing PLoS ALM data using the Javascript Google Charts API.
+
+
+[old chart][oldchart]
+
+Because it was Javascript it allowed some basic interaction. For example, we could hover the mouse on a column, and see the exact number of citations, and the full title of the article.
+
+The chart was limited in that the user could not control which year to view, or which citations to use. Although they could see the article name, actually reading an article required additional manual steps.
+
+In this article, we will learn how to let the user select which data they want to see, and automatically include a link so the user may read the full article.
+
+[part1]: /7230/PLoS-ALM-Charts-with-Google-Fusion-Tables
+[oldchart]: /file/7230/columnChart.html
+
+
 
 
 [test4.html][]
@@ -21,6 +37,9 @@ redirect_from: /b86c/
  - [foo3](/file/{{ page.shortid }}/test8.html)
  - [foo4](/file/{{ page.shortid }}/test9.html)
  - [foo5](/file/{{ page.shortid }}/test10.html)
+
+
+<!-- more -->
 
 
 https://developers.google.com/fusiontables/docs/samples/gviz_datatable
@@ -43,6 +62,35 @@ https://developers.google.com/fusiontables/docs/samples/gviz_datatable
               document.getElementById('visualization'));
           table.draw(response.getDataTable(), {
             showRowNumber: true
+          });
+        });
+      }
+{% endhighlight %}
+
+{% highlight javascript linenos %}
+      function drawTable() {
+        var query = "select col0,col1,col2,col10"
+          + "from 1W7-apvjDSgsT5jRy4lAcxYJgsGVIcFhudiFN0J0"
+          + "where col0 contains ignoring case 'pone'";
+        var year = document.getElementById('year').value;
+        if (year) {
+          query += "and col1 >= 'Jan 1, "+year+"' and col1 <= 'Dec 31, " + year + "'";
+        }
+        query += " order by col10 desc limit 10";
+
+        var queryText = encodeURIComponent(query);
+        var gvizQuery = new google.visualization.Query(
+            'http://www.google.com/fusiontables/gvizdata?tq=' + queryText);
+
+        gvizQuery.send(function(response) {
+
+          var table = new google.visualization.Table(
+            document.getElementById('visualization')
+          );
+
+          table.draw(response.getDataTable(), {
+            showRowNumber: true,
+            allowHtml: true
           });
         });
       }

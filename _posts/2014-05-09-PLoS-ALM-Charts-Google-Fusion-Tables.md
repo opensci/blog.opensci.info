@@ -33,7 +33,7 @@ The advantage of JS is that it is crossplatform and works in any web browser, an
 [bulkcsv]: http://article-level-metrics.plos.org/files/2012/10/alm_report_2014-03-10.csv
 [almapi]: http://api.plos.org/alm/using-the-alm-api/
 
-<!-- more -->  
+<!-- more --> 
 
 <!--
 Google Fusion Tables API supports filtering and aggregation features compared to the default [PLoS ALM API][almapi].
