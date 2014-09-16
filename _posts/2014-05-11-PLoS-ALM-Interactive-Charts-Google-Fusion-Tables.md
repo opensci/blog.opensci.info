@@ -12,11 +12,11 @@ comments: true
 In the [previous part][part1] we made a chart showing PLoS ALM data using the Javascript Google Charts API.
 
 
-[The chart][oldchart] allowed some basic interaction, for example we could hover the mouse on a column, and see the exact number of citations and the full title of the article.
+[The chart][oldchart] allowed some basic interaction. For example, we could hover the mouse on a column and see the exact number of citations and the full title of the article.
 
-However the user could not control which year to view, or which citations to use. Although they could see the article name, there was no way to click through to read the full article.
+However the user had no control over which year to view, or which citations to use. Although they could see the article name, there was no way to click and read the full article.
 
-In this article, we will learn how to let the user select which data they want to see, and automatically include a link so the user can read the full article.
+In this article, we will learn how to let the user select parameters of the data query, and include formatting so the user can read the full article.
 
 [part1]: /7230/
 [oldchart]: /file/7230/columnChart.html
@@ -39,37 +39,46 @@ In this article, we will learn how to let the user select which data they want t
 <!-- more -->
 
 
+Google provides an [example visualization][example] that includes user input. Copy this code into a new HTML file. There are two sections we need to modify.
+
+The first is the beginning of the Javascript `drawTable()` function which includes the actual query. It forms the query using a variable gets modified by the user.
+
+The second part is the HTML form which provides an interface so the user can select the desired variable value. 
+
+When the form is changed it calls the `drawTable()` function which reads the input value from the form.
+
+[example]: https://developers.google.com/fusiontables/docs/samples/gviz_datatable
+
+We will reuse the query from the [previous article][part1]. It selects three types of citation counts for articles published in 2013 and then sorts by the highest `crossref` citations.  
+
 {% highlight sql %}
 SELECT title, crossref, scopus, pubmed FROM 1zkfQ7rtG9UI5a8rPDk2bpD6d0QbgP63h2v2l9YzW WHERE publication_date >= '2013-01-01' AND publication_date < '2014-01-01' ORDER BY crossref desc LIMIT 10
 {% endhighlight %}
 
-Google provides an [example visualization][example] that includes user input. There are two sections we need to modify. The first is the section with the actual query.
+Our custom query can be adapted into the sample code.
 
-When the HTML form is changed it calls the `drawTable()` function. That function gets the value from the form, and uses it to create the data query. 
-
-
-[example]: https://developers.google.com/fusiontables/docs/samples/gviz_datatable
-
-> Sample
+> Sample code builds query and then appends user input.
 {% highlight javascript %}
-var query = "SELECT 'Scoring Team' as Scoring, " +
-    "'Receiving Team' as Receiving, 'Minute of goal' as Minute " +
-    'FROM 1VlPiBCkYt_Vio-JT3UwM-U__APurJvPb6ZEJPg';
-var team = document.getElementById('team').value;
-if (team) {
-  query += " WHERE 'Scoring Team' = '" + team + "'";
-}
+function drawTable() {
+  var query = "SELECT 'Scoring Team' as Scoring, " +
+      "'Receiving Team' as Receiving, 'Minute of goal' as Minute " +
+      'FROM 1VlPiBCkYt_Vio-JT3UwM-U__APurJvPb6ZEJPg';
+  var team = document.getElementById('team').value;
+  if (team) {
+    query += " WHERE 'Scoring Team' = '" + team + "'";
+  }
 {% endhighlight %}
 
-We will reuse the query from the [previous article][part1]. Instead of a user-selectable `team` we will let the user select the `citation` type.
+We will let the user select the `citation` type used in the `ORDER BY` clause by replacing `team` from the example. 
 
-**Modified**
+> The query now contains our custom query plus the user input. 
 {% highlight javascript %}
-var query = "SELECT title, crossref, scopus, pubmed FROM 1zkfQ7rtG9UI5a8rPDk2bpD6d0QbgP63h2v2l9YzW WHERE publication_date >= '2013-01-01' AND publication_date < '2014-01-01'";
-var citation = document.getElementById('citation').value;
-if (citation) {
-  query += " ORDER BY " + citation + " desc LIMIT 10";
-}
+function drawTable() {
+  var query = "SELECT title, crossref, scopus, pubmed FROM 1zkfQ7rtG9UI5a8rPDk2bpD6d0QbgP63h2v2l9YzW WHERE publication_date >= '2013-01-01' AND publication_date < '2014-01-01'";
+  var citation = document.getElementById('citation').value;
+  if (citation) {
+    query += " ORDER BY " + citation + " desc LIMIT 10";
+  }
 {% endhighlight %}
 
 After changing the query and Javascript variables, we have to change the HTML for user input.
@@ -84,7 +93,7 @@ After changing the query and Javascript variables, we have to change the HTML fo
 </select>
 {% endhighlight %}
 
-The option values should be the types of citations we wish to allow.
+The option values will set the type of citations the user can choose from.
 
 {% highlight html %}
 <label>Citation:</label>
@@ -95,10 +104,9 @@ The option values should be the types of citations we wish to allow.
 </select>
 {% endhighlight %}
 
+> The modified sample can now be loaded in a web browser.
 
-
-
-
+<a href="/file/{{ page.shortid }}/gviz_datatable2.html"><img src ="/file/{{ page.shortid }}/sample1.jpg" class="mainimage" /></a>
 
 
 
