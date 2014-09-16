@@ -27,33 +27,22 @@
       google.load('visualization', '1', { packages: ['table'] });
 
       function drawTable() {
+        var query = "SELECT title, publication_date, crossref, scopus, pubmed FROM 1zkfQ7rtG9UI5a8rPDk2bpD6d0QbgP63h2v2l9YzW";
 
         var year = document.getElementById('year').value;
+        if (year) {
+          query += " WHERE publication_date >= '"+year+"-01-01' AND publication_date <= '"+year+"-12-31'";
+        }
+
         var journal = document.getElementById('journal').value;
+        if (journal) {
+          query += " AND doi CONTAINS IGNORING CASE '"+journal+"'";
+        }
+
         var citation = document.getElementById('citation').value;
-
-
-
-        var query = "select col0,col1,col2,"+citation+" from 1W7-apvjDSgsT5jRy4lAcxYJgsGVIcFhudiFN0J0";
-
-
-
-        query_journal = "col0 contains ignoring case '" + journal + "'";
-        query_year = "col1 >= 'Jan 1, " + year + "' and col1 <= 'Dec 31, " + year + "'";
-
-
-        if (journal && year) {
-          query += " where " + query_journal + " and " + query_year;
+        if (citation) {
+          query += " ORDER BY " + citation + " desc LIMIT 10";
         }
-        else if (year) {
-          query += " where " + query_year;
-        }
-        else if (journal) {
-          query += " where " + query_journal;
-        }
-
-        query += " order by " + citation + " desc limit 10";
-
 
 console.log(query);
 
@@ -62,29 +51,22 @@ console.log(query);
             'http://www.google.com/fusiontables/gvizdata?tq=' + queryText);
 
         gvizQuery.send(function(response) {
-
           var table = new google.visualization.Table(
-            document.getElementById('visualization')
-          );
-
+              document.getElementById('visualization'));
           table.draw(response.getDataTable(), {
-            showRowNumber: true,
-            allowHtml: true
+            showRowNumber: true
           });
         });
       }
 
-      
       google.setOnLoadCallback(drawTable);
-
-
     </script>
   </head>
   <body>
+<h1> Top Cited Articles by Journal and Year</h1>
     <div>
       <label>Journal:</label>
       <select id="journal" onchange="drawTable();">
-        <option value="">All</option>
         <option value="pbio">PLoS Biology</option>
         <option value="pone">PLoS ONE</option>
         <option value="pgen">PLoS Genetics</option>
@@ -92,20 +74,17 @@ console.log(query);
       </select>
       <label>Year:</label>
       <select id="year" onchange="drawTable();">
-        <option value="">All</option>
-        <option value="2009">2009</option>
-        <option value="2010">2010</option>
         <option value="2011">2011</option>
         <option value="2012">2012</option>
+        <option value="2013" selected="selected">2013</option>
       </select>
       <label>Citation:</label>
       <select id="citation" onchange="drawTable();">
-        <option value="col10">Scopus</option>
-        <option value="col6">CrossRef</option>
-        <option value="col9">PMC</option>
+        <option value="crossref">CrossRef</option>
+        <option value="scopus">Scopus</option>
+        <option value="pubmed">Pubmed</option>
       </select>
-
     </div>
-    <div id="visualization">Loading...</div>
+    <div id="visualization"></div>
   </body>
 </html>

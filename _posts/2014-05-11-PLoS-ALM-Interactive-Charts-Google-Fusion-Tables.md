@@ -106,12 +106,34 @@ The option values will set the type of citations the user can choose from.
 
 > The modified sample can now be loaded in a web browser.
 
-<a href="/file/{{ page.shortid }}/gviz_datatable2.html"><img src ="/file/{{ page.shortid }}/sample1.jpg" class="mainimage" /></a>
+<a href="/file/{{ page.shortid }}/sample2.html"><img src ="/file/{{ page.shortid }}/sample1.jpg" class="mainimage" /></a>
 
 
+The user can choose which type of citation to sort by. Each time the query gets updated and sent to the Google Fusion Tables server, so it is querying the full dataset with thousands of records and returning the specified results.
 
+# Adding More Options #
 
+We can allow the user to select additional query parameters in the same way. Instead filtering only for 2013, let's allow the user to choose the year. First, modify `drawChart()` to read a value from an HTML form. Then use that variable when creating the data query.
 
+{% highlight javascript %}
+var year = document.getElementById('year').value;
+if (year) {
+  query += " WHERE publication_date >= '"+year+"-01-01' AND publication_date <= '"+year+"-12-31'";
+}
+{% endhighlight %}
+
+Finally make sure the HTML includes a form with the values we want to give the user.
+
+{% highlight html %}
+<label>Year:</label>
+<select id="year" onchange="drawTable();">
+  <option value="2011">2011</option>
+  <option value="2012">2012</option>
+  <option value="2013" selected="selected">2013</option>
+</select>
+{% endhighlight %}
+
+Although 2013 is the last option, we can use `selected="selected"` to have it selected by default. 
 
 
 

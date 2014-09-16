@@ -27,7 +27,7 @@
       google.load('visualization', '1', { packages: ['table'] });
 
       function drawTable() {
-        var query = "SELECT title, crossref, scopus, pubmed FROM 1zkfQ7rtG9UI5a8rPDk2bpD6d0QbgP63h2v2l9YzW WHERE publication_date >= '2013-01-01' AND publication_date < '2014-01-01'";
+        var query = "SELECT title, crossref, scopus, pubmed FROM 1zkfQ7rtG9UI5a8rPDk2bpD6d0QbgP63h2v2l9YzW WHERE publication_date >= '2013-01-01' AND publication_date <= '2013-12-31'";
         var citation = document.getElementById('citation').value;
         if (citation) {
           query += " ORDER BY " + citation + " desc LIMIT 10";
@@ -49,6 +49,7 @@
     </script>
   </head>
   <body>
+<h1>Top Cited Articles in 2013</h1>
     <div>
       <label>Citation:</label>
       <select id="citation" onchange="drawTable();">
