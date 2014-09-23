@@ -27,11 +27,18 @@
       google.load('visualization', '1', { packages: ['table'] });
 
       function drawTable() {
-        var query = "SELECT title, crossref, scopus, pubmed FROM 1zkfQ7rtG9UI5a8rPDk2bpD6d0QbgP63h2v2l9YzW WHERE publication_date >= '2013-01-01' AND publication_date <= '2013-12-31'";
+        var query = "SELECT title, publication_date, crossref, scopus, pubmed FROM 1zkfQ7rtG9UI5a8rPDk2bpD6d0QbgP63h2v2l9YzW";
+
+        var year = document.getElementById('year').value;
+        if (year) {
+          query += " WHERE publication_date >= '"+year+"-01-01' AND publication_date <= '"+year+"-12-31'";
+        }
+
         var citation = document.getElementById('citation').value;
         if (citation) {
           query += " ORDER BY " + citation + " desc LIMIT 10";
         }
+
         var queryText = encodeURIComponent(query);
         var gvizQuery = new google.visualization.Query(
             'http://www.google.com/fusiontables/gvizdata?tq=' + queryText);
@@ -49,8 +56,14 @@
     </script>
   </head>
   <body>
-<h1>Top Cited Articles in 2013</h1>
+<h1> Top Cited Articles by Year</h1>
     <div>
+      <label>Year:</label>
+      <select id="year" onchange="drawTable();">
+        <option value="2011">2011</option>
+        <option value="2012">2012</option>
+        <option value="2013" selected="selected">2013</option>
+      </select>
       <label>Citation:</label>
       <select id="citation" onchange="drawTable();">
         <option value="crossref">CrossRef</option>

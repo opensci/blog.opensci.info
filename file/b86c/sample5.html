@@ -27,7 +27,7 @@
       google.load('visualization', '1', { packages: ['table'] });
 
       function drawTable() {
-        var query = "SELECT title, publication_date, crossref, scopus, pubmed FROM 1zkfQ7rtG9UI5a8rPDk2bpD6d0QbgP63h2v2l9YzW";
+        var query = "SELECT doi, title, publication_date, crossref, scopus, pubmed FROM 1zkfQ7rtG9UI5a8rPDk2bpD6d0QbgP63h2v2l9YzW";
 
         var year = document.getElementById('year').value;
         if (year) {
@@ -36,7 +36,9 @@
 
         var journal = document.getElementById('journal').value;
         if (journal) {
-          query += " AND doi CONTAINS '"+journal+"'";
+          if (year) {query += " AND";}
+          else {query += " WHERE";}
+          query += " doi CONTAINS '"+journal+"'";
         }
 
         var citation = document.getElementById('citation').value;
@@ -44,18 +46,39 @@
           query += " ORDER BY " + citation + " desc LIMIT 10";
         }
 
-console.log(query);
-
         var queryText = encodeURIComponent(query);
         var gvizQuery = new google.visualization.Query(
             'http://www.google.com/fusiontables/gvizdata?tq=' + queryText);
 
         gvizQuery.send(function(response) {
           var table = new google.visualization.Table(
-              document.getElementById('visualization'));
-          table.draw(response.getDataTable(), {
-            showRowNumber: true
+            document.getElementById('visualization')
+          );
+            
+          // load DataTable from response
+          myDataTable = response.getDataTable();
+
+          // define pattern formatter
+          var formatter = new google.visualization.PatternFormat('<a href="http://dx.doi.org/{0}" target="_blank">{1}</a> ');
+
+          // Reformat our data.
+          formatter.format(myDataTable, [0,1],1); // feed columns 0 and 1 as input, and put output into column 1
+          
+          
+          // load DataTable into a DataView
+          myDataView = new google.visualization.DataView(myDataTable);
+
+
+          myDataView.setColumns([1, 2, 3, 4, 5]);
+          // output columns in desired order
+
+       
+          table.draw(myDataView, {
+            showRowNumber: true,
+            allowHtml: true
           });
+       
+       
         });
       }
 
@@ -67,6 +90,7 @@ console.log(query);
     <div>
       <label>Journal:</label>
       <select id="journal" onchange="drawTable();">
+        <option value="">All</option>
         <option value="pone">PLoS ONE</option>
         <option value="pbio">PLoS Biology</option>
         <option value="pgen">PLoS Genetics</option>
@@ -74,6 +98,7 @@ console.log(query);
       </select>
       <label>Year:</label>
       <select id="year" onchange="drawTable();">
+        <option value="">All</option>
         <option value="2011">2011</option>
         <option value="2012">2012</option>
         <option value="2013" selected="selected">2013</option>
