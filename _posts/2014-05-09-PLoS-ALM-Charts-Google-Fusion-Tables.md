@@ -1,6 +1,6 @@
 --- 
 layout: post
-title: PLoS ALM Charts with Google Fusion Tables
+title: Visualize PLoS ALM with Google Charts and Fusion Tables
 permalink: /7230/PLoS-ALM-Charts-with-Google-Fusion-Tables
 uuid: 8c6563f5-7230-4a97-b888-7a1536b5b746
 shortid: 7230
@@ -16,13 +16,15 @@ customhead:   <script type="text/javascript" src="http://www.google.com/jsapi"><
   <img src ="/file/7230/columnChart.png" class="mainimage" />
 </a>
 
-All articles published by the Public Library of Science have [Article Level Metrics][plosalmdata] collected. These metrics include citation counts, web views, online bookmarks, and more. The metrics are available through the [PLoS ALM API][almapi] and in a [bulk CSV file][bulkcsv].
+All articles published by the Public Library of Science have [Article Level Metrics][plosalmdata] collected about them. These metrics include citation counts, web views, online bookmarks, and more. The metrics are available through the [PLoS ALM API][almapi] and in a [bulk CSV file][bulkcsv].
 
-> Google Charts can visualize data from Fusion Tables with Javascript
+> Metrics data for every PLoS article is available online as a bulk download
 
-The CSV data can be uploaded to Google Fusion Tables, a free data hosting service that allows web-based browsing, filtering, and aggregation. The [Fusion Tables API][gftapi] supports SQL-like queries and integrates tightly with the Javascript [Google Charts][gcharts] library allowing visualization of query results in a web browser.
+The CSV data can be uploaded to Google Fusion Tables, a free data hosting service that allows web-based browsing, filtering, and aggregation. The [Fusion Tables API][gftapi] supports SQL-like queries and integrates tightly with the [Google Charts][gcharts] allowing visualization of query results in a web browser using Javascript.
 
-The advantage of Javascript is that it is crossplatform and works in any web browser, and allows interaction with the data.
+> Google Charts uses Javascript to visualize data from Fusion Tables
+
+The advantage of Javascript is that it works in any web browser, including mobile devices, and allows interaction with the data.
 
 [plosalm]: http://article-level-metrics.plos.org/
 [plosalmdata]: http://article-level-metrics.plos.org/plos-alm-data/
@@ -44,15 +46,17 @@ Google Fusion Tables API supports filtering and aggregation features compared to
 
 # Google Fusion Tables #
 
+The article metrics CSV file can be uploaded directly to Fusion Tables and [browsed online][mytable]. The web interface allows sorting, filtering, and aggregation. 
+
+[mytable]: https://www.google.com/fusiontables/DataSource?docid=1zkfQ7rtG9UI5a8rPDk2bpD6d0QbgP63h2v2l9YzW&pli=1#rows:id=12
+
 <a href="https://www.google.com/fusiontables/DataSource?docid=1zkfQ7rtG9UI5a8rPDk2bpD6d0QbgP63h2v2l9YzW&pli=1#rows:id=12">
   <img src ="/file/7230/gft.browse.online.png" class="mainimage" />
 </a>
 
 > Data can be browsed online after uploading the CSV
 
-The article metrics CSV file can be uploaded directly to Fusion Tables and [browsed online][mytable]. The web interface allows sorting, filtering, and aggregation. For example, we can filter by `publication_date` to show only articles from 2013, then sort by the most CrossRef citations.
-
-[mytable]: https://www.google.com/fusiontables/DataSource?docid=1zkfQ7rtG9UI5a8rPDk2bpD6d0QbgP63h2v2l9YzW&pli=1#rows:id=12
+For example, we can filter by `publication_date` to show only articles from 2013, then sort by the most CrossRef citations.
 
 <a href="https://www.google.com/fusiontables/DataSource?docid=1zkfQ7rtG9UI5a8rPDk2bpD6d0QbgP63h2v2l9YzW#rows:id=13"><img src ="/file/7230/gft.filter.sort.png" alt="2013 sorted by CrossRef" class="mainimage"/></a>
 
@@ -60,7 +64,12 @@ The article metrics CSV file can be uploaded directly to Fusion Tables and [brow
 
 # Fusion Tables API #
 
-The query options from the web interface can be used through an API. The syntax is similar to an SQL query. 
+The query options from the web interface also be used through an API. The syntax is similar to an SQL query. 
+
+To see the top 10 CrossRef cited papers from 2013:
+{% highlight sql %}
+SELECT title, crossref, scopus, pubmed FROM 1zkfQ7rtG9UI5a8rPDk2bpD6d0QbgP63h2v2l9YzW WHERE publication_date >= '2013-01-01' AND publication_date < '2014-01-01' ORDER BY crossref desc LIMIT 10
+{% endhighlight %}
 
 * `SELECT` Pick the columns to include in the results.
 * `FROM` Use the unique identifier of the data table which can be found in *File > About this table* or in the URL: `1zkfQ7rtG9UI5a8rPDk2bpD6d0QbgP63h2v2l9YzW`
@@ -68,30 +77,29 @@ The query options from the web interface can be used through an API. The syntax 
 * `ORDER BY` Sort the results using a selected column and in the chosen sort direction.
 * `LIMIT` Return only the specified number of results. This prevents loading too much data into a browser causing it to slow down, and also is useful for testing queries.
 
-The complete query for the top 10 CrossRef cited papers from 2013:
-{% highlight sql %}
-SELECT title, crossref, scopus, pubmed FROM 1zkfQ7rtG9UI5a8rPDk2bpD6d0QbgP63h2v2l9YzW WHERE publication_date >= '2013-01-01' AND publication_date < '2014-01-01' ORDER BY crossref desc LIMIT 10
-{% endhighlight %}
+> Google Fusion Tables API supports SQL-like queries
 
-To test queries during development, use the [Hurl.it HTTP Request tool][querytest].
-
-[querytest]: http://www.hurl.it/?url=www.google.com/fusiontables/exporttable&method=get&args=%7B%22query%22%3A%5B%22SELECT%20title%2C%20crossref%2C%20scopus%2C%20pubmed%20FROM%201zkfQ7rtG9UI5a8rPDk2bpD6d0QbgP63h2v2l9YzW%20WHERE%20publication_date%20%3E%3D%20%272013-01-01%27%20AND%20publication_date%20%3C%20%272014-01-01%27%20ORDER%20BY%20crossref%20desc%20LIMIT%2010%22%5D%7D
-
-
-The results of a query can also be [downloaded as a CSV][query] by appending the query to this URL: `https://www.google.com/fusiontables/exporttable?query=`
+The results of a query can be [downloaded as a CSV][query] by appending the query to this URL: `https://www.google.com/fusiontables/exporttable?query=`
 
 [query]: https://www.google.com/fusiontables/exporttable?query=SELECT%20title%2C%20crossref%2C%20scopus%2C%20pubmed%20FROM%201zkfQ7rtG9UI5a8rPDk2bpD6d0QbgP63h2v2l9YzW%20WHERE%20publication_date%20%3E%3D%20%272013-01-01%27%20AND%20publication_date%20%3C%20%272014-01-01%27%20ORDER%20BY%20crossref%20desc%20LIMIT%2010
 
 
+To test make testing queries during development easier, use the [Hurl.it HTTP Request tool][querytest].
+
+[querytest]: http://www.hurl.it/?url=www.google.com/fusiontables/exporttable&method=get&args=%7B%22query%22%3A%5B%22SELECT%20title%2C%20crossref%2C%20scopus%2C%20pubmed%20FROM%201zkfQ7rtG9UI5a8rPDk2bpD6d0QbgP63h2v2l9YzW%20WHERE%20publication_date%20%3E%3D%20%272013-01-01%27%20AND%20publication_date%20%3C%20%272014-01-01%27%20ORDER%20BY%20crossref%20desc%20LIMIT%2010%22%5D%7D
 
 # Google Charts #
 
-Now that the query is ready, it is time to display the results using Google Charts. Because of the tight integration between Fusion Tables and Google Charts, the query can be written directly in the Javascript code.
+Now that we have a working query, we can display the results using the Google Charts. Because of the tight integration between Fusion Tables and Charts, the query can be written directly in the Javascript code.
 
 [drawchartdemo]: https://developers.google.com/chart/interactive/docs/fusiontables
 [drawchart]: https://developers.google.com/chart/interactive/docs/reference#google.visualization.drawchart
 
-{% highlight javascript linenos hl_lines=4 %}
+> Fusion Tables query is written directly in Javascript
+
+Using this [sample code][drawchartdemo] we can visualize our data by modifying a few lines of the [`drawChart()`][drawchart] function.
+
+{% highlight javascript linenos hl_lines="4 8 9 10" %}
 google.visualization.drawChart({
         "containerId": "visualization_div",
         "dataSourceUrl": 'http://www.google.com/fusiontables/gvizdata?tq=',
@@ -106,9 +114,6 @@ google.visualization.drawChart({
       });
 {% endhighlight %}
 
-> Fusion Tables query is written directly in the Javascript
-
-Using this [sample code][drawchartdemo] we can modify a few lines of the [`drawChart()`][drawchart] function to visualize our data.
 
 * Line 4 is where the `query` value is set. Replace the sample query with our custom query.
 * Remove `refreshInterval` on line 5 because the source data is not being changed.
@@ -123,8 +128,8 @@ Change these settings in the `options` area:
 * `title` A title to describe the chart.
 * `vAxis` Control settings for the vertical axis, such as `title` to show what the axis is measuring.
 
-
-{% highlight javascript linenos hl_lines=4 %}
+> Modifying a few lines from sample code creates chart with our data
+{% highlight javascript linenos hl_lines="4 7 8" %}
       google.visualization.drawChart({
         "containerId": "visualization_div",
         "dataSourceUrl": 'http://www.google.com/fusiontables/gvizdata?tq=',
@@ -137,7 +142,7 @@ Change these settings in the `options` area:
       });
 {% endhighlight %}
 
-The `visualization_div` can be styled like any HTML element, such as with a desired `height` and `width`.
+The chart ouputs to a `visualization_div` that can be styled like any HTML element, such as with a desired `height` and `width`.
 Adding some text like "Loading..." helps prevent users from being confused by a blank space while the visualization loads.
 
 
@@ -146,7 +151,7 @@ Adding some text like "Loading..." helps prevent users from being confused by a 
 {% endhighlight %}
 
 
-<a href="view-source:/file/7230/columnChart.html" target="_blank">View final source code</a>
+<a href="view-source:/file/7230/columnChart.html" target="_blank">Final source code</a>
 
 # Results #
 
@@ -156,14 +161,27 @@ Adding some text like "Loading..." helps prevent users from being confused by a 
 
 [customchart]: /file/7230/columnChart.html
 
-The result is a query performed live on the dataset, with the results visualized in any web browser.
+The result is a query performed on a live dataset, with the results visualized in any web browser.
 
-Because it uses Javascript, even this basic chart can be interactive. When the user hovers their mouse on a column, a label appears showing the full article title and an exact citation count. This provides important detail without taking additional screen space or overloading the user with information.
+Because it uses Javascript, even this basic chart can include some interaction. When the user hovers their mouse on a column, a label appears showing the full article title and an exact citation count. This provides important detail without taking additional screen space or overloading the user with information.
+
+> Javascript charts can include interaction such as tooltips
+
+Although this is a basic query and chart, we can see the top CrossRef cited articles for 2013, and compare their citation counts. We can see that most of the top-cited CrossRef articles had fewer Scopus citations, except for "Post-Treatment HIV-1 Controllers..." and "A Guide to Enterotypes across the..." which for some reason received more Scopus than CrossRef citations. These differences may be due to article awareness, citation inclusion methods, or timeframe.
+
+> The chart lets the viewer compare citations of different papers and spot trends
+
+While it is impossible to draw conclusions from a single chart, even this basic visualization can indicate areas of interest for further study.
 
 
-Although this is a basic query and chart, we can clearly see what the top CrossRef cited articles were for 2013, and compare their citation counts. For example the #1 article received approximately twice as many citations as the #3 article. We can also see that most of the top-cited CrossRef articles had fewer Scopus citations, except for "Post-Treatment HIV-1 Controllers..." and "A Guide to Enterotypes across the..." which for some reason received more Scopus than CrossRef citations. We can also see that while "PKC? Phosphorylates PI3K? to..." received a high amount of Crossref citations, it received relatively few Scopus and zero Pubmed citations. These differences may be due to article awareness, citation inclusion methods, or timeframe. While it is impossible to draw conclusions from a single chart, even this basic visualization can indicate areas of possible interest for further study.
+# Next Steps #
 
+Using this type of code, anyone can run a query on the PLoS ALM dataset. This query can use SQL-like operations and is free to run on the entire 100k+ rows of data.
 
-# Next Step #
+> Fusion Tables query can be modified to visualize different aspects of the data
 
-Additional options would be to add more user interaction, such as allowing the user to choose which year to filter by, and which citation sources to include and sort. Additionally we might add links via the DOI so that users could click directly from the visualization through to the actual article. These features will be explored in upcoming articles.
+There are also a [range of chart types][charttypes] that can be used to display query results.
+
+[charttypes]: https://developers.google.com/chart/interactive/docs/gallery
+
+Additional options would be to add more user interaction, such as allowing the user to select a filter by year, and which citation sources to include and sort. Additionally it would help to link the chart to the article DOIs so users easily read the full article.
