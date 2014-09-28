@@ -5,7 +5,7 @@ permalink: /b86c/PLoS-ALM-Interactive-Charts-Google-Fusion-Tables
 uuid: 769a9bc2-b86c-11e2-8b71-6c626d8ab8fe
 shortid: b86c
 redirect_from: /b86c/
-published: true
+published: false
 comments: true
 ---
 
