@@ -10,13 +10,13 @@ comments: true
 customhead:   <script type="text/javascript" src="http://www.google.com/jsapi"></script><script type="text/javascript" src="/file/7230/columnChart.js"></script>
 ---
 
-*Learn to visualize Article Level Metrics data using Google Fusion Tables and Google Charts*
+*Learn to visualize Article Level Metrics with Google Fusion Tables and Google Charts*
 
 <a href="/file/7230/columnChart.html">
   <img src ="/file/7230/columnChart.png" class="mainimage" />
 </a>
 
-All articles published by the Public Library of Science have [Article Level Metrics][plosalmdata] collected about them. These metrics include citation counts, web views, online bookmarks, and more. The metrics are available through the [PLoS ALM API][almapi] and in a [bulk CSV file][bulkcsv].
+All scientific journal articles published by the Public Library of Science have [Article Level Metrics][plosalmdata] collected about them. These metrics include citation counts, web views, online bookmarks, and more. The metrics are available through the [PLoS ALM API][almapi] and in a [bulk CSV file][bulkcsv].
 
 > Metrics data for every PLoS article is available online as a bulk download
 

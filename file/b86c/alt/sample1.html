@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<!--
+  Copyright 2011 Google Inc. All Rights Reserved.
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+<html>
+  <head>
+    <meta charset="UTF-8">
+
+    <title>Fusion Tables API Example: Google Chart Tools Data Table</title>
+
+    <link href="/apis/fusiontables/docs/samples/style/default.css"
+        rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load('visualization', '1', { packages: ['corechart'] });
+
+      function drawTable() {
+        var query = "SELECT title, crossref, scopus, pubmed FROM 1zkfQ7rtG9UI5a8rPDk2bpD6d0QbgP63h2v2l9YzW WHERE publication_date >= '2013-01-01' AND publication_date <= '2013-12-31'";
+        var citation = document.getElementById('citation').value;
+        if (citation) {
+          query += " ORDER BY " + citation + " desc LIMIT 10";
+        }
+        
+        console.log(query);
+        
+        var queryText = encodeURIComponent(query);
+        var gvizQuery = new google.visualization.Query(
+            'http://www.google.com/fusiontables/gvizdata?tq=' + queryText);
+
+        gvizQuery.send(function(response) {
+          var table = new google.visualization.ColumnChart(
+              document.getElementById('visualization'));
+          table.draw(response.getDataTable(), {
+            showRowNumber: true
+          });
+        });
+      }
+
+      google.setOnLoadCallback(drawTable);
+    </script>
+  </head>
+  <body>
+<h1>Top Cited Articles in 2013</h1>
+    <div>
+      <label>Citation:</label>
+      <select id="citation" onchange="drawTable();">
+        <option value="crossref">CrossRef</option>
+        <option value="scopus">Scopus</option>
+        <option value="pubmed">Pubmed</option>
+      </select>
+    </div>
+    <div id="visualization" style="width: 100%; height: 800px;"></div>
+  </body>
+</html>
