@@ -1,16 +1,16 @@
 # Site navigation links
 
-- title: About
+- title: Home
   url: /about/
 
 - title: Articles
   url: /articles/
 
-- title: Blog
-  url: /blog/
+- title: About
+  url: /about/
 
-- title: Theme Setup
-  url: /theme-setup/
+- title: Follow
+  url: https://twitter.com/opensci
 
-- title: Made Mistakes
-  url: http://mademistakes.com
+- title: Fork
+  url: https://github.com/opensci/blog.opensci.info
