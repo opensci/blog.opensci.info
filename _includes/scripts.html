@@ -5,10 +5,11 @@
 <!-- Jekyll Simple Search option -->
 <script>
   $(document).ready(function() {
-      $('.search-field').simpleJekyllSearch({
-          jsonFile : '{{ site.url }}/search.json',
-          searchResults : '.search-results',
-          template : '<li><article><a href="{url}">{title} <span class="entry-date"><time datetime="{date}">{shortdate}</time></span></a></article></li>',
+      $('.search-field').jekyllSearch({
+          jsonFile: '{{ site.url }}/search.json',
+          searchResults: '.search-results',
+          template: '<li><article><a href="{url}">{title} <span class="entry-date"><time datetime="{date}">{shortdate}</time></span></a></article></li>',
+          fuzzy: true,
           noResults: '<p>Nothing found.</p>'
         });
   });
@@ -16,42 +17,47 @@
   (function( $, window, undefined ) {
     
      var bs = {
-          close: $(".icon-remove-sign"),
+          close: $(".close-btn"),
           searchform: $(".search-form"),
-          canvas: $("body"),
+          canvas: $(".js-menu-screen"),
           dothis: $('.dosearch')
       };
     
     bs.dothis.on('click', function() {
       $('.search-wrapper').css({ display: "block" });
+      $('body').toggleClass('no-scroll');
       bs.searchform.toggleClass('active');
       bs.searchform.find('input').focus();
-      bs.canvas.toggleClass('search-overlay');
+      bs.canvas.toggleClass('is-visible');
     });
     
       bs.close.on('click', function() {
         $('.search-wrapper').removeAttr( 'style' );
+        $('body').toggleClass('no-scroll');
         bs.searchform.toggleClass('active');
-        bs.canvas.removeClass('search-overlay');
+        bs.canvas.removeClass('is-visible');
     });
   })( jQuery, window );
 </script>
 {% endif %}
-{% if site.google_analytics %}
+{% if site.owner.google.analytics %}
 <!-- Asynchronous Google Analytics snippet -->
 <script>
   var _gaq = _gaq || [];
   var pluginUrl = 
  '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
   _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
-  _gaq.push(['_setAccount', '{{ site.google_analytics }}']);
+  _gaq.push(['_setAccount', '{{ site.owner.google.analytics }}']);
   _gaq.push(['_trackPageview']);
 
   (function() {
     var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
 </script>
 {% endif %}
-{% if page.comments %}{% include disqus_comments.html %}{% endif %}
+
+{% if page.comments %}
+  {% include disqus_comments.html %}
+{% endif %}
