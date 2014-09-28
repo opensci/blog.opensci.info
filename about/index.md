@@ -3,6 +3,7 @@ layout: page
 title: About Open Science Info
 excerpt: "Discussing open access, data, and standards."
 modified: 2013-09-13
+logo: false
 image:
   feature: louis_15_bg_101202-feature-256.jpg
 #  credit: WeGraphics
