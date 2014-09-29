@@ -1,13 +1,13 @@
 --- 
 layout: post
 title: Visualize PLoS ALM with Google Charts and Fusion Tables
-permalink: /7230/PLoS-ALM-Charts-with-Google-Fusion-Tables
+permalink: /7230/Visualize-PLoS-ALM-Charts-with-Google-Fusion-Tables
 uuid: 8c6563f5-7230-4a97-b888-7a1536b5b746
 shortid: 7230
 redirect_from: /7230/
 published: true
-comments: true
 customhead:   <script type="text/javascript" src="http://www.google.com/jsapi"></script><script type="text/javascript" src="/file/7230/columnChart.js"></script>
+author: mikechelen
 ---
 
 *Learn to visualize Article Level Metrics with Google Fusion Tables and Google Charts*
@@ -128,7 +128,7 @@ Change these settings in the `options` area:
 * `title` A title to describe the chart.
 * `vAxis` Control settings for the vertical axis, such as `title` to show what the axis is measuring.
 
-> Modifying a few lines from sample code creates chart with our data
+> Modifying a few lines from the sample code creates chart with our data
 {% highlight javascript linenos hl_lines="4 7 8" %}
       google.visualization.drawChart({
         "containerId": "visualization_div",
