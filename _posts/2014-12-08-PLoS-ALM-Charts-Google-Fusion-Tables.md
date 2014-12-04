@@ -10,7 +10,7 @@ customhead:   <script type="text/javascript" src="http://www.google.com/jsapi"><
 author: mikechelen
 ---
 
-*Learn to visualize Article Level Metrics with Google Fusion Tables and Google Charts*
+*Learn to filter, sort, and visualize Article Level Metrics with Google Fusion Tables and Google Charts*
 
 <a href="/file/7230/columnChart.html">
   <img src ="/file/7230/columnChart.png" class="mainimage" />
@@ -95,11 +95,11 @@ Now that we have a working query, we can display the results using Google Charts
 [drawchartdemo]: https://developers.google.com/chart/interactive/docs/fusiontables
 [drawchart]: https://developers.google.com/chart/interactive/docs/reference#google.visualization.drawchart
 
-Using this [sample code][drawchartdemo] we can visualize our data by modifying a few lines of the [`drawChart()`][drawchart] function.
+Starting from this [sample code][drawchartdemo] we can modify a few lines of the [`drawChart()`][drawchart] function to visualize our data.
 
 <a href="https://developers.google.com/chart/interactive/docs/fusiontables" target="_blank" class="btn btn-default" role="button">Sample Code</a>
 
-> Modifying a few lines from the sample code creates a chart with our data
+> Modifying the function parameters of the sample code creates a chart with our data
 
 {% highlight javascript linenos hl_lines="4 8 9 10" %}
 google.visualization.drawChart({
@@ -129,6 +129,7 @@ Change these settings in the `options` area:
 * `title` A title to describe the chart.
 * `vAxis` Control settings for the vertical axis, such as `title` to show what the axis is measuring.
 
+**Modified Version**
 {% highlight javascript linenos hl_lines="4 7 8" %}
       google.visualization.drawChart({
         "containerId": "visualization_div",
@@ -142,9 +143,8 @@ Change these settings in the `options` area:
       });
 {% endhighlight %}
 
-The chart ouputs to a `visualization_div` that can be styled like any HTML element, such as with a desired `height` and `width`.
+The chart ouputs to a `visualization_div` that must exist in the HTML. Like any HTML element, it can be styled such as with a desired `height` and `width`.
 Adding some text like "Loading..." helps prevent users from being confused by a blank space while the visualization loads.
-
 
 {% highlight html %}
   <div id="visualization_div" style="width: 100%; height: 800px;">Loading...</div>
@@ -163,20 +163,19 @@ The final chart can be embedded in a web page or displayed on its own.
 
 The result is a query performed on a live dataset, with the results visualized in any web browser.
 
-Because it uses Javascript, even this basic chart can include some interaction. When the user hovers their mouse on a column, a label appears showing the full article title and an exact citation count. This provides important detail without taking additional screen space or overloading the user with information.
+This simple chart includes some interaction because it uses Javascript. When the user hovers their mouse on a column, a label appears showing the full article title and an exact citation count. This provides important detail without taking additional screen space or overloading the user with information.
 
 > Javascript charts can include interaction such as tooltips
 
-Although this is a basic query and chart, we can see the top CrossRef cited articles for 2013, and compare their citation counts. We can see that most of the top-cited CrossRef articles had fewer Scopus citations, except for "Post-Treatment HIV-1 Controllers..." and "A Guide to Enterotypes across the..." which for some reason received more Scopus than CrossRef citations. These differences may be due to article awareness, citation inclusion methods, or timeframe.
+Although this is a basic query and chart, it allows us to see the top CrossRef cited articles for 2013 and compare their citation counts. Most of the top-cited CrossRef articles had fewer Scopus citations, except for "Post-Treatment HIV-1 Controllers..." and "A Guide to Enterotypes across the..." which for some reason received more Scopus than CrossRef citations. These differences may be due to article awareness, citation inclusion methods, or timeframe.
 
 > The chart lets the viewer compare citations of different papers and spot trends
 
-While it is impossible to draw conclusions from a single chart, even this basic visualization can indicate areas of interest for further study.
-
+While it is impossible to draw conclusions from a single chart, even this simplistic visualization can indicate areas of interest for further study.
 
 # Next Steps #
 
-Using this type of code, anyone can run a query on the PLoS ALM dataset. This query can use SQL-like operations and is free to run on the entire 100k+ rows of data.
+Using this type of code anyone can freely run a query on the PLoS ALM dataset. This query can use SQL-like operations and runs on the entire 100k+ rows of data. The query can also perform calculations on the data columns, such as `SUM()`, `AVERAGE()`, and more.
 
 > Fusion Tables query can be modified to visualize different aspects of the data
 
@@ -184,4 +183,6 @@ There are also a [range of chart types][charttypes] that can be used to display 
 
 [charttypes]: https://developers.google.com/chart/interactive/docs/gallery
 
-Additional options would be to add more user interaction, such as allowing the user to select a filter by year, and which citation sources to include and sort. Additionally it would help to link the chart to the article DOIs so users easily read the full article.
+Google Charts can add more user interaction, such as allowing the user to select a filter by year, or which citation sources to sort by. Extra formatting can be used, for example to provide links to let users easily read the full article.
+
+
