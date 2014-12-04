@@ -5,7 +5,7 @@ locale: en_US
 description:
 logo: site-logo.jpg
 search: true
-url: //localhost:4000
+url: //localhost:4005
 #url: //blog.opensci.info
 
 
