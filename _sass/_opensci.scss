@@ -46,6 +46,20 @@ img.bio-photo {
   box-shadow: 5px 5px 11px #ddd;
 }
 
+// reduce button margin in content
+div.entry-content .btn {
+  margin-bottom: .5rem;
+}
+
+// fix black text on button focus
+.btn:focus {
+  color:white;
+}
+
+.btn:hover {
+  color:black;
+}
+
 
 //
 //.entry-wrapper {
