@@ -16,7 +16,9 @@ author: mikechelen
   <img src ="/file/7230/columnChart.png" class="mainimage" />
 </a>
 
-All scientific journal articles published by the Public Library of Science have [Article Level Metrics collected about them. These metrics include citation counts, web views, online bookmarks, and more. The metrics are available through [a variety of sources][plosalmdata] including a [bulk CSV file][bulkcsv].
+All scientific journal articles published by the Public Library of Science have Article Level Metrics collected about them. These metrics include citation counts, web views, online bookmarks, and more. The metrics are available through [a variety of sources][plosalmdata] including a [bulk CSV file][bulkcsv].
+
+<a href="http://article-level-metrics.plos.org/plos-alm-data/" target="_blank" class="btn btn-default" role="button">ALM Data Sources</a>
 
 > Metrics data for every PLoS article is available online as a bulk download
 
@@ -48,15 +50,17 @@ The article metrics [CSV file][bulkcsv] can be uploaded directly to Fusion Table
 
 [mytable]: https://www.google.com/fusiontables/DataSource?docid=1zkfQ7rtG9UI5a8rPDk2bpD6d0QbgP63h2v2l9YzW&pli=1#rows:id=12
 
-<a href="https://www.google.com/fusiontables/DataSource?docid=1zkfQ7rtG9UI5a8rPDk2bpD6d0QbgP63h2v2l9YzW&pli=1#rows:id=12">
+<a href="https://www.google.com/fusiontables/DataSource?docid=1zkfQ7rtG9UI5a8rPDk2bpD6d0QbgP63h2v2l9YzW&pli=1#rows:id=12" target="_blank">
   <img src ="/file/7230/gft.browse.online.png" class="mainimage" />
 </a>
 
 > Data can be browsed online after uploading the CSV
 
+<a href="https://www.google.com/fusiontables/DataSource?docid=1zkfQ7rtG9UI5a8rPDk2bpD6d0QbgP63h2v2l9YzW&pli=1#rows:id=12" target="_blank" class="btn btn-default" role="button">Browse Fusion Table</a>
+
 For example, we can filter by `publication_date` to show only articles from 2013, and sort by the most CrossRef citations.
 
-<a href="https://www.google.com/fusiontables/DataSource?docid=1zkfQ7rtG9UI5a8rPDk2bpD6d0QbgP63h2v2l9YzW#rows:id=13"><img src ="/file/7230/gft.filter.sort.png" alt="2013 sorted by CrossRef" class="mainimage"/></a>
+<a href="https://www.google.com/fusiontables/DataSource?docid=1zkfQ7rtG9UI5a8rPDk2bpD6d0QbgP63h2v2l9YzW#rows:id=13" target="_blank"><img src ="/file/7230/gft.filter.sort.png" alt="2013 sorted by CrossRef" class="mainimage"/></a>
 
 > The web interface shows a filtered, sorted result
 
@@ -77,11 +81,9 @@ SELECT title, crossref, scopus, pubmed FROM 1zkfQ7rtG9UI5a8rPDk2bpD6d0QbgP63h2v2
 
 > Google Fusion Tables API supports SQL-like queries
 
-The results of a query can be [downloaded as a CSV][query] by appending the query to this URL: `https://www.google.com/fusiontables/exporttable?query=`
+The results of a query can be downloaded as a CSV by appending the query to this URL: `https://www.google.com/fusiontables/exporttable?query=`
 
-[query]: https://www.google.com/fusiontables/exporttable?query=SELECT%20title%2C%20crossref%2C%20scopus%2C%20pubmed%20FROM%201zkfQ7rtG9UI5a8rPDk2bpD6d0QbgP63h2v2l9YzW%20WHERE%20publication_date%20%3E%3D%20%272013-01-01%27%20AND%20publication_date%20%3C%20%272014-01-01%27%20ORDER%20BY%20crossref%20desc%20LIMIT%2010
-
-
+<a href="https://www.google.com/fusiontables/exporttable?query=SELECT%20title%2C%20crossref%2C%20scopus%2C%20pubmed%20FROM%201zkfQ7rtG9UI5a8rPDk2bpD6d0QbgP63h2v2l9YzW%20WHERE%20publication_date%20%3E%3D%20%272013-01-01%27%20AND%20publication_date%20%3C%20%272014-01-01%27%20ORDER%20BY%20crossref%20desc%20LIMIT%2010" target="_blank" class="btn btn-default" role="button">Query Result CSV</a>  
 To make testing queries during development easier, use the [Hurl.it HTTP Request tool][querytest].
 
 [querytest]: http://www.hurl.it/?url=www.google.com/fusiontables/exporttable&method=get&args=%7B%22query%22%3A%5B%22SELECT%20title%2C%20crossref%2C%20scopus%2C%20pubmed%20FROM%201zkfQ7rtG9UI5a8rPDk2bpD6d0QbgP63h2v2l9YzW%20WHERE%20publication_date%20%3E%3D%20%272013-01-01%27%20AND%20publication_date%20%3C%20%272014-01-01%27%20ORDER%20BY%20crossref%20desc%20LIMIT%2010%22%5D%7D
@@ -94,6 +96,8 @@ Now that we have a working query, we can display the results using Google Charts
 [drawchart]: https://developers.google.com/chart/interactive/docs/reference#google.visualization.drawchart
 
 Using this [sample code][drawchartdemo] we can visualize our data by modifying a few lines of the [`drawChart()`][drawchart] function.
+
+<a href="https://developers.google.com/chart/interactive/docs/fusiontables" target="_blank" class="btn btn-default" role="button">Sample Code</a>
 
 > Modifying a few lines from the sample code creates a chart with our data
 
@@ -147,15 +151,15 @@ Adding some text like "Loading..." helps prevent users from being confused by a 
 {% endhighlight %}
 
 
-<a href="https://github.com/opensci/blog.opensci.info/blob/gh-pages/file/7230/columnChart.html" target="_blank" class="btn btn-default" role="button">Final source code</a>
+<a href="https://github.com/opensci/blog.opensci.info/blob/gh-pages/file/7230/columnChart.html" target="_blank" class="btn btn-default" role="button">Final Source Code</a>
 
 # Results #
 
-The final chart can be embedded in a web page or displayed [on its own][customchart].
+The final chart can be embedded in a web page or displayed on its own.
 
 <div id="visualization_div" style="width: 90%; height: 400px; margin-left:auto;margin-right:auto;margin-bottom:.5em;">Loading...</div>
 
-[customchart]: /file/7230/columnChart.html
+<a href="/file/7230/columnChart.html" target="_blank" class="btn btn-default" role="button">Standalone Chart</a>
 
 The result is a query performed on a live dataset, with the results visualized in any web browser.
 
