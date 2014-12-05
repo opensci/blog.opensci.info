@@ -74,8 +74,6 @@ The query syntax closely matches SQL:
 * `ORDER BY` Sort the results using a selected column and in the chosen sort direction.
 * `LIMIT` Return only the specified number of results. This prevents loading too much data into a browser causing it to slow down, and also is useful for testing queries.
 
-> Google Fusion Tables API supports SQL-like queries
-
 The results of a query can be downloaded as a CSV by appending the query to this URL: `https://www.google.com/fusiontables/exporttable?query=`
 
 <a href="https://www.google.com/fusiontables/exporttable?query=SELECT%20title%2C%20crossref%2C%20scopus%2C%20pubmed%20FROM%201zkfQ7rtG9UI5a8rPDk2bpD6d0QbgP63h2v2l9YzW%20WHERE%20publication_date%20%3E%3D%20%272013-01-01%27%20AND%20publication_date%20%3C%20%272014-01-01%27%20ORDER%20BY%20crossref%20desc%20LIMIT%2010" target="_blank" class="btn btn-default" role="button">Query Result CSV</a>  
@@ -164,13 +162,8 @@ While it is impossible to draw conclusions from a single chart, by displaying th
 
 Fusion Tables lets anyone develop their own query to run on the PLoS ALM dataset. This query can use SQL-like operations and runs on the entire 100k+ rows of data. Calculations on the data such as `SUM()`, `AVERAGE()`, can also be run.
 
-> Fusion Tables query can be modified to visualize different aspects of the data
-
-There are also a [range of chart types][charttypes] that can be used to display query results.
-
+Google Charts can add more user interaction, such as allowing the user to select a filter by year, or which citation sources to sort by. Extra formatting can be used, for example to provide links to let users easily read the full article. There are also a [range of chart types][charttypes] that can be used to display query results.
 [charttypes]: https://developers.google.com/chart/interactive/docs/gallery
-
-Google Charts can add more user interaction, such as allowing the user to select a filter by year, or which citation sources to sort by. Extra formatting can be used, for example to provide links to let users easily read the full article.
 
 Any time PLoS releases updated versions of the CSV data, the Fusion Table can be updated, and the visualization will automatically contain the new version of the data.
 
