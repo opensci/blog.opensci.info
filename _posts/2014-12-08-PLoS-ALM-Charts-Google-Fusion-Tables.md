@@ -16,17 +16,15 @@ author: mikechelen
   <img src ="/file/7230/columnChart.png" class="mainimage" />
 </a>
 
-All scientific journal articles published by the Public Library of Science have Article Level Metrics collected about them. These metrics include citation counts, web views, online bookmarks, and more. The metrics are available through [a variety of sources][plosalmdata] including a [bulk CSV file][bulkcsv].
+All scientific journal articles published by the Public Library of Science (PLoS) have Article Level Metrics (ALM) collected about them. These metrics include citation counts, web views, online bookmarks, and more. The metrics are available through [a variety of sources][plosalmdata] including a [bulk CSV file][bulkcsv].
 
 <a href="http://article-level-metrics.plos.org/plos-alm-data/" target="_blank" class="btn btn-default" role="button">ALM Data Sources</a>
 
-> Metrics data for every PLoS article is available online as a bulk download
-
 The CSV data can be uploaded to Google Fusion Tables, a free data hosting service that allows web-based browsing, filtering, and aggregation. The [Fusion Tables API][gftapi] supports SQL-like queries and integrates tightly with [Google Charts][gcharts] allowing visualization of results in a web browser using Javascript.
 
-> Google Charts can visualize query results from Fusion Tables
+The advantage of Javascript compared to Flash or static images is that it works in any web browser including mobile devices, and allows interaction with the data. This makes the visualization easy to share with a large online audience.
 
-The advantage of Javascript compared to Flash or static images is that it works in any web browser including mobile devices, and allows interaction with the data.
+Javascript is also to update if you decide to change the query. Visitors will see the new chart version as soon as the script is altered. This requires fewer manual steps than than exporting a new image and uploading it to a webserver.
 
 [plosalm]: http://article-level-metrics.plos.org/
 [plosalmdata]: http://article-level-metrics.plos.org/plos-alm-data/
@@ -38,11 +36,6 @@ The advantage of Javascript compared to Flash or static images is that it works 
 [almapi]: http://api.plos.org/alm/using-the-alm-api/
 
 <!-- more --> 
-
-<!--
-Google Fusion Tables API supports filtering and aggregation features compared to the default [PLoS ALM API][almapi].
--->
-
 
 # Google Fusion Tables #
 
@@ -62,7 +55,7 @@ For example, we can filter by `publication_date` to show only articles from 2013
 
 <a href="https://www.google.com/fusiontables/DataSource?docid=1zkfQ7rtG9UI5a8rPDk2bpD6d0QbgP63h2v2l9YzW#rows:id=13" target="_blank"><img src ="/file/7230/gft.filter.sort.png" alt="2013 sorted by CrossRef" class="mainimage"/></a>
 
-> The web interface shows a filtered, sorted result
+> The Fusion Tables web interface shows a filtered, sorted result
 
 # Fusion Tables API #
 
@@ -72,6 +65,8 @@ To see the top 10 CrossRef cited papers from 2013:
 {% highlight sql %}
 SELECT title, crossref, scopus, pubmed FROM 1zkfQ7rtG9UI5a8rPDk2bpD6d0QbgP63h2v2l9YzW WHERE publication_date >= '2013-01-01' AND publication_date < '2014-01-01' ORDER BY crossref desc LIMIT 10
 {% endhighlight %}
+
+The query syntax closely matches SQL:
 
 * `SELECT` Pick the columns to include in the results.
 * `FROM` Use the unique identifier of the data table which can be found in *File > About this table* or in the URL: `1zkfQ7rtG9UI5a8rPDk2bpD6d0QbgP63h2v2l9YzW`
@@ -99,7 +94,7 @@ Starting from this [sample code][drawchartdemo] we can modify a few lines of the
 
 <a href="https://developers.google.com/chart/interactive/docs/fusiontables" target="_blank" class="btn btn-default" role="button">Sample Code</a>
 
-> Modifying the function parameters of the sample code creates a chart with our data
+Modifying the function parameters of the sample code creates a chart with our data.
 
 {% highlight javascript linenos hl_lines="4 8 9 10" %}
 google.visualization.drawChart({
@@ -119,10 +114,6 @@ google.visualization.drawChart({
 * Line 4 is where the `query` value is set. Replace the sample query with our custom query.
 * Remove `refreshInterval` on line 5 because the source data is not being changed.
 * Instead of `BarChart`, change `chartType` to `ColumnChart` to select the type of chart.
-
-<!-- among the supported [chart types][charttypes].
-[charttypes]: https://developers.google.com/apps-script/reference/charts/chart-type
--->
 
 Change these settings in the `options` area:
 
@@ -165,17 +156,13 @@ The result is a query performed on a live dataset, with the results visualized i
 
 This simple chart includes some interaction because it uses Javascript. When the user hovers their mouse on a column, a label appears showing the full article title and an exact citation count. This provides important detail without taking additional screen space or overloading the user with information.
 
-> Javascript charts can include interaction such as tooltips
+Although this is a basic query and chart, it allows us to see the top CrossRef cited articles for 2013 and compare their citation counts. Most of the top-cited CrossRef articles had fewer Scopus citations, except for "Post-Treatment HIV-1 Controllers..." and "A Guide to Enterotypes across the..." which for some reason received more Scopus than CrossRef citations. These differences may be due to article awareness, citation inclusion methods, or timeframe. 
 
-Although this is a basic query and chart, it allows us to see the top CrossRef cited articles for 2013 and compare their citation counts. Most of the top-cited CrossRef articles had fewer Scopus citations, except for "Post-Treatment HIV-1 Controllers..." and "A Guide to Enterotypes across the..." which for some reason received more Scopus than CrossRef citations. These differences may be due to article awareness, citation inclusion methods, or timeframe.
-
-> The chart lets the viewer compare citations of different papers and spot trends
-
-While it is impossible to draw conclusions from a single chart, even this simplistic visualization can indicate areas of interest for further study.
+While it is impossible to draw conclusions from a single chart, by displaying the results visually the chart lets the viewer compare citations of different papers and spot trends to investigate further.
 
 # Next Steps #
 
-Using this type of code anyone can freely run a query on the PLoS ALM dataset. This query can use SQL-like operations and runs on the entire 100k+ rows of data. The query can also perform calculations on the data columns, such as `SUM()`, `AVERAGE()`, and more.
+Fusion Tables lets anyone develop their own query to run on the PLoS ALM dataset. This query can use SQL-like operations and runs on the entire 100k+ rows of data. Calculations on the data such as `SUM()`, `AVERAGE()`, can also be run.
 
 > Fusion Tables query can be modified to visualize different aspects of the data
 
@@ -185,4 +172,5 @@ There are also a [range of chart types][charttypes] that can be used to display 
 
 Google Charts can add more user interaction, such as allowing the user to select a filter by year, or which citation sources to sort by. Extra formatting can be used, for example to provide links to let users easily read the full article.
 
+Any time PLoS releases updated versions of the CSV data, the Fusion Table can be updated, and the visualization will automatically contain the new version of the data.
 
