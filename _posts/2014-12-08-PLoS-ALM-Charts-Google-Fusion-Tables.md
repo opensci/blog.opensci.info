@@ -138,13 +138,13 @@ The result is a query performed live on a dataset, with the results visualized i
 
 This chart can include interaction because it uses Javascript. When the user hovers their mouse on a column, a label appears showing the full article title and an exact citation count. This provides important detail without taking additional screen space or overloading the user with information.
 
-The chart allows us to see the top CrossRef cited articles for 2013 and compare their citation counts. Most of the top-cited CrossRef articles had fewer Scopus citations, except for "Post-Treatment HIV-1 Controllers..." and "A Guide to Enterotypes across the..." which for some reason received more Scopus than CrossRef citations. These differences may be due to article awareness, citation inclusion methods, or timeframe.  By displaying the data visually, the chart lets the viewer spot trends for further investigatation.
+The chart allows us to see the top CrossRef cited articles for 2013 and compare their citation counts. All of these articles had equal or more Scopus citations than CrossRef, except for "The Effectiveness of Mobile-Health Technology-Based Health..." which received more CrossRef citations than Scopus. This difference may be due to article awareness, citation inclusion methods, or publication date.  By displaying the data visually, the viewer can identify outliers for further investigatation.
 
 # Next Steps #
 
-Fusion Tables lets anyone develop their own query to run on the PLoS ALM dataset. This query can use SQL-like operations and runs on the entire 100k+ rows of data. Calculations on the data such as `SUM()`, `AVERAGE()`, can also be run.
+Fusion Tables lets anyone develop their own query to run on the PLoS ALM dataset. This query can use SQL-like operations and runs on the entire 100k+ rows of data. Calculations on the data such as `SUM()` and `AVERAGE()` can also be applied.
 
-Google Charts add more user interaction, such as filtering by year, or which citation sources to sort by. Extra formatting can be added, for example links to read the full article. There are also a [range of chart types][charttypes] that can be used to display query results.
+Google Charts also allows more user interaction, such as filtering by year, or which citation sources to sort by. Extra formatting can be added, for example links to read the full article. There are also a [range of chart types][charttypes] available to display query results.
 
 [charttypes]: https://developers.google.com/chart/interactive/docs/gallery
 
