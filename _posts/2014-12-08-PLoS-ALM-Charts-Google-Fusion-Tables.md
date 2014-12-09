@@ -134,9 +134,9 @@ The [final chart](https://github.com/opensci/blog.opensci.info/blob/gh-pages/fil
 
 <div id="visualization_div" style="width: 90%; height: 600px; margin-left:auto;margin-right:auto;margin-bottom:.5em;">Loading...</div>
 
-The result is a query performed live on a dataset, with the results visualized in any web browser.
+The result is a query performed live on a dataset, with the results visualized in any web browser. We can change the query by editing a single file, and the new results will be displayed instantly. The query and visualization can even be [edited live in a web browser](http://jsbin.com/wefene/2/edit?js,output). This is an easy way to experiment and to share visualizations with others.
 
-This chart can include interaction because it uses Javascript. When the user hovers their mouse on a column, a label appears showing the full article title and an exact citation count. This provides important detail without taking additional screen space or overloading the user with information.
+The chart allows interaction because it uses Javascript. When the user hovers their mouse on a column, a label appears showing the full article title and an exact citation count. This provides important detail without taking additional screen space or overloading the user with information.
 
 The chart shows the top CrossRef cited articles for 2013 and compares their citation counts. All of these articles had equal or more Scopus citations than CrossRef, except for "The Effectiveness of Mobile-Health Technology-Based Health..." which received more CrossRef citations than Scopus. This difference may be due to article awareness, citation inclusion methods, or publication date. By displaying the data visually, the viewer can identify outliers for further investigatation.
 
@@ -144,7 +144,7 @@ The chart shows the top CrossRef cited articles for 2013 and compares their cita
 
 Fusion Tables lets anyone develop their own query to run on the PLoS ALM dataset. This query can use SQL-like operations and runs on the entire 100k+ rows of data. Calculations on the data such as `SUM()` and `AVERAGE()` can also be applied.
 
-Google Charts also allows more user interaction, for example filtering by user selected year or journal. Extra formatting can be added to the chart, such as links to read the full articles. There are also a [range of chart types][charttypes] available to display query results.
+Google Charts also supports more user interaction, for example filtering by user selected year or journal. Extra formatting can be added to the chart, such as links to read the full articles. There are also a [range of chart types][charttypes] available to display query results.
 
 [charttypes]: https://developers.google.com/chart/interactive/docs/gallery
 
