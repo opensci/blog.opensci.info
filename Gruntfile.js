@@ -35,6 +35,18 @@ module.exports = function(grunt) {
           src: '{,*/}*.{png,jpg,jpeg}',
           dest: 'images/'
         }]
+      },
+      file: {
+        options: {
+          optimizationLevel: 7,
+          progressive: true
+        },
+        files: [{
+          expand: true,
+          cwd: 'file/',
+          src: '{,*/}*.{png,jpg,jpeg}',
+          dest: 'file/'
+        }]
       }
     },
     svgmin: {
